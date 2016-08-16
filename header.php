@@ -56,6 +56,70 @@
   <section id="main-container">
 
   <!-- start content -->
-  <header id="header">
-    <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+  <header id="header" class="u-fixed">
+    <h1 class="u-visually-hidden"><?php bloginfo('name'); ?></h1>
+    <nav class="menu">
+      <ul class="main-menu row">
+<?php 
+$posts = get_posts();
+
+if (count($posts) > 0) {
+?>
+        <li>
+          Studio
+          <ul class="sub-menu">
+<?php 
+  foreach($posts as $post) {
+    setup_postdata($post);
+?>
+            <li class="studio-list-item">
+              <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+            </li>
+<?php 
+  }
+  wp_reset_postdata();
+?>
+          </ul>
+        </li>
+<?php 
+}
+
+$cat_array = get_categories();
+
+if ($cat_array) {
+?>
+        <li>
+          Sort
+          <ul class="sub-menu u-inline-list">
+<?php 
+  foreach($cat_array as $cat) {
+?>
+            <li class="sort-list-item">
+              <a 
+                class="u-inline-block<?php if (is_home()) { echo ' js-sort-toggle'; } ?>" 
+                data-cat="<?php echo $cat->slug; ?>" 
+                href="<?php echo get_bloginfo('url') . '?sort=' . $cat->slug; ?>">
+                <?php echo $cat->name; ?>
+              </a>
+            </li>
+<?php 
+  }
+?>
+          </ul>
+        </li>
+<?php 
+}
+
+$info_id = get_id_by_slug('info');
+
+if ($info_id) {
+?>
+        <li>
+          <a href="<?php echo get_the_permalink($info_id); ?>">Info</a>
+        </li>
+<?php
+}
+?>
+      </ul>
+    </nav>
   </header>
