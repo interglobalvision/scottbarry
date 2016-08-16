@@ -39,5 +39,32 @@ function igv_cmb_metaboxes() {
    * Reference: https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php
 	 */
 
+  $home_display_options = new_cmb2_box( array(
+    'id'           => $prefix . 'home_display_options',
+    'title'        => __( 'Homepage thumbnail display', 'cmb2' ),
+    'object_types' => array( 'post', ),
+  ) );
+
+  $home_display_options->add_field( array(
+    'name'        => __( 'Single image row', 'cmb2' ),
+    'description' => __( '(Centered image in full-width column)', 'cmb2' ),
+    'id'          => $prefix . 'single_row',
+    'type'        => 'checkbox',
+  ) );
+
+  $home_display_options->add_field( array(
+    'name'        => __( 'Percent width', 'cmb2' ),
+    'description' => __( '% (Percent width in column / Default 100 / Max 100)', 'cmb2' ),
+    'id'          => $prefix . 'percent_width',
+    'type'        => 'text_small',
+  ) );
+
+  $home_display_options->add_field( array(
+    'name'        => __( 'Percent rotate', 'cmb2' ),
+    'description' => __( '% (Clockwise: # / Counter-clockwise: -# / Default 0 / Max 100)', 'cmb2' ),
+    'id'          => $prefix . 'percent_rotate',
+    'type'        => 'text_small',
+  ) );
+
 }
 ?>
