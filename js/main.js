@@ -32,12 +32,14 @@ Site = {
 Site.Sort = {
   siteUrl: window.location.origin + window.location.pathname,
   queryVar: 'sort',
-  queryString: window.location.search.substring(1),
+  queryString: '',
   paramList: '',
   paramArray: [],
 
   init: function() {
     var _this = this;
+
+    _this.queryString = window.location.search.substring(1);
 
     if (_this.queryString) {
       _this.paramList = _this.queryString.replace(_this.queryVar + '=', '');
@@ -55,7 +57,7 @@ Site.Sort = {
   bindToggle: function() {
     var _this = this;
 
-    $('.js-sort-toggle').bind('click', function(event) {
+    $('.js-sort-toggle').on('click', function(event) {
       event.preventDefault();
 
       var catSlug = $(this).attr('data-cat');
@@ -68,6 +70,8 @@ Site.Sort = {
     var _this = this;
     var newUrl = _this.siteUrl;
 
+    _this.queryString = window.location.search.substring(1);
+
     if(_this.queryString) {
       var foundInQuery = $.inArray(toggleParam, _this.paramArray) > -1;
 
@@ -75,8 +79,6 @@ Site.Sort = {
         _this.paramArray.splice(_this.paramArray.indexOf(toggleParam), 1);
 
         newUrl += '?' + _this.queryVar + '=' + _this.paramArray.join();
-
-        Site.Sort.toggleCats(_this.paramArray);
 
       } else if (!foundInQuery) {
         _this.paramArray.push(toggleParam);
