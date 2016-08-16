@@ -54,14 +54,16 @@ function igv_cmb_metaboxes() {
 
   $home_display_options->add_field( array(
     'name'        => __( 'Percent width', 'cmb2' ),
-    'description' => __( '% (Percent width in column / Default 100 / Max 100)', 'cmb2' ),
+    'description' => __( '% (Percent width in column / Max 100 / Default 100)', 'cmb2' ),
+    'default'     => '100',
     'id'          => $prefix . 'percent_width',
     'type'        => 'text_small',
   ) );
 
   $home_display_options->add_field( array(
     'name'        => __( 'Percent rotate', 'cmb2' ),
-    'description' => __( '% (Clockwise: # / Counter-clockwise: -# / Default 0 / Max 100)', 'cmb2' ),
+    'description' => __( '% (Clockwise: # / Counter-clockwise: -# / Max 100 / Default 0)', 'cmb2' ),
+    'default'     => '0',
     'id'          => $prefix . 'percent_rotate',
     'type'        => 'text_small',
   ) );
