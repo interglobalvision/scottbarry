@@ -38,6 +38,11 @@ function igv_cmb_metaboxes() {
 	 * Metaboxes declarations here
    * Reference: https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php
 	 */
+  $home_display_options = new_cmb2_box( array(
+    'id'           => $prefix . 'home_display_options',
+    'title'        => __( 'Homepage thumbnail display', 'cmb2' ),
+    'object_types' => array( 'post', ),
+  ) );
 
   $home_display_options->add_field( array(
     'name'        => __( 'Single image row', 'cmb2' ),
