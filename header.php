@@ -81,7 +81,7 @@ if ($info_id) {
 
 
 <?php
-$posts = get_posts();
+$posts = get_posts('posts_per_page=-1');
 
 if (count($posts) > 0) {
 ?>
