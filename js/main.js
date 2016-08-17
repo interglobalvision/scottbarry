@@ -12,6 +12,8 @@ Site = {
 
     _this.Sort.init();
 
+    _this.Header.init();
+
   },
 
   onResize: function() {
@@ -28,6 +30,34 @@ Site = {
     });
   },
 };
+
+Site.Header = {
+  init: function() {
+    var _this = this;
+
+    if ($('.menu-trigger').length) {
+      _this.bindMenuToggle();
+    }
+  },
+
+  bindMenuToggle: function() {
+    var _this = this;
+
+    $('.menu-trigger').bind('click', function(event) {
+      event.preventDefault();
+
+      var menu = $(this).attr('data-trigger');
+
+      _this.toggleMenu(menu);
+    });
+  },
+
+  toggleMenu: function(menuName) {
+    console.log(menuName); 
+
+    $('#' + menuName + '-menu').toggle();
+  },
+}
 
 Site.Sort = {
   siteUrl: window.location.origin + window.location.pathname,
@@ -49,12 +79,12 @@ Site.Sort = {
     }
 
     if ($('.js-sort-toggle').length) {
-      _this.bindToggle();
+      _this.bindSortToggle();
     }
 
   },
 
-  bindToggle: function() {
+  bindSortToggle: function() {
     var _this = this;
 
     $('.js-sort-toggle').on('click', function(event) {
@@ -101,7 +131,7 @@ Site.Sort = {
     window.history.replaceState(_this.paramList, 'Scott Barry', newUrl);
   },
 
-  toggleCats(slugArray) {
+  toggleCats: function(slugArray) {
     var _this = this;
 
     $('.js-sort-toggle').removeClass('active');
