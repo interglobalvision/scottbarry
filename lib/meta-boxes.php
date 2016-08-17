@@ -61,7 +61,7 @@ function igv_cmb_metaboxes() {
   ) );
 
   $home_display_options->add_field( array(
-    'name'        => __( 'Percent width', 'cmb2' ),
+    'name'        => __( 'Width', 'cmb2' ),
     'description' => __( '% (Percent width in column / Default 100)', 'cmb2' ),
     'default'     => '100',
     'id'          => $prefix . 'percent_width',
@@ -69,10 +69,10 @@ function igv_cmb_metaboxes() {
   ) );
 
   $home_display_options->add_field( array(
-    'name'        => __( 'Percent rotate', 'cmb2' ),
-    'description' => __( '% (Clockwise: # / Counter-clockwise: -# / Default 0)', 'cmb2' ),
+    'name'        => __( 'Rotate', 'cmb2' ),
+    'description' => __( 'degrees (Clockwise: # / Counter-clockwise: -# / Default 0)', 'cmb2' ),
     'default'     => '0',
-    'id'          => $prefix . 'percent_rotate',
+    'id'          => $prefix . 'degrees_rotate',
     'type'        => 'text_small',
   ) );
 
