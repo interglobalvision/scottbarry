@@ -43,7 +43,7 @@ Site.Sort = {
 
     if (_this.queryString) {
       _this.paramList = _this.queryString.replace(_this.queryVar + '=', '');
-      _this.paramArray = _this.paramList.split(',');
+      _this.paramArray = _this.paramList.split('+');
 
       _this.toggleCats(_this.paramArray);
     }
@@ -78,12 +78,12 @@ Site.Sort = {
       if (foundInQuery && _this.paramArray.length > 1) {
         _this.paramArray.splice(_this.paramArray.indexOf(toggleParam), 1);
 
-        newUrl += '?' + _this.queryVar + '=' + _this.paramArray.join();
+        newUrl += '?' + _this.queryVar + '=' + _this.paramArray.join('+');
 
       } else if (!foundInQuery) {
         _this.paramArray.push(toggleParam);
 
-        newUrl += '?' + _this.queryVar + '=' + _this.paramArray.join();
+        newUrl += '?' + _this.queryVar + '=' + _this.paramArray.join('+');
 
       } else {
         _this.paramArray = [];
@@ -105,7 +105,7 @@ Site.Sort = {
     var _this = this;
 
     $('.js-sort-toggle').removeClass('active');
-    
+
     if (slugArray.length > 0) {
       $('.post').hide();
 
