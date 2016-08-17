@@ -4,7 +4,7 @@ get_header();
 
 <!-- main content -->
 
-<main id="main-content" class="margin-bottom-large">
+<main id="main-content" class="margin-bottom-large padding-top-large">
 
   <!-- main posts loop -->
   <section id="post" class="container">
