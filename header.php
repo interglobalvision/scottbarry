@@ -57,7 +57,7 @@
 
   <!-- start content -->
   <header id="header" class="u-fixed">
-    <h1 class="u-visually-hidden"><?php bloginfo('name'); ?></h1>
+    <h1 class="u-visuallyhidden"><?php bloginfo('name'); ?></h1>
     <nav class="menu">
       <ul class="main-menu row">
 <?php 
