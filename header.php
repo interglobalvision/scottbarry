@@ -85,9 +85,9 @@ $posts = get_posts('posts_per_page=-1');
 
 if (count($posts) > 0) {
 ?>
-      <div class="row">
+      <div id="studio-menu" class="row">
         <div class="col col-s-12">
-          <ul id="studio-menu">
+          <ul>
 <?php
   foreach($posts as $post) {
     setup_postdata($post);
@@ -112,9 +112,9 @@ $cat_array = get_categories();
 
 if ($cat_array) {
 ?>
-      <div class="row">
+      <div id="sort-menu" class="row">
         <div class="col col-s-12">
-          <ul id="sort-menu" class="text-align-center u-inline-list">
+          <ul class="text-align-center u-inline-list">
 <?php
   foreach($cat_array as $cat) {
 ?>
