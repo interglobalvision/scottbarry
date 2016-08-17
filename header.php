@@ -57,69 +57,82 @@
 
   <!-- start content -->
   <header id="header" class="u-fixed">
-    <h1 class="u-visuallyhidden"><?php bloginfo('name'); ?></h1>
-    <nav class="menu">
-      <ul class="main-menu row">
-<?php 
+    <div class="container">
+      <div class="row">
+        <div class="col col-s-4">
+          <h1 class="u-visuallyhidden"><?php bloginfo('name'); ?></h1>
+          <a id="menu-studio-trigger" href="<?php echo site_url(); ?>">Studio</a>
+        </div>
+        <div class="col col-s-4 text-align-center">
+          <a id="menu-sort-trigger" href="<?php echo site_url(); ?>">Sort</a>
+        </div>
+        <div class="col col-s-4 text-align-right">
+<?php
+$info_id = get_id_by_slug('info');
+
+if ($info_id) {
+?>
+          <a href="<?php echo get_the_permalink($info_id); ?>">Info</a>
+<?php
+}
+?>
+        </div>
+      </div>
+
+
+<?php
 $posts = get_posts();
 
 if (count($posts) > 0) {
 ?>
-        <li>
-          Studio
-          <ul class="sub-menu">
-<?php 
+      <div class="row">
+        <div class="col col-s-12">
+          <ul id="studio-menu">
+<?php
   foreach($posts as $post) {
     setup_postdata($post);
 ?>
             <li class="studio-list-item">
               <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
             </li>
-<?php 
+<?php
   }
   wp_reset_postdata();
 ?>
           </ul>
-        </li>
-<?php 
+        </div>
+      </div>
+<?php
 }
+?>
 
+
+<?php
 $cat_array = get_categories();
 
 if ($cat_array) {
 ?>
-        <li>
-          Sort
-          <ul class="sub-menu u-inline-list">
-<?php 
+      <div class="row">
+        <div class="col col-s-12">
+          <ul id="sort-menu" class="text-align-center u-inline-list">
+<?php
   foreach($cat_array as $cat) {
 ?>
             <li class="sort-list-item">
-              <a 
-                class="u-inline-block<?php if (is_home()) { echo ' js-sort-toggle'; } ?>" 
-                data-cat="<?php echo $cat->slug; ?>" 
+              <a
+                class="u-inline-block<?php if (is_home()) { echo ' js-sort-toggle'; } ?>"
+                data-cat="<?php echo $cat->slug; ?>"
                 href="<?php echo get_bloginfo('url') . '?sort=' . $cat->slug; ?>">
                 <?php echo $cat->name; ?>
               </a>
             </li>
-<?php 
+<?php
   }
 ?>
           </ul>
-        </li>
-<?php 
-}
-
-$info_id = get_id_by_slug('info');
-
-if ($info_id) {
-?>
-        <li>
-          <a href="<?php echo get_the_permalink($info_id); ?>">Info</a>
-        </li>
+        </div>
+      </div>
 <?php
 }
 ?>
-      </ul>
-    </nav>
   </header>
