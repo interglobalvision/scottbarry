@@ -1,5 +1,6 @@
 @import "kouto-swiss"
 @import "helpers"
+@import "fonts"
 
 // ******************************************************
 
@@ -111,11 +112,9 @@ $margin-basic = ($gutter * 2)
 $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
 
-$font-size-basic = 15px
-$font-size-larger = 1.3rem
-$font-size-h3 = golden-ratio(1rem , 1)
-$font-size-h2 = golden-ratio(1rem , 1.5)
-$font-size-h1 = golden-ratio(1rem , 2)
+$font-size-small = 11px
+$font-size-mid = 16px
+$font-size-large = 21px
 
 $font-leading-basic = 1.35
 $font-leading-tighter = 1.15
@@ -123,6 +122,9 @@ $font-leading-larger = 1.45
 
 $font-tracking-basic = 0.001em
 $font-tracking-wider = 0.05em
+
+$font-sans = 'Moderat', font-stack('Helvetica')
+$font-serif = font-stack('Times New Roman')
 
 $color-black-soft = rgb(14, 14, 14)
 $color-white-soft = rgb(253, 253, 253)
@@ -132,8 +134,8 @@ $color-white-soft = rgb(253, 253, 253)
 // TYPOGRAPHY
 
 html
-  font-family: font-stack('Helvetica')
-  font-size: $font-size-basic
+  font-family: $font-sans
+  font-size: $font-size-small
   letter-spacing: $font-tracking-basic
 
 body
@@ -142,15 +144,12 @@ body
   // HTML ELEMENT STYLING
 
 h1
-  font-size: $font-size-h1
-  line-height: $font-leading-tighter
+  line-height: $font-leading-basic
+  margin-bottom: 0
 
 h2
-  font-size: $font-size-h2
-  line-height: $font-leading-tighter
-
-h3
-  font-size: $font-size-h3
+  line-height: $font-leading-basic
+  margin-bottom: 0
 
 p
   margin-bottom: 1rem
@@ -163,12 +162,27 @@ p
 .font-bold
   font-weight: bold
 
+.font-serif
+  font-family: $font-serif
+
 .font-small-caps
   font-size: 0.85em
   text-transform: uppercase
 
 .font-capitalize
   text-transform: capitalize
+
+.font-size-small
+  font-size: $font-size-small
+
+.font-size-mid
+  font-size: $font-size-mid
+
+.font-size-large
+  font-size: $font-size-large
+
+.font-leading-tighter
+  line-height: $font-leading-tighter
 
   // TEXT RULES
 
@@ -299,6 +313,12 @@ img
 
 .sub-menu
   display: none
+
+.studio-list-item
+  border: 0px solid $color-black-soft
+  border-bottom-width: 1px
+  &:first-of-type
+    border-top-width: 1px
 
 // ******************************************************
 

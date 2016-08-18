@@ -36,7 +36,7 @@ if( have_posts() ) {
 
         <a href="<?php the_permalink() ?>">
           <?php the_post_thumbnail('gallery', array('style'=>'max-width: ' . $percent_width . '%; transform: rotate(' . $degrees_rotate . 'deg)')); ?>
-          <h2 class="font-caption text-align-center margin-top-small"><?php the_title(); ?></h2>
+          <h2 class="text-align-center margin-top-small"><?php the_title(); ?></h2>
         </a>
 
       </article>

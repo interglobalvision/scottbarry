@@ -23,11 +23,11 @@ if( have_posts() ) {
       <article <?php post_class('row'); ?>>
 
         <div class="col col-s-12 text-align-center">
-          <h1><?php the_title(); ?></h1>
+          <h1 class="font-size-mid"><?php the_title(); ?></h1>
 <?php
     if (!empty($tagline)) {
 ?>
-          <div><?php echo $tagline ?></div>
+          <div class="font-size-mid"><?php echo $tagline ?></div>
 <?php
     }
 ?>
@@ -35,7 +35,7 @@ if( have_posts() ) {
 <?php
     if (get_the_content()) {
 ?>
-        <div class="col col-s-12 text-align-center"><?php the_content(); ?></div>
+        <div class="col col-s-12 text-align-center font-size-large font-serif"><?php the_content(); ?></div>
 <?php
     }
 
@@ -62,7 +62,7 @@ if( have_posts() ) {
 <?php
       if (!empty($image['caption'])) {
 ?>
-          <div class="font-caption text-align-center margin-top-small"><?php echo $image['caption'] ?></div>
+          <div class="text-align-center margin-top-small"><?php echo $image['caption'] ?></div>
 <?php
       }
 ?>

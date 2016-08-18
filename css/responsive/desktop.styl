@@ -9,6 +9,13 @@ $gutter = 30px
 .col
   padding: 0 ($gutter / 2)
   margin-bottom: $gutter
+  
+.col-no-gutter
+  padding-left: 0
+  padding-right: 0
+  
+.col-no-margin-bottom
+  margin-bottom: 0
 
 for offset in 0..($cols - 1)
   .offset-l-{offset}
@@ -32,11 +39,9 @@ $margin-basic = ($gutter * 2)
 $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
 
-$font-size-basic = 15px
-$font-size-larger = 1.3rem
-$font-size-h3 = golden-ratio(1rem , 1)
-$font-size-h2 = golden-ratio(1rem , 1.5)
-$font-size-h1 = golden-ratio(1rem , 2)
+$font-size-small = 14px
+$font-size-mid = 26px
+$font-size-large = 48px
 
 $font-leading-basic = 1.35
 $font-leading-tighter = 1.15
@@ -50,24 +55,16 @@ $font-tracking-wider = 0.05em
 // TYPOGRAPHY
 
 html
-  font-size: $font-size-basic
-  letter-spacing: $font-tracking-basic
-
-body
-  line-height: $font-leading-basic
-
-  // HTML ELEMENT STYLING
-
-h1
-  font-size: $font-size-h1
-  line-height: $font-leading-tighter
-
-h2
-  font-size: $font-size-h2
-  line-height: $font-leading-tighter
-
-h3
-  font-size: $font-size-h3
+  font-size: $font-size-small
+  
+.font-size-small 
+  font-size: $font-size-small
+  
+.font-size-mid 
+  font-size: $font-size-mid
+  
+.font-size-large 
+  font-size: $font-size-large 
   
 // ******************************************************
 
@@ -154,4 +151,3 @@ h3
   padding-bottom: $margin-large
 
 // ******************************************************
-
