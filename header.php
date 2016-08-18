@@ -63,7 +63,7 @@ $cat_array = get_categories();
   <!-- start content -->
   <header id="header" class="u-fixed padding-top-small">
     <div class="container">
-      <div class="row">
+      <div class="row font-size-mid">
 
         <div class="col col-s-4">
           <h1 class="u-visuallyhidden"><?php bloginfo('name'); ?></h1>
@@ -100,7 +100,7 @@ if ($info_id) {
 <?php
 if (count($posts) > 0) {
 ?>
-      <div id="studio-menu" class="row sub-menu">
+      <div id="studio-menu" class="row sub-menu font-size-large font-serif">
         <div class="col col-s-12">
           <ul>
 <?php
@@ -125,7 +125,7 @@ if (count($posts) > 0) {
 <?php
 if ($cat_array) {
 ?>
-      <div id="sort-menu" class="row sub-menu">
+      <div id="sort-menu" class="row sub-menu font-size-large font-serif">
         <div class="col col-s-12">
           <ul class="text-align-center u-inline-list">
 <?php
