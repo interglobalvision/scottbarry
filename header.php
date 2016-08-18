@@ -55,17 +55,35 @@
 
   <section id="main-container">
 
+<?php 
+$posts = get_posts('posts_per_page=-1');
+$cat_array = get_categories();
+?>
+
   <!-- start content -->
-  <header id="header" class="u-fixed">
+  <header id="header" class="u-fixed padding-top-small">
     <div class="container">
       <div class="row">
+
         <div class="col col-s-4">
           <h1 class="u-visuallyhidden"><?php bloginfo('name'); ?></h1>
-          <a id="menu-studio-trigger" href="<?php echo site_url(); ?>">Studio</a>
+<?php
+if (count($posts) > 0) {
+?>
+          <a class="menu-trigger" data-trigger="studio" href="<?php echo site_url(); ?>">Studio</a>
+<?php 
+}
+?>
         </div>
         <div class="col col-s-4 text-align-center">
-          <a id="menu-sort-trigger" href="<?php echo site_url(); ?>">Sort</a>
+<?php
+if ($cat_array) {
+?>
+          <a class="menu-trigger" data-trigger="sort" href="<?php echo site_url(); ?>">Sort</a>
         </div>
+<?php
+}
+?>
         <div class="col col-s-4 text-align-right">
 <?php
 $info_id = get_id_by_slug('info');
@@ -79,13 +97,10 @@ if ($info_id) {
         </div>
       </div>
 
-
 <?php
-$posts = get_posts('posts_per_page=-1');
-
 if (count($posts) > 0) {
 ?>
-      <div id="studio-menu" class="row">
+      <div id="studio-menu" class="row sub-menu">
         <div class="col col-s-12">
           <ul>
 <?php
@@ -108,11 +123,9 @@ if (count($posts) > 0) {
 
 
 <?php
-$cat_array = get_categories();
-
 if ($cat_array) {
 ?>
-      <div id="sort-menu" class="row">
+      <div id="sort-menu" class="row sub-menu">
         <div class="col col-s-12">
           <ul class="text-align-center u-inline-list">
 <?php
