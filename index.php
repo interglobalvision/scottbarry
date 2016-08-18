@@ -4,7 +4,7 @@ get_header();
 
 <!-- main content -->
 
-<main id="main-content" class="padding-top-large">
+<main id="main-content" class="padding-top-large margin-bottom-large">
 
   <!-- main posts loop -->
   <section id="posts" class="container">
@@ -26,9 +26,9 @@ if( have_posts() ) {
     $degrees_rotate = empty($degrees_rotate) ? '0' : $degrees_rotate;
 ?>
 
-      <article <?php 
+      <article <?php
         if ($single_row == 'on') {
-          post_class('text-align-center col col-s-12'); 
+          post_class('text-align-center col col-s-12');
         } else {
           post_class('text-align-center col col-s-12 col-m-6');
         }
@@ -43,7 +43,7 @@ if( have_posts() ) {
 
 <?php
   }
-} 
+}
 ?>
     </div>
   <!-- end posts -->

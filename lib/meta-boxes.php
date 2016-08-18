@@ -38,20 +38,36 @@ function igv_cmb_metaboxes() {
 	 * Metaboxes declarations here
    * Reference: https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php
 	 */
-  $home_display_options = new_cmb2_box( array(
-    'id'           => $prefix . 'home_display_options',
-    'title'        => __( 'Homepage thumbnail display', 'cmb2' ),
+
+  // Home thumbnail display
+
+  $post_options_metabox = new_cmb2_box( array(
+    'id'           => $prefix . 'post_options_metabox',
+    'title'        => __( 'Options', 'cmb2' ),
     'object_types' => array( 'post', ),
   ) );
 
-  $home_display_options->add_field( array(
+  $post_options_metabox->add_field( array(
+    'name'        => __( 'Tagline', 'cmb2' ),
+    'description' => __( '(Appears below title. Project dates, etc)', 'cmb2' ),
+    'id'          => $prefix . 'tagline',
+    'type'        => 'text',
+  ) );
+
+  $post_options_metabox->add_field( array(
+    'name'        => __( 'Homepage thumbnail display', 'cmb2' ),
+    'id'          => $prefix . 'home_display_title',
+    'type'        => 'title',
+  ) );
+
+  $post_options_metabox->add_field( array(
     'name'        => __( 'Single image row', 'cmb2' ),
     'description' => __( '(Centered image in full-width column / Default off)', 'cmb2' ),
     'id'          => $prefix . 'single_row',
     'type'        => 'checkbox',
   ) );
 
-  $home_display_options->add_field( array(
+  $post_options_metabox->add_field( array(
     'name'        => __( 'Top margin', 'cmb2' ),
     'description' => __( 'px (Default 0)', 'cmb2' ),
     'default'     => '0',
@@ -59,19 +75,19 @@ function igv_cmb_metaboxes() {
     'type'        => 'text_small',
   ) );
 
-  $home_display_options->add_field( array(
-    'name'        => __( 'Percent width', 'cmb2' ),
+  $post_options_metabox->add_field( array(
+    'name'        => __( 'Width', 'cmb2' ),
     'description' => __( '% (Percent width in column / Default 100)', 'cmb2' ),
     'default'     => '100',
     'id'          => $prefix . 'percent_width',
     'type'        => 'text_small',
   ) );
 
-  $home_display_options->add_field( array(
-    'name'        => __( 'Percent rotate', 'cmb2' ),
-    'description' => __( '% (Clockwise: # / Counter-clockwise: -# / Default 0)', 'cmb2' ),
+  $post_options_metabox->add_field( array(
+    'name'        => __( 'Rotate', 'cmb2' ),
+    'description' => __( 'degrees (Clockwise: # / Counter-clockwise: -# / Default 0)', 'cmb2' ),
     'default'     => '0',
-    'id'          => $prefix . 'percent_rotate',
+    'id'          => $prefix . 'degrees_rotate',
     'type'        => 'text_small',
   ) );
 
@@ -125,53 +141,16 @@ function igv_cmb_metaboxes() {
   ) );
 
   $image_gallery_group->add_group_field( $image_gallery_field_id, array(
-    'name'        => __( 'Percent width', 'cmb2' ),
+    'name'        => __( 'Width', 'cmb2' ),
     'description' => __( '% (Percent width in column / Default 100)', 'cmb2' ),
     'id'          => 'percent_width',
     'type'        => 'text_small',
   ) );
 
   $image_gallery_group->add_group_field( $image_gallery_field_id, array(
-    'name'        => __( 'Percent rotate', 'cmb2' ),
-    'description' => __( '% (Clockwise: # / Counter-clockwise: -# / Default 0)', 'cmb2' ),
-    'id'          => 'percent_rotate',
-    'type'        => 'text_small',
-  ) );
-
-  $home_display_options = new_cmb2_box( array(
-    'id'           => $prefix . 'home_display_options',
-    'title'        => __( 'Homepage thumbnail display', 'cmb2' ),
-    'object_types' => array( 'post', ),
-  ) );
-
-  $home_display_options->add_field( array(
-    'name'        => __( 'Single image row', 'cmb2' ),
-    'description' => __( '(Centered image in full-width column / Default off)', 'cmb2' ),
-    'id'          => $prefix . 'single_row',
-    'type'        => 'checkbox',
-  ) );
-
-  $home_display_options->add_field( array(
-    'name'        => __( 'Top margin', 'cmb2' ),
-    'description' => __( 'px (Default 0)', 'cmb2' ),
-    'default'     => '0',
-    'id'          => $prefix . 'top_margin',
-    'type'        => 'text_small',
-  ) );
-
-  $home_display_options->add_field( array(
-    'name'        => __( 'Width', 'cmb2' ),
-    'description' => __( '% (Percent width in column / Default 100)', 'cmb2' ),
-    'default'     => '100',
-    'id'          => $prefix . 'percent_width',
-    'type'        => 'text_small',
-  ) );
-
-  $home_display_options->add_field( array(
     'name'        => __( 'Rotate', 'cmb2' ),
     'description' => __( 'degrees (Clockwise: # / Counter-clockwise: -# / Default 0)', 'cmb2' ),
-    'default'     => '0',
-    'id'          => $prefix . 'degrees_rotate',
+    'id'          => 'degrees_rotate',
     'type'        => 'text_small',
   ) );
 
