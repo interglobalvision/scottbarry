@@ -14,16 +14,28 @@ if( have_posts() ) {
   while( have_posts() ) {
     the_post();
 
+    $tagline = get_post_meta($post->ID, '_igv_tagline', true);
     $images = get_post_meta($post->ID, '_igv_image_gallery', true);
 
     //pr($images[0][0]['image_id']); die;
 ?>
 
       <article <?php post_class('row'); ?>>
+
+        <div class="col col-s-12 text-align-center">
+          <h1><?php the_title(); ?></h1>
+<?php
+    if (!empty($tagline)) {
+?>
+          <div><?php echo $tagline ?></div>
+<?php 
+    }
+?>
+        </div>
 <?php
     if (get_the_content()) {
 ?>
-        <div class="col col-s-12"><?php the_content(); ?></div>
+        <div class="col col-s-12 text-align-center"><?php the_content(); ?></div>
 <?php 
     }
 
