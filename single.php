@@ -28,7 +28,7 @@ if( have_posts() ) {
     if (!empty($tagline)) {
 ?>
           <div><?php echo $tagline ?></div>
-<?php 
+<?php
     }
 ?>
         </div>
@@ -36,46 +36,48 @@ if( have_posts() ) {
     if (get_the_content()) {
 ?>
         <div class="col col-s-12 text-align-center"><?php the_content(); ?></div>
-<?php 
+<?php
     }
 
-    foreach ($images as $image) {
+    if ($images) {
+      foreach ($images as $image) {
 
-      $image_id = $image['image_id'];
-      $single_row = empty($image['single_row']) ? '' : $image['single_row'];
-      $top_margin = empty($image['top_margin']) ? '0' : $image['top_margin'];
-      $percent_width = empty($image['percent_width']) ? '100' : $image['percent_width'];
-      $degrees_rotate = empty($image['degrees_rotate']) ? '0' : $image['degrees_rotate'];
+        $image_id = $image['image_id'];
+        $single_row = empty($image['single_row']) ? '' : $image['single_row'];
+        $top_margin = empty($image['top_margin']) ? '0' : $image['top_margin'];
+        $percent_width = empty($image['percent_width']) ? '100' : $image['percent_width'];
+        $degrees_rotate = empty($image['degrees_rotate']) ? '0' : $image['degrees_rotate'];
 
-      $image_size = $single_row == 'on' ? 'col-12' : 'col-6'
+        $image_size = $single_row == 'on' ? 'col-12' : 'col-6'
 ?>
-        <div class="<?php 
+        <div class="<?php
           if ($single_row == 'on') {
-            echo 'text-align-center col col-s-12'; 
+            echo 'text-align-center col col-s-12';
           } else {
             echo 'text-align-center col col-s-12 col-m-6';
           }
         ?>" style="margin-top: <?php echo $top_margin; ?>px">
 
           <?php echo wp_get_attachment_image($image_id, $image_size, false, array('style'=>'max-width: ' . $percent_width . '%; transform: rotate(' . $degrees_rotate . 'deg)')); ?>
-<?php 
+<?php
       if (!empty($image['caption'])) {
 ?>
           <div class="font-caption text-align-center margin-top-small"><?php echo $image['caption'] ?></div>
-<?php 
+<?php
       }
 ?>
 
         </div>
 
-<?php 
+<?php
+      }
     }
 ?>
       </article>
 
 <?php
   }
-} 
+}
 ?>
   <!-- end posts -->
   </section>
