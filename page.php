@@ -11,11 +11,11 @@ $content_two = get_post_meta($post->ID, '_igv_content_two', true);
   <!-- main posts loop -->
   <section id="page" class="container">
 
-    <article <?php post_class('row font-size-mid font-serif'); ?>>
-      <div class="col col-s-12 col-m-6 col-l-5 offset-l-1">
+    <article <?php post_class('row font-size-mid'); ?>>
+      <div class="col col-s-12 col-m-6 col-l-5">
         <?php the_content(); ?>
       </div>
-      <div class="col col-s-12 col-m-6 col-l-5">
+      <div class="col col-s-12 col-m-6 col-l-5 offset-l-1">
         <?php 
           if (!empty($content_two)) {
             echo apply_filters('the_content', $content_two);
