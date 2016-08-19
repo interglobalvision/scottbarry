@@ -27,8 +27,6 @@ $content_two = get_post_meta($post->ID, '_igv_content_two', true);
   <!-- end posts -->
   </section>
 
-  <?php get_template_part('partials/pagination'); ?>
-
 <!-- end main-content -->
 
 </main>
