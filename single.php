@@ -16,8 +16,6 @@ if( have_posts() ) {
 
     $tagline = get_post_meta($post->ID, '_igv_tagline', true);
     $images = get_post_meta($post->ID, '_igv_image_gallery', true);
-
-    //pr($images[0][0]['image_id']); die;
 ?>
 
       <article <?php post_class('row'); ?>>

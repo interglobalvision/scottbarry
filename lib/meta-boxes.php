@@ -39,6 +39,22 @@ function igv_cmb_metaboxes() {
    * Reference: https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php
 	 */
 
+
+  // Page options
+
+  $info_page_metabox = new_cmb2_box( array(
+    'id'            => $prefix . 'info_page_metabox',
+    'title'         => __( 'Column 2', 'cmb2' ),
+    'object_types'  => array( 'page', ), // Post type
+  ) );
+
+  $info_page_metabox->add_field( array(
+    'desc'    => __( 'Appears in the right column on Info page', 'cmb2' ),
+    'id'      => $prefix . 'content_two',
+    'type'    => 'wysiwyg',
+    'options' => array( 'textarea_rows' => 16, ),
+  ) );
+
   // Conversation details
 
   $conversation_details_metabox = new_cmb2_box( array(
