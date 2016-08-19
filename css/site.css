@@ -841,6 +841,7 @@ img {
 }
 .sub-menu {
   display: none;
+  overflow-y: scroll;
 }
 .studio-list-item {
   border: 0px solid #0e0e0e;
