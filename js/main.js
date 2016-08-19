@@ -19,6 +19,7 @@ Site = {
   onResize: function() {
     var _this = this;
 
+    _this.Header.menuMaxHeight();
   },
 
   fixWidows: function() {
@@ -38,6 +39,8 @@ Site.Header = {
     if ($('.menu-trigger').length) {
       _this.bindMenuToggle();
     }
+
+    _this.menuMaxHeight();
   },
 
   bindMenuToggle: function() {
@@ -64,6 +67,20 @@ Site.Header = {
       $menu.show().addClass('active');
     } 
   },
+
+  menuMaxHeight: function() {
+    var maxHeight;
+
+    if ($('.sub-menu.active').length) {
+      $('.sub-menu.active').hide();
+      maxHeight = $(window).height() - $('#header').outerHeight(true);
+      $('.sub-menu.active').show();
+    } else {
+      maxHeight = $(window).height() - $('#header').outerHeight(true);
+    }
+
+    $('.sub-menu').css('max-height', maxHeight);
+  }
 };
 
 Site.Sort = {
