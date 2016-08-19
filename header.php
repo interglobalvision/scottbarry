@@ -137,7 +137,7 @@ if ($cat_array) {
 ?>
             <li class="sort-list-item">
               &nbsp;<a
-                class="u-inline-block<?php if (is_home()) { echo ' js-sort-toggle'; } ?>"
+                class="u-inline-block<?php if (is_home()) { echo ' sort-toggle'; } ?>"
                 data-cat="<?php echo $cat->slug; ?>"
                 href="<?php echo get_bloginfo('url') . '?sort=' . $cat->slug; ?>">
                 <?php echo $cat->name; ?>
