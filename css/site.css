@@ -863,7 +863,7 @@ img {
     font-size: 28px;
   }
 }
-@media screen and (min-width: 736px) {
+@media screen and (min-width: 750px) {
   .container {
     width: 750px;
   }
