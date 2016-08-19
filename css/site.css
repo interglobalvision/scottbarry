@@ -748,6 +748,9 @@ p {
 .text-align-center {
   text-align: center;
 }
+.p-line-length p {
+  width: 85%;
+}
 a,
 a:active,
 a:visited {
@@ -861,6 +864,9 @@ img {
   }
   .font-size-large {
     font-size: 28px;
+  }
+  .p-line-length p {
+    width: 65%;
   }
 }
 @media screen and (min-width: 750px) {
@@ -997,6 +1003,9 @@ img {
   }
   .font-size-large {
     font-size: 32px;
+  }
+  .p-line-length p {
+    width: 100%;
   }
   .margin-top-micro {
     margin-top: 8.034441853748111px;
@@ -1205,6 +1214,9 @@ img {
   }
   .font-size-large {
     font-size: 48px;
+  }
+  .p-line-length p {
+    width: 430px;
   }
   .margin-top-micro {
     margin-top: 9.270509831247821px;
