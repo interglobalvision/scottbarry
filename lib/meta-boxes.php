@@ -39,6 +39,21 @@ function igv_cmb_metaboxes() {
    * Reference: https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php
 	 */
 
+  // Conversation details
+
+  $conversation_details_metabox = new_cmb2_box( array(
+    'id'           => $prefix . 'conversation_details_metabox',
+    'title'        => __( 'Details', 'cmb2' ),
+    'object_types' => array( 'conversation', ),
+  ) );
+
+  $conversation_details_metabox->add_field( array(
+    'desc'    => __( 'Names, date, location, etc.', 'cmb2' ),
+    'id'      => $prefix . 'conversation_details',
+    'type'    => 'wysiwyg',
+    'options' => array( 'textarea_rows' => 12, 'media_buttons' => false, ),
+  ) );
+
   // Home thumbnail display
 
   $post_options_metabox = new_cmb2_box( array(
