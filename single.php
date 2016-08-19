@@ -10,12 +10,8 @@ get_header();
   <section id="post" class="container">
 
 <?php
-if( have_posts() ) {
-  while( have_posts() ) {
-    the_post();
-
-    $tagline = get_post_meta($post->ID, '_igv_tagline', true);
-    $images = get_post_meta($post->ID, '_igv_image_gallery', true);
+$tagline = get_post_meta($post->ID, '_igv_tagline', true);
+$images = get_post_meta($post->ID, '_igv_image_gallery', true);
 ?>
 
       <article <?php post_class('row'); ?>>
@@ -23,30 +19,30 @@ if( have_posts() ) {
         <div class="col col-s-12 text-align-center">
           <h1 class="font-size-mid"><?php the_title(); ?></h1>
 <?php
-    if (!empty($tagline)) {
+if (!empty($tagline)) {
 ?>
           <div class="font-size-mid"><?php echo $tagline ?></div>
 <?php
-    }
+}
 ?>
         </div>
 <?php
-    if (get_the_content()) {
+if (get_the_content()) {
 ?>
         <div class="col col-s-12 text-align-center font-size-large font-serif"><?php the_content(); ?></div>
 <?php
-    }
+}
 
-    if ($images) {
-      foreach ($images as $image) {
+if ($images) {
+  foreach ($images as $image) {
 
-        $image_id = $image['image_id'];
-        $single_row = empty($image['single_row']) ? '' : $image['single_row'];
-        $top_margin = empty($image['top_margin']) ? '0' : $image['top_margin'];
-        $percent_width = empty($image['percent_width']) ? '100' : $image['percent_width'];
-        $degrees_rotate = empty($image['degrees_rotate']) ? '0' : $image['degrees_rotate'];
+    $image_id = $image['image_id'];
+    $single_row = empty($image['single_row']) ? '' : $image['single_row'];
+    $top_margin = empty($image['top_margin']) ? '0' : $image['top_margin'];
+    $percent_width = empty($image['percent_width']) ? '100' : $image['percent_width'];
+    $degrees_rotate = empty($image['degrees_rotate']) ? '0' : $image['degrees_rotate'];
 
-        $image_size = $single_row == 'on' ? 'col-12' : 'col-6'
+    $image_size = $single_row == 'on' ? 'col-12' : 'col-6'
 ?>
         <div class="<?php
           if ($single_row == 'on') {
@@ -58,25 +54,21 @@ if( have_posts() ) {
 
           <?php echo wp_get_attachment_image($image_id, $image_size, false, array('style'=>'max-width: ' . $percent_width . '%; transform: rotate(' . $degrees_rotate . 'deg)')); ?>
 <?php
-      if (!empty($image['caption'])) {
+    if (!empty($image['caption'])) {
 ?>
           <div class="text-align-center margin-top-small"><?php echo $image['caption'] ?></div>
 <?php
-      }
+    }
 ?>
 
         </div>
 
 <?php
-      }
-    }
-?>
-      </article>
-
-<?php
   }
 }
 ?>
+      </article>
+      
   <!-- end posts -->
   </section>
 
