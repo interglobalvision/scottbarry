@@ -77,7 +77,7 @@ if (count($posts) > 0) {
         </div>
         <div class="col col-s-4 text-align-center">
 <?php
-if ($cat_array) {
+if ($cat_array && array_values($cat_array)[0]->slug != 'uncategorized') {
 ?>
           <a class="menu-trigger" data-trigger="sort" href="<?php echo site_url(); ?>">Sort</a>
 <?php
@@ -123,7 +123,7 @@ if (count($posts) > 0) {
 
 
 <?php
-if ($cat_array) {
+if ($cat_array && array_values($cat_array)[0]->slug != 'uncategorized') {
 ?>
       <div id="sort-menu" class="row sub-menu font-size-large font-serif">
         <div class="col col-s-12">
