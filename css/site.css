@@ -856,7 +856,9 @@ img {
 .studio-list-item:first-of-type {
   border-top-width: 1px;
 }
-<<<<<<< HEAD
+.sort-toggle.active {
+  border-bottom: 1px solid #0e0e0e;
+}
 @media screen and (min-width: 568px) {
   html {
     font-size: 14px;
@@ -876,10 +878,6 @@ img {
   .text-line-length p {
     width: 65%;
   }
-=======
-.sort-toggle.active {
-  border-bottom: 1px solid #0e0e0e;
->>>>>>> master
 }
 @media screen and (min-width: 750px) {
   .container {
