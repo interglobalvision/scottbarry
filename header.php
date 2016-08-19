@@ -80,10 +80,10 @@ if (count($posts) > 0) {
 if ($cat_array) {
 ?>
           <a class="menu-trigger" data-trigger="sort" href="<?php echo site_url(); ?>">Sort</a>
-        </div>
 <?php
 }
 ?>
+        </div>
         <div class="col col-s-4 text-align-right">
 <?php
 $info_id = get_id_by_slug('info');
@@ -129,15 +129,19 @@ if ($cat_array) {
         <div class="col col-s-12">
           <ul class="text-align-center u-inline-list">
 <?php
+  $cat_count = count($cat_array);
+  $cat_num = 0; 
+
   foreach($cat_array as $cat) {
+    $cat_num++;
 ?>
             <li class="sort-list-item">
-              <a
-                class="u-inline-block<?php if (is_home()) { echo ' js-sort-toggle'; } ?>"
+              &nbsp;<a
+                class="u-inline-block<?php if (is_home()) { echo ' sort-toggle'; } ?>"
                 data-cat="<?php echo $cat->slug; ?>"
                 href="<?php echo get_bloginfo('url') . '?sort=' . $cat->slug; ?>">
                 <?php echo $cat->name; ?>
-              </a>
+              </a><?php echo $cat_num != $cat_count ? ',' : ''; ?>
             </li>
 <?php
   }
