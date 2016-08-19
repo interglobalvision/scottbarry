@@ -19,6 +19,7 @@ Site = {
   onResize: function() {
     var _this = this;
 
+    _this.Header.menuMaxHeight();
   },
 
   fixWidows: function() {
@@ -38,6 +39,8 @@ Site.Header = {
     if ($('.menu-trigger').length) {
       _this.bindMenuToggle();
     }
+
+    _this.menuMaxHeight();
   },
 
   bindMenuToggle: function() {
@@ -55,9 +58,30 @@ Site.Header = {
   toggleMenu: function(menuName) {
     console.log(menuName); 
 
-    $('#' + menuName + '-menu').toggle();
+    var $menu = $('#' + menuName + '-menu');
+
+    if ($menu.hasClass('active')) {
+      $menu.hide().removeClass('active');
+    } else {
+      $('.sub-menu.active').hide().removeClass('active');
+      $menu.show().addClass('active');
+    } 
   },
-}
+
+  menuMaxHeight: function() {
+    var maxHeight;
+
+    if ($('.sub-menu.active').length) {
+      $('.sub-menu.active').hide();
+      maxHeight = $(window).height() - $('#header').outerHeight(true);
+      $('.sub-menu.active').show();
+    } else {
+      maxHeight = $(window).height() - $('#header').outerHeight(true);
+    }
+
+    $('.sub-menu').css('max-height', maxHeight);
+  }
+};
 
 Site.Sort = {
   siteUrl: window.location.origin + window.location.pathname,
@@ -78,7 +102,7 @@ Site.Sort = {
       _this.toggleCats(_this.paramArray);
     }
 
-    if ($('.js-sort-toggle').length) {
+    if ($('.sort-toggle').length) {
       _this.bindSortToggle();
     }
 
@@ -87,7 +111,7 @@ Site.Sort = {
   bindSortToggle: function() {
     var _this = this;
 
-    $('.js-sort-toggle').on('click', function(event) {
+    $('.sort-toggle').on('click', function(event) {
       event.preventDefault();
 
       var catSlug = $(this).attr('data-cat');
@@ -134,7 +158,7 @@ Site.Sort = {
   toggleCats: function(slugArray) {
     var _this = this;
 
-    $('.js-sort-toggle').removeClass('active');
+    $('.sort-toggle').removeClass('active');
 
     if (slugArray.length > 0) {
       $('.post').hide();
@@ -142,13 +166,13 @@ Site.Sort = {
       for(var i = 0; i < slugArray.length; i++) {
         $('.post.category-' + slugArray[i]).show();
 
-        $('.js-sort-toggle[data-cat=' + slugArray[i] + ']').addClass('active');
+        $('.sort-toggle[data-cat=' + slugArray[i] + ']').addClass('active');
       }
     } else {
       $('.post').show();
     }
   }
-}
+};
 
 jQuery(document).ready(function () {
   'use strict';
