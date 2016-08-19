@@ -80,10 +80,10 @@ if (count($posts) > 0) {
 if ($cat_array) {
 ?>
           <a class="menu-trigger" data-trigger="sort" href="<?php echo site_url(); ?>">Sort</a>
-        </div>
 <?php
 }
 ?>
+        </div>
         <div class="col col-s-4 text-align-right">
 <?php
 $info_id = get_id_by_slug('info');
