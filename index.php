@@ -28,7 +28,7 @@ if( have_posts() ) {
 
       <article <?php
         if ($single_row == 'on') {
-          post_class('text-align-center col col-s-12');
+          post_class('text-align-center col col-s-12 text-line-length');
         } else {
           post_class('text-align-center col col-s-12 col-m-6');
         }

@@ -748,7 +748,10 @@ p {
 .text-align-center {
   text-align: center;
 }
-.p-line-length p {
+.text-line-length h1,
+.text-line-length h2,
+.text-line-length h3,
+.text-line-length p {
   width: 85%;
 }
 a,
@@ -865,7 +868,10 @@ img {
   .font-size-large {
     font-size: 28px;
   }
-  .p-line-length p {
+  .text-line-length h1,
+  .text-line-length h2,
+  .text-line-length h3,
+  .text-line-length p {
     width: 65%;
   }
 }
@@ -1004,7 +1010,10 @@ img {
   .font-size-large {
     font-size: 32px;
   }
-  .p-line-length p {
+  .text-line-length h1,
+  .text-line-length h2,
+  .text-line-length h3,
+  .text-line-length p {
     width: 100%;
   }
   .margin-top-micro {
@@ -1215,7 +1224,10 @@ img {
   .font-size-large {
     font-size: 48px;
   }
-  .p-line-length p {
+  .text-line-length h1,
+  .text-line-length h2,
+  .text-line-length h3,
+  .text-line-length p {
     width: 430px;
   }
   .margin-top-micro {

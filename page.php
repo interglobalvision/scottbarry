@@ -12,10 +12,10 @@ $content_two = get_post_meta($post->ID, '_igv_content_two', true);
   <section id="page" class="container">
 
     <article <?php post_class('row font-size-mid'); ?>>
-      <div class="col col-s-12 col-m-6 p-line-length">
+      <div class="col col-s-12 col-m-6 text-line-length">
         <?php the_content(); ?>
       </div>
-      <div class="col col-s-12 col-m-6 p-line-length">
+      <div class="col col-s-12 col-m-6 text-line-length">
         <?php 
           if (!empty($content_two)) {
             echo apply_filters('the_content', $content_two);
