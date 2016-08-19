@@ -849,7 +849,21 @@ img {
 .studio-list-item:first-of-type {
   border-top-width: 1px;
 }
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 568px) {
+  html {
+    font-size: 14px;
+  }
+  .font-size-small {
+    font-size: 14px;
+  }
+  .font-size-mid {
+    font-size: 21px;
+  }
+  .font-size-large {
+    font-size: 28px;
+  }
+}
+@media screen and (min-width: 736px) {
   .container {
     width: 750px;
   }
