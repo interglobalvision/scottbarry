@@ -161,15 +161,15 @@ Site.Sort = {
     $('.sort-toggle').removeClass('active');
 
     if (slugArray.length > 0) {
-      $('.post').hide();
+      $('.js-sort-item').hide();
 
       for(var i = 0; i < slugArray.length; i++) {
-        $('.post.category-' + slugArray[i]).show();
+        $('.js-sort-item.category-' + slugArray[i]).show();
 
         $('.sort-toggle[data-cat=' + slugArray[i] + ']').addClass('active');
       }
     } else {
-      $('.post').show();
+      $('.js-sort-item').show();
     }
   }
 };
