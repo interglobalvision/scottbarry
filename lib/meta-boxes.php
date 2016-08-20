@@ -40,7 +40,7 @@ function igv_cmb_metaboxes() {
 	 */
 
 
-  // Page options
+// Page options
 
   $info_page_metabox = new_cmb2_box( array(
     'id'            => $prefix . 'info_page_metabox',
@@ -55,7 +55,7 @@ function igv_cmb_metaboxes() {
     'options' => array( 'textarea_rows' => 16, ),
   ) );
 
-  // Conversation details
+// Conversation details
 
   $conversation_details_metabox = new_cmb2_box( array(
     'id'           => $prefix . 'conversation_details_metabox',
@@ -70,35 +70,36 @@ function igv_cmb_metaboxes() {
     'options' => array( 'textarea_rows' => 12, 'media_buttons' => false, ),
   ) );
 
-  // Home thumbnail display
+// Post tagline
 
-  $post_options_metabox = new_cmb2_box( array(
-    'id'           => $prefix . 'post_options_metabox',
-    'title'        => __( 'Options', 'cmb2' ),
+  $post_tagline_metabox = new_cmb2_box( array(
+    'id'           => $prefix . 'post_tagline_metabox',
+    'title'        => __( 'Tagline', 'cmb2' ),
     'object_types' => array( 'post', ),
   ) );
 
-  $post_options_metabox->add_field( array(
-    'name'        => __( 'Tagline', 'cmb2' ),
+  $post_tagline_metabox->add_field( array(
     'description' => __( '(Appears below title. Project dates, etc)', 'cmb2' ),
     'id'          => $prefix . 'tagline',
     'type'        => 'text',
   ) );
 
-  $post_options_metabox->add_field( array(
-    'name'        => __( 'Homepage thumbnail display', 'cmb2' ),
-    'id'          => $prefix . 'home_display_title',
-    'type'        => 'title',
+  // Home display
+
+  $home_display_metabox = new_cmb2_box( array(
+    'id'           => $prefix . 'home_display_metabox',
+    'title'        => __( 'Homepage feed display options', 'cmb2' ),
+    'object_types' => array( 'post','conversation'),
   ) );
 
-  $post_options_metabox->add_field( array(
-    'name'        => __( 'Single image row', 'cmb2' ),
-    'description' => __( '(Centered image in full-width column / Default off)', 'cmb2' ),
+  $home_display_metabox->add_field( array(
+    'name'        => __( 'Single row', 'cmb2' ),
+    'description' => __( '(Centered in full-width column / Default off)', 'cmb2' ),
     'id'          => $prefix . 'single_row',
     'type'        => 'checkbox',
   ) );
 
-  $post_options_metabox->add_field( array(
+  $home_display_metabox->add_field( array(
     'name'        => __( 'Top margin', 'cmb2' ),
     'description' => __( 'px (Default 0)', 'cmb2' ),
     'default'     => '0',
@@ -106,7 +107,15 @@ function igv_cmb_metaboxes() {
     'type'        => 'text_small',
   ) );
 
-  $post_options_metabox->add_field( array(
+// Home thumb display
+
+  $home_thumb_display_metabox = new_cmb2_box( array(
+    'id'           => $prefix . 'home_thumb_display_metabox',
+    'title'        => __( 'Homepage thumb display options', 'cmb2' ),
+    'object_types' => array( 'post',),
+  ) );
+
+  $home_thumb_display_metabox->add_field( array(
     'name'        => __( 'Width', 'cmb2' ),
     'description' => __( '% (Percent width in column / Default 100)', 'cmb2' ),
     'default'     => '100',
@@ -114,7 +123,7 @@ function igv_cmb_metaboxes() {
     'type'        => 'text_small',
   ) );
 
-  $post_options_metabox->add_field( array(
+  $home_thumb_display_metabox->add_field( array(
     'name'        => __( 'Rotate', 'cmb2' ),
     'description' => __( 'degrees (Clockwise: # / Counter-clockwise: -# / Default 0)', 'cmb2' ),
     'default'     => '0',
@@ -122,7 +131,7 @@ function igv_cmb_metaboxes() {
     'type'        => 'text_small',
   ) );
 
-  // Image gallery
+// Image gallery
 
   $image_gallery_group = new_cmb2_box( array(
     'id'           => $prefix . 'image_gallery_metabox',
