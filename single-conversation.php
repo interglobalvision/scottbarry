@@ -11,8 +11,8 @@ get_header();
 
     <article <?php post_class('row'); ?>>
 
-      <div class="col col-s-12 col-m-6 text-line-length text-align-center">
-        <h1 class="font-size-mid">
+      <div class="col col-s-12 col-m-6 text-line-length">
+        <h1 class="font-size-mid margin-bottom-1rem">
           <?php the_title(); ?>
         </h1>
 <?php
@@ -30,7 +30,7 @@ if (!empty($details)) {
 <?php
 if (get_the_content()) {
 ?>
-      <div class="col col-s-12 col-m-6 text-line-length text-align-center font-size-large font-serif">
+      <div class="col col-s-12 col-m-6 text-line-length font-size-mid" id="conversation-holder">
         <?php the_content(); ?>
       </div>
 <?php
