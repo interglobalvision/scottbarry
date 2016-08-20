@@ -31,7 +31,7 @@ if( $query->have_posts() ) {
 
       <article <?php
         if ($single_row == 'on') {
-          post_class('text-align-center col col-s-12 text-line-length text-content-centered js-sort-item');
+          post_class('text-align-center col col-s-12 text-line-length js-sort-item');
         } else {
           post_class('text-align-center col col-s-12 col-m-6 text-line-length js-sort-item');
         }
@@ -47,8 +47,11 @@ if( $query->have_posts() ) {
       $degrees_rotate = empty($degrees_rotate) ? '0' : $degrees_rotate;
 ?>
 
-        <a href="<?php the_permalink() ?>">
-          <?php the_post_thumbnail('gallery', array('style'=>'max-width: ' . $percent_width . '%; transform: rotate(' . $degrees_rotate . 'deg)', 'class'=>'margin-bottom-small')); ?>
+        <a href="<?php the_permalink() ?>" class="text-content-centered">
+          <?php the_post_thumbnail('gallery', array(
+              'style' => 'max-width: ' . $percent_width . '%; transform: rotate(' . $degrees_rotate . 'deg)', 
+              'class'=>'margin-bottom-small'
+          )); ?>
           <h2><?php the_title(); ?></h2>
         </a>
 
@@ -56,7 +59,7 @@ if( $query->have_posts() ) {
     } else {
 ?>
 
-        <a href="<?php the_permalink() ?>">
+        <a href="<?php the_permalink() ?>" class="text-content-centered">
           <div class="font-size-mid margin-bottom-small"><?php the_excerpt(); ?></div>
           <h2><?php the_title(); ?></h2>
         </a>
