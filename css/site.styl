@@ -145,11 +145,11 @@ body
 
 h1
   line-height: $font-leading-basic
-  margin-bottom: 0
+  margin: 0
 
 h2
   line-height: $font-leading-basic
-  margin-bottom: 0
+  margin: 0
 
 p
   margin-bottom: 1rem
@@ -200,7 +200,12 @@ p
   
 .text-line-length 
   h1, h2, h3, p
+    margin-left: auto
+    margin-right: auto
     width: 85%
+
+.margin-bottom-1rem
+  margin-bottom: 1rem
 
   // LINKS
 
@@ -328,6 +333,13 @@ img
 .sort-toggle
   &.active
     border-bottom: 1px solid $color-black-soft
+
+// CONVERSATION
+#conversation-holder
+  position: relative
+  h3 
+    font-size: $font-size-mid
+    position: absolute
 
 // ******************************************************
 

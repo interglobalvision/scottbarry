@@ -697,11 +697,11 @@ body {
 }
 h1 {
   line-height: 1.35;
-  margin-bottom: 0;
+  margin: 0;
 }
 h2 {
   line-height: 1.35;
-  margin-bottom: 0;
+  margin: 0;
 }
 p {
   margin-bottom: 1rem;
@@ -752,7 +752,12 @@ p {
 .text-line-length h2,
 .text-line-length h3,
 .text-line-length p {
+  margin-left: auto;
+  margin-right: auto;
   width: 85%;
+}
+.margin-bottom-1rem {
+  margin-bottom: 1rem;
 }
 a,
 a:active,
@@ -859,6 +864,13 @@ img {
 .sort-toggle.active {
   border-bottom: 1px solid #0e0e0e;
 }
+#conversation-holder {
+  position: relative;
+}
+#conversation-holder h3 {
+  font-size: 16px;
+  position: absolute;
+}
 @media screen and (min-width: 568px) {
   html {
     font-size: 14px;
@@ -877,6 +889,10 @@ img {
   .text-line-length h3,
   .text-line-length p {
     width: 65%;
+  }
+  #conversation-holder h3 {
+    font-size: 21px;
+    left: 12%;
   }
 }
 @media screen and (min-width: 750px) {
@@ -1018,7 +1034,16 @@ img {
   .text-line-length h2,
   .text-line-length h3,
   .text-line-length p {
-    width: 100%;
+    width: 329px;
+    margin-left: initial;
+    margin-right: initial;
+  }
+  .text-content-centered h1,
+  .text-content-centered h2,
+  .text-content-centered h3,
+  .text-content-centered p {
+    margin-left: auto;
+    margin-right: auto;
   }
   .margin-top-micro {
     margin-top: 8.034441853748111px;
@@ -1091,6 +1116,10 @@ img {
   }
   .padding-bottom-large {
     padding-bottom: 130px;
+  }
+  #conversation-holder h3 {
+    font-size: 21px;
+    left: -13px;
   }
 }
 @media screen and (min-width: 1150px) {
@@ -1305,5 +1334,9 @@ img {
   }
   .padding-bottom-large {
     padding-bottom: 150px;
+  }
+  #conversation-holder h3 {
+    font-size: 26px;
+    left: -15px;
   }
 }
