@@ -11,33 +11,62 @@ get_header();
     <div class="row">
 
 <?php
-if( have_posts() ) {
-  while( have_posts() ) {
-    the_post();
+$args = array (
+  'post_type'              => array( 'post', ' conversation' ),
+  'posts_per_page'         => '-1',
+);
+
+$query = new WP_Query( $args );
+
+if( $query->have_posts() ) {
+  while( $query->have_posts() ) {
+    $query->the_post();
 
     $single_row = get_post_meta($post->ID, '_igv_single_row', true);
     $top_margin = get_post_meta($post->ID, '_igv_top_margin', true);
-    $percent_width = get_post_meta($post->ID, '_igv_percent_width', true);
-    $degrees_rotate = get_post_meta($post->ID, '_igv_degrees_rotate', true);
 
     $single_row = empty($single_row) ? '' : $single_row;
     $top_margin = empty($top_margin) ? '0' : $top_margin;
-    $percent_width = empty($percent_width) ? '100' : $percent_width;
-    $degrees_rotate = empty($degrees_rotate) ? '0' : $degrees_rotate;
 ?>
 
       <article <?php
         if ($single_row == 'on') {
-          post_class('text-align-center col col-s-12 text-line-length');
+          post_class('text-align-center col col-s-12 text-line-length js-sort-item');
         } else {
-          post_class('text-align-center col col-s-12 col-m-6');
+          post_class('text-align-center col col-s-12 col-m-6 text-line-length js-sort-item');
         }
       ?> id="post-<?php the_ID(); ?>" style="margin-top: <?php echo $top_margin; ?>px">
 
-        <a href="<?php the_permalink() ?>">
-          <?php the_post_thumbnail('gallery', array('style'=>'max-width: ' . $percent_width . '%; transform: rotate(' . $degrees_rotate . 'deg)')); ?>
-          <h2 class="text-align-center margin-top-small"><?php the_title(); ?></h2>
+<?php
+    if (get_post_type() == 'post') {
+
+      $percent_width = get_post_meta($post->ID, '_igv_percent_width', true);
+      $degrees_rotate = get_post_meta($post->ID, '_igv_degrees_rotate', true);
+
+      $percent_width = empty($percent_width) ? '100' : $percent_width;
+      $degrees_rotate = empty($degrees_rotate) ? '0' : $degrees_rotate;
+?>
+
+        <a href="<?php the_permalink() ?>" class="text-content-centered">
+          <?php the_post_thumbnail('gallery', array(
+              'style' => 'max-width: ' . $percent_width . '%; transform: rotate(' . $degrees_rotate . 'deg)', 
+              'class'=>'margin-bottom-small'
+          )); ?>
+          <h2><?php the_title(); ?></h2>
         </a>
+
+<?php
+    } else {
+?>
+
+        <a href="<?php the_permalink() ?>" class="text-content-centered">
+          <div class="font-size-mid margin-bottom-small"><?php the_excerpt(); ?></div>
+          <h2><?php the_title(); ?></h2>
+        </a>
+
+<?php
+    }
+?>
 
       </article>
 
@@ -45,6 +74,7 @@ if( have_posts() ) {
   }
 }
 ?>
+
     </div>
   <!-- end posts -->
   </section>

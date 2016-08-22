@@ -56,7 +56,11 @@
   <section id="main-container">
 
 <?php 
-$posts = get_posts('posts_per_page=-1');
+$args = array(
+  'posts_per_page'   => -1,
+  'post_type'        => array('post','conversation'),
+);
+$posts = get_posts($args);
 $cat_array = get_categories();
 ?>
 
