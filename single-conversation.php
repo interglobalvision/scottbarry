@@ -41,8 +41,6 @@ if (get_the_content()) {
   <!-- end posts -->
   </section>
 
-  <?php get_template_part('partials/pagination'); ?>
-
 <!-- end main-content -->
 
 </main>
