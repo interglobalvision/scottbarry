@@ -61,7 +61,7 @@ $args = array(
   'post_type'        => array('project','conversation'),
 );
 $posts = get_posts($args);
-$cat_array = get_categories();
+$cat_array = get_cpt_categories();
 ?>
 
   <!-- start content -->
