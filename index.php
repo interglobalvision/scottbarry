@@ -12,7 +12,7 @@ get_header();
 
 <?php
 $args = array (
-  'post_type'              => array( 'post', ' conversation' ),
+  'post_type'              => array( 'post' ),
   'posts_per_page'         => '-1',
 );
 
