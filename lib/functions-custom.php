@@ -16,3 +16,30 @@ function cmb2_get_post_options($args) {
 
   return $post_options;
  }
+
+ function get_cpt_categories() {
+  $args = array(
+    'post_type' => array('project','category'),
+    'posts_per_page' => -1
+  );
+
+  $query = new WP_Query( $args );
+
+  $terms = array();
+
+  while ($query->have_posts()){
+    $query->the_post();
+
+    $current_terms = wp_get_object_terms(get_the_ID(), 'category');
+
+    foreach ($current_terms as $t){
+      if (!in_array($t,$terms)){
+
+        $terms[] = $t;
+      }
+    }
+  }
+  wp_reset_query();
+
+  return $terms;
+ }
