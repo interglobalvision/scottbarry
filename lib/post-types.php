@@ -27,7 +27,7 @@ add_action( 'init', 'register_cpt_igv' );
 function register_cpt_igv() {
 
 // Projects
-  
+
   $labels = array( 
     'name' => _x( 'Projects', 'project' ),
     'singular_name' => _x( 'Project', 'project' ),
@@ -47,7 +47,7 @@ function register_cpt_igv() {
     'labels' => $labels,
     'hierarchical' => false,
     
-    'supports' => array( 'title', 'editor' ),
+    'supports' => array( 'title', 'editor', 'thumbnail' ),
     
     'public' => true,
     'show_ui' => true,
@@ -87,7 +87,7 @@ function register_cpt_igv() {
     'labels' => $labels,
     'hierarchical' => false,
     
-    'supports' => array( 'title', 'editor', 'excerpt' ),
+    'supports' => array( 'title', 'editor', 'thumbnail' ),
     
     'public' => true,
     'show_ui' => true,
