@@ -58,7 +58,7 @@
 <?php 
 $args = array(
   'posts_per_page'   => -1,
-  'post_type'        => array('post','conversation'),
+  'post_type'        => array('project','conversation'),
 );
 $posts = get_posts($args);
 $cat_array = get_categories();
