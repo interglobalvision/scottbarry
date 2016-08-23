@@ -55,6 +55,47 @@ function igv_cmb_metaboxes() {
     'options' => array( 'textarea_rows' => 16, ),
   ) );
 
+// Post link
+
+  $post_link_metabox = new_cmb2_box( array(
+    'id'           => $prefix . 'post_link_metabox',
+    'title'        => __( 'Link', 'cmb2' ),
+    'object_types' => array( 'post', ),
+  ) );
+
+  $post_link_metabox->add_field( array(
+    'name'             => __( 'Post type', 'cmb2' ),
+    'id'               => $prefix . 'post_type',
+    'type'             => 'radio_inline',
+    'show_option_none' => false,
+    'options'          => array(
+      'project'          => __( 'Project', 'cmb2' ),
+      'conversation'     => __( 'Conversation', 'cmb2' ),
+    ),
+  ) );
+
+  $post_link_metabox->add_field( array(
+    'name'             => __( 'Project', 'cmb2' ),
+    'id'               => $prefix . 'project_id',
+    'type'             => 'select',
+    'show_option_none' => true,
+    'options'          => cmb2_get_post_options(array(
+      'post_type'       => 'project', 
+      'posts_per_page'  => -1,
+    )),
+  ) );
+
+  $post_link_metabox->add_field( array(
+    'name'             => __( 'Conversation', 'cmb2' ),
+    'id'               => $prefix . 'conversation_id',
+    'type'             => 'select',
+    'show_option_none' => true,
+    'options'          => cmb2_get_post_options(array(
+      'post_type'       => 'conversation', 
+      'posts_per_page'  => -1,
+    )),
+  ) );
+
 // Home display
 
   $home_display_metabox = new_cmb2_box( array(
@@ -92,36 +133,6 @@ function igv_cmb_metaboxes() {
     'default'     => '0',
     'id'          => $prefix . 'degrees_rotate',
     'type'        => 'text_small',
-  ) );
-
-// Post link
-
-  $post_link_metabox = new_cmb2_box( array(
-    'id'           => $prefix . 'post_link_metabox',
-    'title'        => __( 'Link', 'cmb2' ),
-    'object_types' => array( 'post', ),
-  ) );
-
-  $post_link_metabox->add_field( array(
-    'name'             => __( 'Project', 'cmb2' ),
-    'id'               => $prefix . 'project_link',
-    'type'             => 'select',
-    'show_option_none' => true,
-    'options'          => cmb2_get_post_options(array(
-      'post_type'       => 'project', 
-      'posts_per_page'  => -1,
-    )),
-  ) );
-
-  $post_link_metabox->add_field( array(
-    'name'             => __( 'Conversation', 'cmb2' ),
-    'id'               => $prefix . 'conversation_link',
-    'type'             => 'select',
-    'show_option_none' => true,
-    'options'          => cmb2_get_post_options(array(
-      'post_type'       => 'conversation', 
-      'posts_per_page'  => -1,
-    )),
   ) );
 
 // Project tagline
