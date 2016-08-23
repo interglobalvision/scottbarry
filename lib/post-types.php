@@ -107,3 +107,12 @@ function register_cpt_igv() {
   register_post_type( 'conversation', $args );
 
 }
+
+add_action('init', 'add_cpt_taxonomy');
+
+function add_cpt_taxonomy() {
+
+    register_taxonomy_for_object_type('category', 'project');
+    register_taxonomy_for_object_type('category', 'conversation');
+
+}
