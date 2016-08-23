@@ -99,13 +99,29 @@ function igv_cmb_metaboxes() {
   $post_link_metabox = new_cmb2_box( array(
     'id'           => $prefix . 'post_link_metabox',
     'title'        => __( 'Link', 'cmb2' ),
-    'object_types' => array( 'project', ),
+    'object_types' => array( 'post', ),
   ) );
 
   $post_link_metabox->add_field( array(
-    'description' => __( '(Appears below title. Project dates, etc)', 'cmb2' ),
-    'id'          => $prefix . 'tagline',
-    'type'        => 'text',
+    'name'             => __( 'Project', 'cmb2' ),
+    'id'               => $prefix . 'project_link',
+    'type'             => 'select',
+    'show_option_none' => true,
+    'options'          => cmb2_get_post_options(array(
+      'post_type'       => 'project', 
+      'posts_per_page'  => -1,
+    )),
+  ) );
+
+  $post_link_metabox->add_field( array(
+    'name'             => __( 'Conversation', 'cmb2' ),
+    'id'               => $prefix . 'conversation_link',
+    'type'             => 'select',
+    'show_option_none' => true,
+    'options'          => cmb2_get_post_options(array(
+      'post_type'       => 'conversation', 
+      'posts_per_page'  => -1,
+    )),
   ) );
 
 // Project tagline
