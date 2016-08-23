@@ -55,36 +55,7 @@ function igv_cmb_metaboxes() {
     'options' => array( 'textarea_rows' => 16, ),
   ) );
 
-// Conversation details
-
-  $conversation_details_metabox = new_cmb2_box( array(
-    'id'           => $prefix . 'conversation_details_metabox',
-    'title'        => __( 'Details', 'cmb2' ),
-    'object_types' => array( 'conversation', ),
-  ) );
-
-  $conversation_details_metabox->add_field( array(
-    'desc'    => __( 'Names, date, location, etc.', 'cmb2' ),
-    'id'      => $prefix . 'conversation_details',
-    'type'    => 'wysiwyg',
-    'options' => array( 'textarea_rows' => 12, 'media_buttons' => false, ),
-  ) );
-
-// Post tagline
-
-  $post_tagline_metabox = new_cmb2_box( array(
-    'id'           => $prefix . 'post_tagline_metabox',
-    'title'        => __( 'Tagline', 'cmb2' ),
-    'object_types' => array( 'post', ),
-  ) );
-
-  $post_tagline_metabox->add_field( array(
-    'description' => __( '(Appears below title. Project dates, etc)', 'cmb2' ),
-    'id'          => $prefix . 'tagline',
-    'type'        => 'text',
-  ) );
-
-  // Home display
+// Home display
 
   $home_display_metabox = new_cmb2_box( array(
     'id'           => $prefix . 'home_display_metabox',
@@ -107,15 +78,7 @@ function igv_cmb_metaboxes() {
     'type'        => 'text_small',
   ) );
 
-// Home thumb display
-
-  $home_thumb_display_metabox = new_cmb2_box( array(
-    'id'           => $prefix . 'home_thumb_display_metabox',
-    'title'        => __( 'Homepage thumb display options', 'cmb2' ),
-    'object_types' => array( 'post',),
-  ) );
-
-  $home_thumb_display_metabox->add_field( array(
+  $home_display_metabox->add_field( array(
     'name'        => __( 'Width', 'cmb2' ),
     'description' => __( '% (Percent width in column / Default 100)', 'cmb2' ),
     'default'     => '100',
@@ -123,7 +86,7 @@ function igv_cmb_metaboxes() {
     'type'        => 'text_small',
   ) );
 
-  $home_thumb_display_metabox->add_field( array(
+  $home_display_metabox->add_field( array(
     'name'        => __( 'Rotate', 'cmb2' ),
     'description' => __( 'degrees (Clockwise: # / Counter-clockwise: -# / Default 0)', 'cmb2' ),
     'default'     => '0',
@@ -131,12 +94,40 @@ function igv_cmb_metaboxes() {
     'type'        => 'text_small',
   ) );
 
+// Post link
+
+  $post_link_metabox = new_cmb2_box( array(
+    'id'           => $prefix . 'post_link_metabox',
+    'title'        => __( 'Link', 'cmb2' ),
+    'object_types' => array( 'project', ),
+  ) );
+
+  $post_link_metabox->add_field( array(
+    'description' => __( '(Appears below title. Project dates, etc)', 'cmb2' ),
+    'id'          => $prefix . 'tagline',
+    'type'        => 'text',
+  ) );
+
+// Project tagline
+
+  $post_tagline_metabox = new_cmb2_box( array(
+    'id'           => $prefix . 'post_tagline_metabox',
+    'title'        => __( 'Tagline', 'cmb2' ),
+    'object_types' => array( 'project', ),
+  ) );
+
+  $post_tagline_metabox->add_field( array(
+    'description' => __( '(Appears below title. Project dates, etc)', 'cmb2' ),
+    'id'          => $prefix . 'tagline',
+    'type'        => 'text',
+  ) );
+
 // Image gallery
 
   $image_gallery_group = new_cmb2_box( array(
     'id'           => $prefix . 'image_gallery_metabox',
     'title'        => __( 'Image gallery', 'cmb2' ),
-    'object_types' => array( 'post', ),
+    'object_types' => array( 'project', ),
   ) );
 
   $image_gallery_field_id = $image_gallery_group->add_field( array(
@@ -192,6 +183,21 @@ function igv_cmb_metaboxes() {
     'description' => __( 'degrees (Clockwise: # / Counter-clockwise: -# / Default 0)', 'cmb2' ),
     'id'          => 'degrees_rotate',
     'type'        => 'text_small',
+  ) );
+
+// Conversation details
+
+  $conversation_details_metabox = new_cmb2_box( array(
+    'id'           => $prefix . 'conversation_details_metabox',
+    'title'        => __( 'Details', 'cmb2' ),
+    'object_types' => array( 'conversation', ),
+  ) );
+
+  $conversation_details_metabox->add_field( array(
+    'desc'    => __( 'Names, date, location, etc.', 'cmb2' ),
+    'id'      => $prefix . 'conversation_details',
+    'type'    => 'wysiwyg',
+    'options' => array( 'textarea_rows' => 12, 'media_buttons' => false, ),
   ) );
 
 }
