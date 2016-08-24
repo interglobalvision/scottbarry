@@ -60,7 +60,7 @@ function igv_cmb_metaboxes() {
   $post_link_metabox = new_cmb2_box( array(
     'id'           => $prefix . 'post_link_metabox',
     'title'        => __( 'Link', 'cmb2' ),
-    'object_types' => array( 'post', ),
+    'object_types' => array( 'home_item', ),
   ) );
 
   $post_link_metabox->add_field( array(
@@ -101,7 +101,7 @@ function igv_cmb_metaboxes() {
   $home_display_metabox = new_cmb2_box( array(
     'id'           => $prefix . 'home_display_metabox',
     'title'        => __( 'Homepage feed display options', 'cmb2' ),
-    'object_types' => array( 'post','conversation'),
+    'object_types' => array( 'home_item', ),
   ) );
 
   $home_display_metabox->add_field( array(

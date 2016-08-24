@@ -26,7 +26,45 @@ add_action( 'init', 'register_cpt_igv' );
 
 function register_cpt_igv() {
 
-// Projects
+// Home Items
+
+  $labels = array( 
+    'name' => _x( 'Home Items', 'home_item' ),
+    'singular_name' => _x( 'Home Item', 'home_item' ),
+    'add_new' => _x( 'Add New', 'home_item' ),
+    'add_new_item' => _x( 'Add New Home Item', 'home_item' ),
+    'edit_item' => _x( 'Edit Home Item', 'home_item' ),
+    'new_item' => _x( 'New Home Item', 'home_item' ),
+    'view_item' => _x( 'View Home Item', 'home_item' ),
+    'search_items' => _x( 'Search Home Items', 'home_item' ),
+    'not_found' => _x( 'No home item found', 'home_item' ),
+    'not_found_in_trash' => _x( 'No home item found in Trash', 'home_item' ),
+    'parent_item_colon' => _x( 'Parent Home Item:', 'home_item' ),
+    'menu_name' => _x( 'Home Items', 'home_item' ),
+  );
+
+  $args = array( 
+    'labels' => $labels,
+    'hierarchical' => false,
+    
+    'supports' => array( 'title', 'editor', 'thumbnail' ),
+    
+    'public' => false,
+    'show_ui' => true,
+    'show_in_menu' => true,
+    'menu_position' => 5,
+    
+    'show_in_nav_menus' => true,
+    'publicly_queryable' => true,
+    'exclude_from_search' => false,
+    'has_archive' => true,
+    'query_var' => true,
+    'can_export' => true,
+    'rewrite' => true,
+    'capability_type' => 'post'
+  );
+
+  register_post_type( 'home_item', $args );
 
   $labels = array( 
     'name' => _x( 'Projects', 'project' ),
