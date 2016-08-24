@@ -98,20 +98,20 @@ function igv_cmb_metaboxes() {
 
 // Home display
 
-  $home_display_metabox = new_cmb2_box( array(
-    'id'           => $prefix . 'home_display_metabox',
-    'title'        => __( 'Homepage feed display options', 'cmb2' ),
+  $home_layout_metabox = new_cmb2_box( array(
+    'id'           => $prefix . 'home_layout_metabox',
+    'title'        => __( 'Layout options', 'cmb2' ),
     'object_types' => array( 'home_item', ),
   ) );
 
-  $home_display_metabox->add_field( array(
+  $home_layout_metabox->add_field( array(
     'name'        => __( 'Single row', 'cmb2' ),
     'description' => __( '(Centered in full-width column / Default off)', 'cmb2' ),
     'id'          => $prefix . 'single_row',
     'type'        => 'checkbox',
   ) );
 
-  $home_display_metabox->add_field( array(
+  $home_layout_metabox->add_field( array(
     'name'        => __( 'Top margin', 'cmb2' ),
     'description' => __( 'px (Default 0)', 'cmb2' ),
     'default'     => '0',
@@ -119,7 +119,13 @@ function igv_cmb_metaboxes() {
     'type'        => 'text_small',
   ) );
 
-  $home_display_metabox->add_field( array(
+  $home_project_metabox = new_cmb2_box( array(
+    'id'           => $prefix . 'home_project_metabox',
+    'title'        => __( 'Project image display', 'cmb2' ),
+    'object_types' => array( 'home_item', ),
+  ) );
+
+  $home_project_metabox->add_field( array(
     'name'        => __( 'Width', 'cmb2' ),
     'description' => __( '% (Percent width in column / Default 100)', 'cmb2' ),
     'default'     => '100',
@@ -127,7 +133,7 @@ function igv_cmb_metaboxes() {
     'type'        => 'text_small',
   ) );
 
-  $home_display_metabox->add_field( array(
+  $home_project_metabox->add_field( array(
     'name'        => __( 'Rotate', 'cmb2' ),
     'description' => __( 'degrees (Clockwise: # / Counter-clockwise: -# / Default 0)', 'cmb2' ),
     'default'     => '0',
