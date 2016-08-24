@@ -30,7 +30,7 @@ if( $query->have_posts() ) {
 
       if (!empty($link_post_id)) {
 
-        $categories = get_categories($link_post_id);
+        $categories = wp_get_object_terms($link_post_id, 'category');
 
         $single_row = get_post_meta($post->ID, '_igv_single_row', true);
         $top_margin = get_post_meta($post->ID, '_igv_top_margin', true);
