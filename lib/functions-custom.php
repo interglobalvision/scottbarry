@@ -15,7 +15,7 @@ function cmb2_get_post_options($args) {
   }
 
   return $post_options;
- }
+}
 
  function get_cpt_categories() {
   $args = array(
@@ -42,4 +42,4 @@ function cmb2_get_post_options($args) {
   wp_reset_query();
 
   return $terms;
- }
+}

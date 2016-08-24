@@ -30,7 +30,7 @@ if( $query->have_posts() ) {
 
       if (!empty($link_post_id)) {
 
-        $categories = get_categories($link_post_id);
+        $categories = get_the_terms($link_post_id, 'category');
 
         $single_row = get_post_meta($post->ID, '_igv_single_row', true);
         $top_margin = get_post_meta($post->ID, '_igv_top_margin', true);
@@ -45,8 +45,10 @@ if( $query->have_posts() ) {
           echo 'col-m-6';
         }
 
-        foreach ($categories as $cat) {
-          echo ' category-' . $cat->slug;
+        if ($categories) {
+          foreach ($categories as $cat) {
+            echo ' category-' . $cat->slug;
+          }
         }
 
       ?>" id="post-<?php the_ID(); ?>" style="margin-top: <?php echo $top_margin; ?>px">
