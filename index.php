@@ -12,7 +12,7 @@ get_header();
 
 <?php
 $args = array (
-  'post_type'              => array( 'post', ' conversation' ),
+  'post_type'              => array( 'home_item' ),
   'posts_per_page'         => '-1',
 );
 
@@ -22,32 +22,46 @@ if( $query->have_posts() ) {
   while( $query->have_posts() ) {
     $query->the_post();
 
-    $single_row = get_post_meta($post->ID, '_igv_single_row', true);
-    $top_margin = get_post_meta($post->ID, '_igv_top_margin', true);
+    $link_post_type = get_post_meta($post->ID, '_igv_post_type', true);
 
-    $single_row = empty($single_row) ? '' : $single_row;
-    $top_margin = empty($top_margin) ? '0' : $top_margin;
+    if (!empty($link_post_type)) {
+
+      $link_post_id = get_post_meta($post->ID, '_igv_' . $link_post_type . '_id', true);
+
+      if (!empty($link_post_id)) {
+
+        $categories = get_categories($link_post_id);
+
+        $single_row = get_post_meta($post->ID, '_igv_single_row', true);
+        $top_margin = get_post_meta($post->ID, '_igv_top_margin', true);
+
+        $single_row = empty($single_row) ? '' : $single_row;
+        $top_margin = empty($top_margin) ? '0' : $top_margin;
 ?>
 
-      <article <?php
-        if ($single_row == 'on') {
-          post_class('text-align-center col col-s-12 text-line-length js-sort-item');
-        } else {
-          post_class('text-align-center col col-s-12 col-m-6 text-line-length js-sort-item');
+      <article class="post text-align-center col col-s-12 text-line-length js-sort-item <?php
+
+        if ($single_row !== 'on') {
+          echo 'col-m-6';
         }
-      ?> id="post-<?php the_ID(); ?>" style="margin-top: <?php echo $top_margin; ?>px">
+
+        foreach ($categories as $cat) {
+          echo ' category-' . $cat->slug;
+        }
+
+      ?>" id="post-<?php the_ID(); ?>" style="margin-top: <?php echo $top_margin; ?>px">
 
 <?php
-    if (get_post_type() == 'post') {
+        if ($link_post_type == 'project') {
 
-      $percent_width = get_post_meta($post->ID, '_igv_percent_width', true);
-      $degrees_rotate = get_post_meta($post->ID, '_igv_degrees_rotate', true);
+          $percent_width = get_post_meta($post->ID, '_igv_percent_width', true);
+          $degrees_rotate = get_post_meta($post->ID, '_igv_degrees_rotate', true);
 
-      $percent_width = empty($percent_width) ? '100' : $percent_width;
-      $degrees_rotate = empty($degrees_rotate) ? '0' : $degrees_rotate;
+          $percent_width = empty($percent_width) ? '100' : $percent_width;
+          $degrees_rotate = empty($degrees_rotate) ? '0' : $degrees_rotate;
 ?>
 
-        <a href="<?php the_permalink() ?>" class="text-content-centered">
+        <a href="<?php echo get_the_permalink($link_post_id); ?>" class="text-content-centered">
           <?php the_post_thumbnail('gallery', array(
               'style' => 'max-width: ' . $percent_width . '%; transform: rotate(' . $degrees_rotate . 'deg)', 
               'class'=>'margin-bottom-small'
@@ -56,21 +70,23 @@ if( $query->have_posts() ) {
         </a>
 
 <?php
-    } else {
+        } else {
 ?>
 
-        <a href="<?php the_permalink() ?>" class="text-content-centered">
-          <div class="font-size-mid margin-bottom-small"><?php the_excerpt(); ?></div>
+        <a href="<?php echo get_the_permalink($link_post_id); ?>" class="text-content-centered">
+          <div class="font-size-mid margin-bottom-small"><?php the_content(); ?></div>
           <h2><?php the_title(); ?></h2>
         </a>
 
 <?php
-    }
+        }
 ?>
 
       </article>
 
 <?php
+      }
+    }
   }
 }
 ?>

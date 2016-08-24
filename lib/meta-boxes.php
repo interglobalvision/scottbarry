@@ -55,41 +55,53 @@ function igv_cmb_metaboxes() {
     'options' => array( 'textarea_rows' => 16, ),
   ) );
 
-// Conversation details
+// Post link
 
-  $conversation_details_metabox = new_cmb2_box( array(
-    'id'           => $prefix . 'conversation_details_metabox',
-    'title'        => __( 'Details', 'cmb2' ),
-    'object_types' => array( 'conversation', ),
+  $post_link_metabox = new_cmb2_box( array(
+    'id'           => $prefix . 'post_link_metabox',
+    'title'        => __( 'Link', 'cmb2' ),
+    'object_types' => array( 'home_item', ),
   ) );
 
-  $conversation_details_metabox->add_field( array(
-    'desc'    => __( 'Names, date, location, etc.', 'cmb2' ),
-    'id'      => $prefix . 'conversation_details',
-    'type'    => 'wysiwyg',
-    'options' => array( 'textarea_rows' => 12, 'media_buttons' => false, ),
+  $post_link_metabox->add_field( array(
+    'name'             => __( 'Post type', 'cmb2' ),
+    'id'               => $prefix . 'post_type',
+    'type'             => 'radio_inline',
+    'show_option_none' => false,
+    'options'          => array(
+      'project'          => __( 'Project', 'cmb2' ),
+      'conversation'     => __( 'Conversation', 'cmb2' ),
+    ),
   ) );
 
-// Post tagline
-
-  $post_tagline_metabox = new_cmb2_box( array(
-    'id'           => $prefix . 'post_tagline_metabox',
-    'title'        => __( 'Tagline', 'cmb2' ),
-    'object_types' => array( 'post', ),
+  $post_link_metabox->add_field( array(
+    'name'             => __( 'Project', 'cmb2' ),
+    'id'               => $prefix . 'project_id',
+    'type'             => 'select',
+    'show_option_none' => true,
+    'options'          => cmb2_get_post_options(array(
+      'post_type'       => 'project', 
+      'posts_per_page'  => -1,
+    )),
   ) );
 
-  $post_tagline_metabox->add_field( array(
-    'description' => __( '(Appears below title. Project dates, etc)', 'cmb2' ),
-    'id'          => $prefix . 'tagline',
-    'type'        => 'text',
+  $post_link_metabox->add_field( array(
+    'name'             => __( 'Conversation', 'cmb2' ),
+    'id'               => $prefix . 'conversation_id',
+    'type'             => 'select',
+    'show_option_none' => true,
+    'options'          => cmb2_get_post_options(array(
+      'post_type'       => 'conversation', 
+      'posts_per_page'  => -1,
+    )),
   ) );
 
-  // Home display
+// Home display
 
   $home_display_metabox = new_cmb2_box( array(
     'id'           => $prefix . 'home_display_metabox',
     'title'        => __( 'Homepage feed display options', 'cmb2' ),
-    'object_types' => array( 'post','conversation'),
+    'object_types' => array( 'home_item', ),
   ) );
 
   $home_display_metabox->add_field( array(
@@ -107,15 +119,7 @@ function igv_cmb_metaboxes() {
     'type'        => 'text_small',
   ) );
 
-// Home thumb display
-
-  $home_thumb_display_metabox = new_cmb2_box( array(
-    'id'           => $prefix . 'home_thumb_display_metabox',
-    'title'        => __( 'Homepage thumb display options', 'cmb2' ),
-    'object_types' => array( 'post',),
-  ) );
-
-  $home_thumb_display_metabox->add_field( array(
+  $home_display_metabox->add_field( array(
     'name'        => __( 'Width', 'cmb2' ),
     'description' => __( '% (Percent width in column / Default 100)', 'cmb2' ),
     'default'     => '100',
@@ -123,7 +127,7 @@ function igv_cmb_metaboxes() {
     'type'        => 'text_small',
   ) );
 
-  $home_thumb_display_metabox->add_field( array(
+  $home_display_metabox->add_field( array(
     'name'        => __( 'Rotate', 'cmb2' ),
     'description' => __( 'degrees (Clockwise: # / Counter-clockwise: -# / Default 0)', 'cmb2' ),
     'default'     => '0',
@@ -131,12 +135,26 @@ function igv_cmb_metaboxes() {
     'type'        => 'text_small',
   ) );
 
+// Project tagline
+
+  $post_tagline_metabox = new_cmb2_box( array(
+    'id'           => $prefix . 'post_tagline_metabox',
+    'title'        => __( 'Tagline', 'cmb2' ),
+    'object_types' => array( 'project', ),
+  ) );
+
+  $post_tagline_metabox->add_field( array(
+    'description' => __( '(Appears below title. Project dates, etc)', 'cmb2' ),
+    'id'          => $prefix . 'tagline',
+    'type'        => 'text',
+  ) );
+
 // Image gallery
 
   $image_gallery_group = new_cmb2_box( array(
     'id'           => $prefix . 'image_gallery_metabox',
     'title'        => __( 'Image gallery', 'cmb2' ),
-    'object_types' => array( 'post', ),
+    'object_types' => array( 'project', ),
   ) );
 
   $image_gallery_field_id = $image_gallery_group->add_field( array(
@@ -192,6 +210,21 @@ function igv_cmb_metaboxes() {
     'description' => __( 'degrees (Clockwise: # / Counter-clockwise: -# / Default 0)', 'cmb2' ),
     'id'          => 'degrees_rotate',
     'type'        => 'text_small',
+  ) );
+
+// Conversation details
+
+  $conversation_details_metabox = new_cmb2_box( array(
+    'id'           => $prefix . 'conversation_details_metabox',
+    'title'        => __( 'Details', 'cmb2' ),
+    'object_types' => array( 'conversation', ),
+  ) );
+
+  $conversation_details_metabox->add_field( array(
+    'desc'    => __( 'Names, date, location, etc.', 'cmb2' ),
+    'id'      => $prefix . 'conversation_details',
+    'type'    => 'wysiwyg',
+    'options' => array( 'textarea_rows' => 12, 'media_buttons' => false, ),
   ) );
 
 }
