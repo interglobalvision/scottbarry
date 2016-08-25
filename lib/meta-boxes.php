@@ -119,6 +119,14 @@ function igv_cmb_metaboxes() {
     'type'        => 'text_small',
   ) );
 
+  $home_layout_metabox->add_field( array(
+    'name'        => __( 'Side margin', 'cmb2' ),
+    'description' => __( '% (Right: # / Left: -#)', 'cmb2' ),
+    'default'     => '0',
+    'id'          => $prefix . 'percent_margin',
+    'type'        => 'text_small',
+  ) );
+
   $home_project_metabox = new_cmb2_box( array(
     'id'           => $prefix . 'home_project_metabox',
     'title'        => __( 'Project image display', 'cmb2' ),
@@ -127,7 +135,7 @@ function igv_cmb_metaboxes() {
 
   $home_project_metabox->add_field( array(
     'name'        => __( 'Width', 'cmb2' ),
-    'description' => __( '% (Percent width in column / Default 100)', 'cmb2' ),
+    'description' => __( '% (Percent width in column / Default: 100)', 'cmb2' ),
     'default'     => '100',
     'id'          => $prefix . 'percent_width',
     'type'        => 'text_small',
@@ -135,7 +143,7 @@ function igv_cmb_metaboxes() {
 
   $home_project_metabox->add_field( array(
     'name'        => __( 'Rotate', 'cmb2' ),
-    'description' => __( 'degrees (Clockwise: # / Counter-clockwise: -# / Default 0)', 'cmb2' ),
+    'description' => __( 'degrees (Clockwise: # / Counter-clockwise: -#)', 'cmb2' ),
     'default'     => '0',
     'id'          => $prefix . 'degrees_rotate',
     'type'        => 'text_small',
@@ -206,16 +214,41 @@ function igv_cmb_metaboxes() {
 
   $image_gallery_group->add_group_field( $image_gallery_field_id, array(
     'name'        => __( 'Width', 'cmb2' ),
-    'description' => __( '% (Percent width in column / Default 100)', 'cmb2' ),
+    'description' => __( '% (Percent width in column / Default: 100)', 'cmb2' ),
+    'default'     => '100',
     'id'          => 'percent_width',
     'type'        => 'text_small',
   ) );
 
   $image_gallery_group->add_group_field( $image_gallery_field_id, array(
     'name'        => __( 'Rotate', 'cmb2' ),
-    'description' => __( 'degrees (Clockwise: # / Counter-clockwise: -# / Default 0)', 'cmb2' ),
+    'description' => __( 'degrees (Clockwise: # / Counter-clockwise: -#)', 'cmb2' ),
+    'default'     => '0',
     'id'          => 'degrees_rotate',
     'type'        => 'text_small',
+  ) );
+
+  $image_gallery_group->add_group_field( $image_gallery_field_id, array(
+    'name'        => __( 'Side margin', 'cmb2' ),
+    'description' => __( '% (Right: # / Left: -#)', 'cmb2' ),
+    'default'     => '0',
+    'id'          => 'percent_margin',
+    'type'        => 'text_small',
+  ) );
+
+// Conversation options
+
+  $conversation_options_metabox = new_cmb2_box( array(
+    'id'           => $prefix . 'conversation_options_metabox',
+    'title'        => __( 'Options', 'cmb2' ),
+    'object_types' => array( 'conversation', ),
+  ) );
+
+  $conversation_options_metabox->add_field( array(
+    'name'    => __( 'Background color', 'cmb2' ),
+    'id'      => $prefix . 'conversation_bg_color',
+    'type'    => 'colorpicker',
+    'default' => '#ffffff',
   ) );
 
 // Conversation details
