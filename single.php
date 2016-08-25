@@ -33,37 +33,38 @@ if (get_the_content()) {
 <?php
 }
 
-if ($images) {
+if (!empty($images)) {
   foreach ($images as $image) {
+    if (!empty($image['image_id'])) {
+      $single_row = empty($image['single_row']) ? '' : $image['single_row'];
+      $top_margin = empty($image['top_margin']) ? '0' : $image['top_margin'];
+      $percent_width = empty($image['percent_width']) ? '100' : $image['percent_width'];
+      $degrees_rotate = empty($image['degrees_rotate']) ? '0' : $image['degrees_rotate'];
+      $percent_margin = empty($image['percent_margin']) ? '0' : $image['percent_margin'];
 
-    $image_id = $image['image_id'];
-    $single_row = empty($image['single_row']) ? '' : $image['single_row'];
-    $top_margin = empty($image['top_margin']) ? '0' : $image['top_margin'];
-    $percent_width = empty($image['percent_width']) ? '100' : $image['percent_width'];
-    $degrees_rotate = empty($image['degrees_rotate']) ? '0' : $image['degrees_rotate'];
-
-    $image_size = $single_row == 'on' ? 'col-12' : 'col-6'
+      $image_size = $single_row == 'on' ? 'col-12' : 'col-6';
 ?>
         <div class="<?php
           if ($single_row == 'on') {
-            echo 'text-align-center col col-s-12';
+            echo 'image-col text-align-center col col-s-12';
           } else {
-            echo 'text-align-center col col-s-12 col-m-6';
+            echo 'image-col text-align-center col col-s-12 col-m-6';
           }
-        ?>" style="margin-top: <?php echo $top_margin; ?>px">
+        ?>" style="margin-top: <?php echo $top_margin; ?>px; left: <?php echo $percent_margin; ?>%">
 
-          <?php echo wp_get_attachment_image($image_id, $image_size, false, array('style'=>'max-width: ' . $percent_width . '%; transform: rotate(' . $degrees_rotate . 'deg)')); ?>
+          <?php echo wp_get_attachment_image($image['image_id'], $image_size, false, array('style'=>'max-width: ' . $percent_width . '%; transform: rotate(' . $degrees_rotate . 'deg);')); ?>
 <?php
-    if (!empty($image['caption'])) {
+      if (!empty($image['caption'])) {
 ?>
-          <div class="text-align-center margin-top-small"><?php echo $image['caption'] ?></div>
+          <div class="text-align-center margin-top-small caption">
+            <?php echo $image['caption'] ?>
+          </div>
+<?php
+      }
+?>
+        </div>
 <?php
     }
-?>
-
-        </div>
-
-<?php
   }
 }
 ?>

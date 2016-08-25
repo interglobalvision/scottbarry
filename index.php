@@ -34,9 +34,11 @@ if( $query->have_posts() ) {
 
         $single_row = get_post_meta($post->ID, '_igv_single_row', true);
         $top_margin = get_post_meta($post->ID, '_igv_top_margin', true);
+        $percent_margin = get_post_meta($post->ID, '_igv_percent_margin', true);
 
         $single_row = empty($single_row) ? '' : $single_row;
         $top_margin = empty($top_margin) ? '0' : $top_margin;
+        $percent_margin = empty($percent_margin) ? '0' : $percent_margin;
 ?>
 
       <article class="post text-align-center col col-s-12 text-line-length js-sort-item <?php
@@ -51,24 +53,26 @@ if( $query->have_posts() ) {
           }
         }
 
-      ?>" id="post-<?php the_ID(); ?>" style="margin-top: <?php echo $top_margin; ?>px">
+      ?>" id="post-<?php the_ID(); ?>" style="margin-top: <?php echo $top_margin; ?>px; left: <?php echo $percent_margin; ?>%">
 
 <?php
         if ($link_post_type == 'project') {
 
           $percent_width = get_post_meta($post->ID, '_igv_percent_width', true);
           $degrees_rotate = get_post_meta($post->ID, '_igv_degrees_rotate', true);
-
+          
           $percent_width = empty($percent_width) ? '100' : $percent_width;
           $degrees_rotate = empty($degrees_rotate) ? '0' : $degrees_rotate;
 ?>
-
+       
         <a href="<?php echo get_the_permalink($link_post_id); ?>" class="text-content-centered">
           <?php the_post_thumbnail('gallery', array(
-              'style' => 'max-width: ' . $percent_width . '%; transform: rotate(' . $degrees_rotate . 'deg)', 
+              'style' => 'max-width: ' . $percent_width . '%; transform: rotate(' . $degrees_rotate . 'deg);', 
               'class'=>'margin-bottom-small'
           )); ?>
-          <h2><?php the_title(); ?></h2>
+          <div class="text-align-center margin-top-small caption">
+            <?php the_title(); ?>
+          </div>
         </a>
 
 <?php
@@ -77,7 +81,9 @@ if( $query->have_posts() ) {
 
         <a href="<?php echo get_the_permalink($link_post_id); ?>" class="text-content-centered">
           <div class="font-size-mid margin-bottom-small"><?php the_content(); ?></div>
-          <h2><?php the_title(); ?></h2>
+          <div class="text-align-center margin-top-small caption">
+            <?php the_title(); ?>
+          </div>
         </a>
 
 <?php
