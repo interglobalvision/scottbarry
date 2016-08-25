@@ -564,6 +564,7 @@ th {
       align-content: flex-end;
 }
 .col {
+  position: relative;
   -ms-flex: 1 1 auto;
   -webkit-box-flex: 1;
           flex: 1 1 auto;
@@ -694,6 +695,7 @@ html {
 }
 body {
   line-height: 1.35;
+  overflow-x: hidden;
 }
 h1 {
   line-height: 1.35;
@@ -847,6 +849,11 @@ img {
 .padding-bottom-large {
   padding-bottom: 110px;
 }
+.caption {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
 #header {
   width: 100%;
   z-index: 100;
@@ -891,6 +898,9 @@ img {
   .text-line-length h3,
   .text-line-length p {
     width: 65%;
+  }
+  .caption {
+    width: 70%;
   }
   #conversation-holder h3 {
     font-size: 21px;
@@ -1119,6 +1129,9 @@ img {
   .padding-bottom-large {
     padding-bottom: 130px;
   }
+  .caption {
+    width: 80%;
+  }
   #conversation-holder h3 {
     font-size: 21px;
     left: -13px;
@@ -1336,6 +1349,9 @@ img {
   }
   .padding-bottom-large {
     padding-bottom: 150px;
+  }
+  .caption {
+    width: 65%;
   }
   #conversation-holder h3 {
     font-size: 26px;
