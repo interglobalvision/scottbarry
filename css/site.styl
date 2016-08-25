@@ -126,8 +126,8 @@ $font-tracking-wider = 0.05em
 $font-sans = 'Moderat', font-stack('Helvetica')
 $font-serif = font-stack('Times New Roman')
 
-$color-black-soft = rgb(14, 14, 14)
-$color-white-soft = rgb(253, 253, 253)
+$color-black = rgb(0, 0, 0)
+$color-white = rgb(255, 255, 255)
 
 // ******************************************************
 
@@ -205,7 +205,7 @@ p
     width: 85%
 
 .margin-bottom-1rem
-  margin-bottom: 1rem
+  margin-bottom: 1rem 
 
   // LINKS
 
@@ -220,8 +220,8 @@ a:visited
 // BASIC
 
 html
-  background-color: $color-white-soft
-  color: $color-black-soft
+  background-color: $color-white
+  color: $color-black
 
 img
   max-width: 100%
@@ -318,21 +318,21 @@ img
 #header
   width: 100%
   z-index: 100
-  background-color: $color-white-soft
+  background-color: $color-white
 
 .sub-menu
   display: none
   overflow-y: scroll
 
 .studio-list-item
-  border: 0px solid $color-black-soft
+  border: 0px solid $color-black
   border-bottom-width: 1px
   &:first-of-type
     border-top-width: 1px
     
 .sort-toggle
   &.active
-    border-bottom: 1px solid $color-black-soft
+    border-bottom: 1px solid $color-black
 
 // CONVERSATION
 #conversation-holder

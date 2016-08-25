@@ -766,8 +766,8 @@ a:visited {
   text-decoration: none;
 }
 html {
-  background-color: #fdfdfd;
-  color: #0e0e0e;
+  background-color: #fff;
+  color: #000;
 }
 img {
   max-width: 100%;
@@ -848,21 +848,21 @@ img {
 #header {
   width: 100%;
   z-index: 100;
-  background-color: #fdfdfd;
+  background-color: #fff;
 }
 .sub-menu {
   display: none;
   overflow-y: scroll;
 }
 .studio-list-item {
-  border: 0px solid #0e0e0e;
+  border: 0px solid #000;
   border-bottom-width: 1px;
 }
 .studio-list-item:first-of-type {
   border-top-width: 1px;
 }
 .sort-toggle.active {
-  border-bottom: 1px solid #0e0e0e;
+  border-bottom: 1px solid #000;
 }
 #conversation-holder {
   position: relative;
