@@ -207,6 +207,7 @@ function igv_cmb_metaboxes() {
   $image_gallery_group->add_group_field( $image_gallery_field_id, array(
     'name'        => __( 'Width', 'cmb2' ),
     'description' => __( '% (Percent width in column / Default 100)', 'cmb2' ),
+    'default'     => '100',
     'id'          => 'percent_width',
     'type'        => 'text_small',
   ) );
@@ -214,6 +215,7 @@ function igv_cmb_metaboxes() {
   $image_gallery_group->add_group_field( $image_gallery_field_id, array(
     'name'        => __( 'Rotate', 'cmb2' ),
     'description' => __( 'degrees (Clockwise: # / Counter-clockwise: -# / Default 0)', 'cmb2' ),
+    'default'     => '0',
     'id'          => 'degrees_rotate',
     'type'        => 'text_small',
   ) );
