@@ -220,6 +220,21 @@ function igv_cmb_metaboxes() {
     'type'        => 'text_small',
   ) );
 
+// Conversation options
+
+  $conversation_options_metabox = new_cmb2_box( array(
+    'id'           => $prefix . 'conversation_options_metabox',
+    'title'        => __( 'Options', 'cmb2' ),
+    'object_types' => array( 'conversation', ),
+  ) );
+
+  $conversation_options_metabox->add_field( array(
+    'name'    => __( 'Background color', 'cmb2' ),
+    'id'      => $prefix . 'conversation_bg_color',
+    'type'    => 'colorpicker',
+    'default' => '#ffffff',
+  ) );
+
 // Conversation details
 
   $conversation_details_metabox = new_cmb2_box( array(
