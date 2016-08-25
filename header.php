@@ -49,8 +49,20 @@
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
   <?php } ?>
   <?php wp_head(); ?>
+  <?php 
+    if (get_post_type() == 'conversation') {
+      $bg_color = get_post_meta($post->ID, '_igv_conversation_bg_color', true);
+    }
+  ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php 
+  
+  body_class(); 
+
+  if (!empty($bg_color)) {
+    echo 'style="background-color: ' . $bg_color . '"';
+  }
+?>>
 <!--[if lt IE 9]><p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
 
   <section id="main-container">
@@ -65,7 +77,11 @@ $cat_array = get_cpt_categories();
 ?>
 
   <!-- start content -->
-  <header id="header" class="u-fixed padding-top-small">
+  <header id="header" class="u-fixed padding-top-small" <?php
+    if (!empty($bg_color)) {
+      echo 'style="background-color: ' . $bg_color . '"';
+    }
+  ?>>
     <div class="container">
       <div class="row font-size-mid">
 
