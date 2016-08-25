@@ -766,8 +766,10 @@ a:visited {
   text-decoration: none;
 }
 html {
-  background-color: #fff;
   color: #000;
+}
+body {
+  background-color: #fff;
 }
 img {
   max-width: 100%;
