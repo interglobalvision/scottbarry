@@ -7,8 +7,9 @@ get_header();
   <!-- main posts loop -->
   <section id="page" class="container">
 
-    <div class="col col-s-12 font-size-mid text-align-center">
-      <h1 class="font-size-mid">404</h1><p>Nothing Here</p>
+    <div class="col col-s-12 text-align-center">
+      <h1 class="font-size-mid">404</h1>
+      <p class="font-size-mid">Nothing Here</p>
     </div>
 
   <!-- end posts -->
