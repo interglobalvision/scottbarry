@@ -8,7 +8,7 @@ get_header();
   <section id="page" class="container">
 
     <div class="col col-s-12 font-size-mid text-align-center">
-      404 Nothing Here
+      <h1 class="font-size-mid">404</h1><p>Nothing Here</p>
     </div>
 
   <!-- end posts -->
