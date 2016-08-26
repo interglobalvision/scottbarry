@@ -908,9 +908,6 @@ img {
   }
 }
 @media screen and (min-width: 750px) {
-  .container {
-    width: 750px;
-  }
   .col {
     padding: 0 13px;
     margin-bottom: 26px;
@@ -1138,9 +1135,6 @@ img {
   }
 }
 @media screen and (min-width: 1150px) {
-  .container {
-    width: 1150px;
-  }
   .col {
     padding: 0 15px;
     margin-bottom: 30px;
