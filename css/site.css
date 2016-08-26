@@ -487,6 +487,7 @@ th {
 .container {
   margin: 0 auto;
   width: 96%;
+  max-width: 2400px;
 }
 .row {
   box-sizing: border-box;
