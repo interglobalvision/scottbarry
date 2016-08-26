@@ -49,6 +49,13 @@ Site.Header = {
     $('.menu-trigger').bind('click', function(event) {
       event.preventDefault();
 
+      if ($(this).hasClass('active')) {
+        $(this).removeClass('active');
+      } else {
+        $('.menu-item.active').removeClass('active');
+        $(this).addClass('active');
+      } 
+
       var menu = $(this).attr('data-trigger');
 
       _this.toggleMenu(menu);
@@ -62,9 +69,11 @@ Site.Header = {
 
     if ($menu.hasClass('active')) {
       $menu.hide().removeClass('active');
+      $('#header').removeClass('open');
     } else {
       $('.sub-menu.active').hide().removeClass('active');
       $menu.show().addClass('active');
+      $('#header').addClass('open');
     } 
   },
 

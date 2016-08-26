@@ -129,6 +129,7 @@ $font-serif = font-stack('Times New Roman')
 
 $color-black = rgb(0, 0, 0)
 $color-white = rgb(255, 255, 255)
+$color-grey = rgb(180, 180, 180)
 
 // ******************************************************
 
@@ -328,6 +329,11 @@ img
   width: 100%
   z-index: 100
   background-color: $color-white
+  &.open
+    .menu-item
+      color: $color-grey
+      &.active 
+        color: $color-black
 
 .sub-menu
   display: none

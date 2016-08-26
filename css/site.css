@@ -859,6 +859,12 @@ img {
   z-index: 100;
   background-color: #fff;
 }
+#header.open .menu-item {
+  color: #b4b4b4;
+}
+#header.open .menu-item.active {
+  color: #000;
+}
 .sub-menu {
   display: none;
   overflow-y: scroll;

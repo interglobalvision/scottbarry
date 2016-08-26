@@ -90,7 +90,7 @@ $cat_array = get_cpt_categories();
 <?php
 if (count($posts) > 0) {
 ?>
-          <a class="menu-trigger" data-trigger="studio" href="<?php echo site_url(); ?>">Studio</a>
+          <a class="menu-trigger menu-item" data-trigger="studio" href="<?php echo site_url(); ?>">Studio</a>
 <?php 
 }
 ?>
@@ -99,7 +99,7 @@ if (count($posts) > 0) {
 <?php
 if ($cat_array) {
 ?>
-          <a class="menu-trigger" data-trigger="sort" href="<?php echo site_url(); ?>">Sort</a>
+          <a class="menu-trigger menu-item" data-trigger="sort" href="<?php echo site_url(); ?>">Sort</a>
 <?php
 }
 ?>
@@ -110,7 +110,7 @@ $info_id = get_id_by_slug('info');
 
 if ($info_id) {
 ?>
-          <a href="<?php echo get_the_permalink($info_id); ?>">Info</a>
+          <a class="menu-item" href="<?php echo get_the_permalink($info_id); ?>">Info</a>
 <?php
 }
 ?>
