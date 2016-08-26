@@ -86,20 +86,28 @@ $cat_array = get_cpt_categories();
       <div class="row font-size-mid">
 
         <div class="col col-s-4 margin-bottom-tiny">
-          <h1 class="u-visuallyhidden"><?php bloginfo('name'); ?></h1>
+          <h1 class="font-size-mid">
+            <a class="menu-item" href="<?php echo site_url(); ?>">
+              <?php bloginfo('name'); ?>
+            </a>
+          </h1>
+        </div>
+
+        <div class="col col-s-4 text-align-center margin-bottom-tiny">
 <?php
 if (count($posts) > 0) {
 ?>
-          <a class="menu-trigger menu-item" data-trigger="studio" href="<?php echo site_url(); ?>">Studio</a>
-<?php 
+          <a class="menu-trigger menu-item" data-trigger="studio" href="<?php echo site_url(); ?>">Projects</a><?php 
 }
-?>
-        </div>
-        <div class="col col-s-4 margin-bottom-tiny text-align-center">
-<?php
+
+if (count($posts) > 0 && $cat_array) {
+  echo ', ';
+}
+
 if ($cat_array) {
-?>
-          <a class="menu-trigger menu-item" data-trigger="sort" href="<?php echo site_url(); ?>">Sort</a>
+
+?><a class="menu-trigger menu-item" data-trigger="sort" href="<?php echo site_url(); ?>">Sort</a>
+
 <?php
 }
 ?>
