@@ -85,7 +85,7 @@ $cat_array = get_cpt_categories();
     <div class="container">
       <div class="row font-size-mid">
 
-        <div class="col col-s-4">
+        <div class="col col-s-4 margin-bottom-tiny">
           <h1 class="u-visuallyhidden"><?php bloginfo('name'); ?></h1>
 <?php
 if (count($posts) > 0) {
@@ -95,7 +95,7 @@ if (count($posts) > 0) {
 }
 ?>
         </div>
-        <div class="col col-s-4 text-align-center">
+        <div class="col col-s-4 margin-bottom-tiny text-align-center">
 <?php
 if ($cat_array) {
 ?>
@@ -104,7 +104,7 @@ if ($cat_array) {
 }
 ?>
         </div>
-        <div class="col col-s-4 text-align-right">
+        <div class="col col-s-4 margin-bottom-tiny text-align-right">
 <?php
 $info_id = get_id_by_slug('info');
 
@@ -121,7 +121,7 @@ if ($info_id) {
 if (count($posts) > 0) {
 ?>
       <div id="studio-menu" class="row sub-menu font-size-large font-serif">
-        <div class="col col-s-12">
+        <div class="col col-s-12 margin-bottom-tiny">
           <ul>
 <?php
   foreach($posts as $post) {
@@ -146,7 +146,7 @@ if (count($posts) > 0) {
 if ($cat_array) {
 ?>
       <div id="sort-menu" class="row sub-menu font-size-large font-serif">
-        <div class="col col-s-12">
+        <div class="col col-s-12 margin-bottom-tiny">
           <ul class="text-align-center u-inline-list">
 <?php
   $cat_count = count($cat_array);
