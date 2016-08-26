@@ -129,7 +129,6 @@ $font-serif = font-stack('Times New Roman')
 
 $color-black = rgb(0, 0, 0)
 $color-white = rgb(255, 255, 255)
-$color-grey = rgb(180, 180, 180)
 
 $border-width = 2px
 
@@ -330,12 +329,18 @@ img
 #header
   width: 100%
   z-index: 100
-  background-color: $color-white
+  background-color: none
   &.open
+    background-color: $color-white
     .menu-item
-      color: $color-grey
+      opacity: 0.5
       &.active 
-        color: $color-black
+        opacity: 1
+        
+body
+  &.page-info, &.single-conversation
+    #header
+      background-color: $color-white
 
 .sub-menu
   display: none
