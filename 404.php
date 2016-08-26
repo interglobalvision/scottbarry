@@ -2,13 +2,22 @@
 get_header();
 ?>
 
-<!-- main content -->
+<main id="main-content" class="margin-bottom-large padding-top-large">
 
-<section id="main-content">
-  <h1>Not found</h1>
-  <p>:(</p>
+  <!-- main posts loop -->
+  <section id="page" class="container">
+
+    <div class="col col-s-12 text-align-center">
+      <h1 class="font-size-mid">404</h1>
+      <p class="font-size-mid">Nothing Here</p>
+    </div>
+
+  <!-- end posts -->
+  </section>
+
 <!-- end main-content -->
-</section>
+
+</main>
 
 <?php
 get_footer();
