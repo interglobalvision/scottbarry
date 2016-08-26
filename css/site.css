@@ -871,13 +871,14 @@ img {
 }
 .studio-list-item {
   border: 0px solid #000;
-  border-bottom-width: 1px;
+  border-bottom-width: 2px;
 }
 .studio-list-item:first-of-type {
-  border-top-width: 1px;
+  border-top-width: 2px;
 }
-.sort-toggle.active {
-  border-bottom: 1px solid #000;
+.sort-toggle.active,
+.sort-toggle:hover {
+  border-bottom: 2px solid #000;
 }
 #conversation-holder {
   position: relative;
