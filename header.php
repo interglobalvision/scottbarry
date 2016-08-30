@@ -96,19 +96,16 @@ $cat_array = get_cpt_categories();
         <div class="col col-s-4 text-align-center margin-bottom-tiny">
 <?php
 if (count($posts) > 0) {
-?>
-          <a class="menu-trigger menu-item" data-trigger="studio" href="<?php echo site_url(); ?>">Projects</a><?php 
+?><a class="menu-trigger menu-item" data-trigger="studio" href="<?php echo site_url(); ?>">Projects</a><?php 
 }
 
 if (count($posts) > 0 && $cat_array) {
-  echo ', ';
+?><span class="menu-item">,&nbsp;</span><?php 
 }
 
 if ($cat_array) {
 
-?><a class="menu-trigger menu-item" data-trigger="sort" href="<?php echo site_url(); ?>">Sort</a>
-
-<?php
+?><a class="menu-trigger menu-item" data-trigger="sort" href="<?php echo site_url(); ?>">Sort</a><?php
 }
 ?>
         </div>
