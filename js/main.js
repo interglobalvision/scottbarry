@@ -33,6 +33,7 @@ Site = {
 };
 
 Site.Header = {
+  $header: $('#header'),
   init: function() {
     var _this = this;
 
@@ -63,29 +64,29 @@ Site.Header = {
   },
 
   toggleMenu: function(menuName) {
-    console.log(menuName); 
-
+    var _this = this;
     var $menu = $('#' + menuName + '-menu');
 
     if ($menu.hasClass('active')) {
       $menu.hide().removeClass('active');
-      $('#header').removeClass('open');
+      _this.$header.removeClass('open');
     } else {
       $('.sub-menu.active').hide().removeClass('active');
       $menu.show().addClass('active');
-      $('#header').addClass('open');
+      _this.$header.addClass('open'); 
     } 
   },
 
   menuMaxHeight: function() {
+    var _this = this;
     var maxHeight;
 
     if ($('.sub-menu.active').length) {
       $('.sub-menu.active').hide();
-      maxHeight = $(window).height() - $('#header').outerHeight(true);
+      maxHeight = $(window).height() - _this.$header.outerHeight(true);
       $('.sub-menu.active').show();
     } else {
-      maxHeight = $(window).height() - $('#header').outerHeight(true);
+      maxHeight = $(window).height() - _this.$header.outerHeight(true);
     }
 
     $('.sub-menu').css('max-height', maxHeight);
