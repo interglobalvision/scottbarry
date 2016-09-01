@@ -85,32 +85,37 @@ $cat_array = get_cpt_categories();
     <div class="container">
       <div class="row font-size-mid">
 
-        <div class="col col-s-4">
-          <h1 class="u-visuallyhidden"><?php bloginfo('name'); ?></h1>
+        <div class="col col-s-4 margin-bottom-tiny">
+          <h1 class="font-size-mid">
+            <a class="menu-item" href="<?php echo site_url(); ?>">
+              <?php bloginfo('name'); ?>
+            </a>
+          </h1>
+        </div>
+
+        <div class="col col-s-4 text-align-center margin-bottom-tiny">
 <?php
 if (count($posts) > 0) {
-?>
-          <a class="menu-trigger" data-trigger="studio" href="<?php echo site_url(); ?>">Studio</a>
-<?php 
+?><a class="menu-trigger menu-item" data-trigger="studio" href="<?php echo site_url(); ?>">Projects</a><?php 
 }
-?>
-        </div>
-        <div class="col col-s-4 text-align-center">
-<?php
+
+if (count($posts) > 0 && $cat_array) {
+?><span class="menu-item">,&nbsp;</span><?php 
+}
+
 if ($cat_array) {
-?>
-          <a class="menu-trigger" data-trigger="sort" href="<?php echo site_url(); ?>">Sort</a>
-<?php
+
+?><a class="menu-trigger menu-item" data-trigger="sort" href="<?php echo site_url(); ?>">Sort</a><?php
 }
 ?>
         </div>
-        <div class="col col-s-4 text-align-right">
+        <div class="col col-s-4 margin-bottom-tiny text-align-right">
 <?php
 $info_id = get_id_by_slug('info');
 
 if ($info_id) {
 ?>
-          <a href="<?php echo get_the_permalink($info_id); ?>">Info</a>
+          <a class="menu-item" href="<?php echo get_the_permalink($info_id); ?>">Info</a>
 <?php
 }
 ?>
@@ -121,7 +126,7 @@ if ($info_id) {
 if (count($posts) > 0) {
 ?>
       <div id="studio-menu" class="row sub-menu font-size-large font-serif">
-        <div class="col col-s-12">
+        <div class="col col-s-12 margin-bottom-tiny">
           <ul>
 <?php
   foreach($posts as $post) {
@@ -146,7 +151,7 @@ if (count($posts) > 0) {
 if ($cat_array) {
 ?>
       <div id="sort-menu" class="row sub-menu font-size-large font-serif">
-        <div class="col col-s-12">
+        <div class="col col-s-12 margin-bottom-tiny">
           <ul class="text-align-center u-inline-list">
 <?php
   $cat_count = count($cat_array);

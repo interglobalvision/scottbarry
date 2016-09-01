@@ -33,6 +33,7 @@ Site = {
 };
 
 Site.Header = {
+  $header: $('#header'),
   init: function() {
     var _this = this;
 
@@ -49,6 +50,13 @@ Site.Header = {
     $('.menu-trigger').bind('click', function(event) {
       event.preventDefault();
 
+      if ($(this).hasClass('active')) {
+        $(this).removeClass('active');
+      } else {
+        $('.menu-item.active').removeClass('active');
+        $(this).addClass('active');
+      } 
+
       var menu = $(this).attr('data-trigger');
 
       _this.toggleMenu(menu);
@@ -56,27 +64,29 @@ Site.Header = {
   },
 
   toggleMenu: function(menuName) {
-    console.log(menuName); 
-
+    var _this = this;
     var $menu = $('#' + menuName + '-menu');
 
     if ($menu.hasClass('active')) {
       $menu.hide().removeClass('active');
+      _this.$header.removeClass('open');
     } else {
       $('.sub-menu.active').hide().removeClass('active');
       $menu.show().addClass('active');
+      _this.$header.addClass('open'); 
     } 
   },
 
   menuMaxHeight: function() {
+    var _this = this;
     var maxHeight;
 
     if ($('.sub-menu.active').length) {
       $('.sub-menu.active').hide();
-      maxHeight = $(window).height() - $('#header').outerHeight(true);
+      maxHeight = $(window).height() - _this.$header.outerHeight(true);
       $('.sub-menu.active').show();
     } else {
-      maxHeight = $(window).height() - $('#header').outerHeight(true);
+      maxHeight = $(window).height() - _this.$header.outerHeight(true);
     }
 
     $('.sub-menu').css('max-height', maxHeight);

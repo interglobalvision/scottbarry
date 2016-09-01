@@ -131,6 +131,8 @@ $font-serif = font-stack('Times New Roman')
 $color-black = rgb(0, 0, 0)
 $color-white = rgb(255, 255, 255)
 
+$border-width = 2px
+
 // ******************************************************
 
 // TYPOGRAPHY
@@ -328,7 +330,18 @@ img
 #header
   width: 100%
   z-index: 100
-  background-color: $color-white
+  background-color: none
+  &.open
+    background-color: $color-white
+    .menu-item
+      opacity: 0.5
+      &.active 
+        opacity: 1
+        
+body
+  &.page-info, &.single-conversation
+    #header
+      background-color: $color-white
 
 .sub-menu
   display: none
@@ -336,13 +349,13 @@ img
 
 .studio-list-item
   border: 0px solid $color-black
-  border-bottom-width: 1px
+  border-bottom-width: $border-width
   &:first-of-type
-    border-top-width: 1px
+    border-top-width: $border-width
     
 .sort-toggle
-  &.active
-    border-bottom: 1px solid $color-black
+  &.active, &:hover
+    border-bottom: $border-width solid $color-black
 
 // CONVERSATION
 

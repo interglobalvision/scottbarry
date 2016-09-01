@@ -858,6 +858,24 @@ img {
 #header {
   width: 100%;
   z-index: 100;
+  background-color: none;
+}
+#header.open {
+  background-color: #fff;
+}
+#header.open .menu-item {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+#header.open .menu-item.active {
+  -ms-filter: none;
+  -webkit-filter: none;
+          filter: none;
+  opacity: 1;
+}
+body.page-info #header,
+body.single-conversation #header {
   background-color: #fff;
 }
 .sub-menu {
@@ -866,13 +884,14 @@ img {
 }
 .studio-list-item {
   border: 0px solid #000;
-  border-bottom-width: 1px;
+  border-bottom-width: 2px;
 }
 .studio-list-item:first-of-type {
-  border-top-width: 1px;
+  border-top-width: 2px;
 }
-.sort-toggle.active {
-  border-bottom: 1px solid #000;
+.sort-toggle.active,
+.sort-toggle:hover {
+  border-bottom: 2px solid #000;
 }
 #conversation-holder {
   position: relative;
