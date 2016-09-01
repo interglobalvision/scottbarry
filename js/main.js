@@ -61,6 +61,13 @@ Site.Header = {
 
       _this.toggleMenu(menu);
     });
+
+    _this.$header.bind('mouseleave', function() {
+      if (_this.$header.hasClass('open')) {
+        _this.$header.removeClass('open');
+        $('.sub-menu.active').hide().removeClass('active');
+      }
+    });
   },
 
   toggleMenu: function(menuName) {
