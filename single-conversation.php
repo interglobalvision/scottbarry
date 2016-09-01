@@ -20,7 +20,7 @@ $details = get_post_meta($post->ID, '_igv_conversation_details', true);
 
 if (!empty($details)) {
 ?>
-        <div class="font-size-mid">
+        <div class="font-size-mid underline-links">
           <?php echo apply_filters('the_content', $details); ?>
         </div>
 <?php
@@ -30,7 +30,7 @@ if (!empty($details)) {
 <?php
 if (get_the_content()) {
 ?>
-      <div class="col col-s-12 col-m-6 text-line-length font-size-mid" id="conversation-holder">
+      <div class="col col-s-12 col-m-6 text-line-length font-size-mid underline-links" id="conversation-holder">
         <?php the_content(); ?>
       </div>
 <?php
