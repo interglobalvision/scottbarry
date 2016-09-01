@@ -893,6 +893,10 @@ body.single-conversation #header {
 .sort-toggle:hover {
   border-bottom: 2px solid #000;
 }
+#project-text-holder p {
+  margin: 0 auto;
+  width: 100%;
+}
 #conversation-holder {
   position: relative;
 }
@@ -921,6 +925,9 @@ body.single-conversation #header {
   }
   .caption {
     width: 70%;
+  }
+  #project-text-holder p {
+    width: 540px;
   }
   #conversation-holder h3 {
     font-size: 21px;
@@ -1149,6 +1156,9 @@ body.single-conversation #header {
   .caption {
     width: 80%;
   }
+  #project-text-holder p {
+    width: 720px;
+  }
   #conversation-holder h3 {
     font-size: 21px;
     left: -13px;
@@ -1366,6 +1376,9 @@ body.single-conversation #header {
   }
   .caption {
     width: 65%;
+  }
+  #project-text-holder p {
+    width: 1000px;
   }
   #conversation-holder h3 {
     font-size: 26px;
