@@ -907,7 +907,7 @@ body.single-conversation #header {
 }
 #conversation-holder h3 {
   font-size: 16px;
-  position: absolute;
+  position: relative;
 }
 @media screen and (min-width: 568px) {
   html {
@@ -936,7 +936,9 @@ body.single-conversation #header {
   }
   #conversation-holder h3 {
     font-size: 21px;
-    left: 12%;
+    position: absolute;
+    text-align: right;
+    right: 85%;
   }
 }
 @media screen and (min-width: 750px) {
@@ -1166,7 +1168,7 @@ body.single-conversation #header {
   }
   #conversation-holder h3 {
     font-size: 21px;
-    left: -13px;
+    right: 100%;
   }
 }
 @media screen and (min-width: 1150px) {
@@ -1387,6 +1389,5 @@ body.single-conversation #header {
   }
   #conversation-holder h3 {
     font-size: 26px;
-    left: -15px;
   }
 }
