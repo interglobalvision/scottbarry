@@ -889,9 +889,12 @@ body.single-conversation #header {
 .studio-list-item:first-of-type {
   border-top-width: 2px;
 }
-.sort-toggle.active,
-.sort-toggle:hover {
-  border-bottom: 2px solid #000;
+.sort-list-item a {
+  border-bottom: 2px solid transparent;
+}
+.sort-list-item a.active,
+.sort-list-item a:hover {
+  border-bottom-color: #000;
 }
 #conversation-holder {
   position: relative;
