@@ -17,9 +17,10 @@ function cmb2_get_post_options($args) {
   return $post_options;
 }
 
- function get_cpt_categories($post_type_array) {
+ function get_cpt_categories($post_type_array = array(), $post_id_array = array()) {
   $args = array(
     'post_type' => $post_type_array,
+    'post__in' => $post_id_array,
     'posts_per_page' => -1
   );
 
