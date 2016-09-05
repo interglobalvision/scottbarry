@@ -38,13 +38,13 @@ Site.Header = {
     var _this = this;
 
     if ($('.menu-trigger').length) {
-      _this.bindMenuToggle();
+      _this.bindMenuToggles();
     }
 
     _this.menuMaxHeight();
   },
 
-  bindMenuToggle: function() {
+  bindMenuToggles: function() {
     var _this = this;
 
     $('.menu-trigger').bind('click', function(event) {
@@ -61,6 +61,25 @@ Site.Header = {
 
       _this.toggleMenu(menu);
     });
+
+    _this.$header.bind('mouseleave', function() {
+      _this.closeMenu();
+    });
+
+    $(document).bind('click', function(event) {
+      if (!$(event.target).is('#header, #header *')) {
+        _this.closeMenu();
+      }
+    });
+  },
+
+  closeMenu: function() {
+    var _this = this;
+
+    if (_this.$header.hasClass('open')) {
+      _this.$header.removeClass('open');
+      $('.sub-menu.active').hide().removeClass('active');
+    }
   },
 
   toggleMenu: function(menuName) {
