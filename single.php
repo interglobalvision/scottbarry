@@ -29,7 +29,7 @@ if (!empty($tagline)) {
 <?php
 if (get_the_content()) {
 ?>
-        <div class="col col-s-12 text-align-center font-size-large font-serif"><?php the_content(); ?></div>
+        <div id="project-text-holder" class="col col-s-12 text-align-center font-size-large font-serif underline-links"><?php the_content(); ?></div>
 <?php
 }
 

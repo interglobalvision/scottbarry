@@ -23,15 +23,27 @@ html
 .text-line-length 
   h1, h2, h3, p
     width: 65%
+  div.wp-caption
+    width: 65% !important
     
 // ******************************************************
 
 .caption
   width: 70%
+  
+p.wp-caption-text
+  font-size: $font-size-small
+  
+// PROJECT
+#project-text-holder
+  p 
+    width: 540px
 
 // CONVERSATION
 
 #conversation-holder
   h3 
     font-size: $font-size-mid
-    left: 12%
+    position: absolute
+    text-align: right 
+    right: 85%

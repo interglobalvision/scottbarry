@@ -68,6 +68,8 @@ html
 .text-line-length 
   h1, h2, h3, p
     width: 430px
+  div.wp-caption
+    width: 430px !important
   
 // ******************************************************
 
@@ -158,9 +160,20 @@ html
 .caption
   width: 65%
   
+p.wp-caption-text
+  width: 80%
+  font-size: $font-size-small
+  margin-top: $margin-micro
+  margin-left: auto
+  margin-right: auto
+  
+// PROJECT
+#project-text-holder
+  p 
+    width: 1000px
+  
 // CONVERSATION
 
 #conversation-holder
   h3 
     font-size: $font-size-mid
-    left: -($margin-tiny)
