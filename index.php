@@ -12,8 +12,8 @@ get_header();
 
 <?php
 $args = array (
-  'post_type'              => array( 'home_item' ),
-  'posts_per_page'         => '-1',
+  'posts_per_page'         => -1,
+  'post_type'              => array('home_item',),
 );
 
 $query = new WP_Query( $args );

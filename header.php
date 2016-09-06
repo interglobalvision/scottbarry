@@ -73,7 +73,27 @@ $args = array(
   'post_type'        => array('project','conversation'),
 );
 $posts = get_posts($args);
-$cat_array = get_cpt_categories();
+
+$args = array (
+  'posts_per_page'         => -1,
+  'post_type'              => array( 'home_item' ),
+);
+$home_items = get_posts($args);
+
+if (count($home_items) > 0) {
+  $home_item_ids = array();
+
+  foreach ($home_items as $item) {
+    $item_post_type = get_post_meta($item->ID, '_igv_post_type', true);
+    $item_post_id = get_post_meta($item->ID, '_igv_' . $item_post_type . '_id', true);
+
+    array_push($home_item_ids, $item_post_id);
+  }
+
+  $cat_array = get_cpt_categories(array('project','conversation'), $home_item_ids);
+} else {
+  $cat_array = false;
+}
 ?>
 
   <!-- start content -->
