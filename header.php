@@ -145,7 +145,7 @@ if ($info_id) {
 <?php
 if (count($posts) > 0) {
 ?>
-      <div id="studio-menu" class="row sub-menu font-size-large font-serif">
+      <div id="studio-menu" class="row sub-menu font-size-large font-bold">
         <div class="col col-s-12 margin-bottom-tiny">
           <ul>
 <?php
@@ -170,7 +170,7 @@ if (count($posts) > 0) {
 <?php
 if ($cat_array) {
 ?>
-      <div id="sort-menu" class="row sub-menu font-size-large font-serif">
+      <div id="sort-menu" class="row sub-menu font-size-large font-bold">
         <div class="col col-s-12 margin-bottom-tiny">
           <ul class="text-align-center u-inline-list">
 <?php
