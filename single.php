@@ -56,7 +56,7 @@ if (!empty($images)) {
 <?php
       if (!empty($image['caption'])) {
 ?>
-          <div class="text-align-center margin-top-small caption">
+          <div class="text-align-center margin-top-tiny caption">
             <?php echo $image['caption'] ?>
           </div>
 <?php

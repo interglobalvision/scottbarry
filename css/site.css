@@ -729,13 +729,13 @@ p {
   font-size: 11px;
 }
 .font-size-mid {
-  font-size: 16px;
+  font-size: 16.5px;
 }
 .font-size-large {
-  font-size: 21px;
+  font-size: 22px;
 }
 .font-size-extra {
-  font-size: 28px;
+  font-size: 38.5px;
 }
 .font-leading-tighter {
   line-height: 1.15;
@@ -945,7 +945,7 @@ p.wp-caption-text {
   position: relative;
 }
 #conversation-holder h3 {
-  font-size: 16px;
+  font-size: 16.5px;
   position: relative;
 }
 #conversation-holder img {
@@ -954,19 +954,19 @@ p.wp-caption-text {
 }
 @media screen and (min-width: 568px) {
   html {
-    font-size: 14px;
+    font-size: 12px;
   }
   .font-size-small {
-    font-size: 14px;
+    font-size: 12px;
   }
   .font-size-mid {
-    font-size: 21px;
+    font-size: 18px;
   }
   .font-size-large {
-    font-size: 28px;
+    font-size: 24px;
   }
   .font-size-extra {
-    font-size: 32px;
+    font-size: 42px;
   }
   .text-line-length h1,
   .text-line-length h2,
@@ -981,13 +981,13 @@ p.wp-caption-text {
     width: 70%;
   }
   p.wp-caption-text {
-    font-size: 14px;
+    font-size: 12px;
   }
   #project-text-holder p {
     width: 540px;
   }
   #conversation-holder h3 {
-    font-size: 21px;
+    font-size: 18px;
     position: absolute;
     text-align: right;
     right: 85%;
@@ -1123,10 +1123,10 @@ p.wp-caption-text {
     font-size: 21px;
   }
   .font-size-large {
-    font-size: 32px;
+    font-size: 28px;
   }
   .font-size-extra {
-    font-size: 50px;
+    font-size: 49px;
   }
   .text-line-length h1,
   .text-line-length h2,
