@@ -97,62 +97,19 @@ if (count($home_items) > 0) {
 ?>
 
   <!-- start content -->
-  <header id="header" class="u-fixed padding-top-small" <?php
-    if (!empty($bg_color)) {
-      echo 'style="background-color: ' . $bg_color . '"';
-    }
-  ?>>
-    <div class="container">
-      <div class="row font-size-mid">
-
-        <div class="col col-s-4 margin-bottom-tiny">
-          <h1 class="font-size-mid">
-            <a class="menu-item" href="<?php echo site_url(); ?>">
-              <?php bloginfo('name'); ?>
-            </a>
-          </h1>
-        </div>
-
-        <div class="col col-s-4 text-align-center margin-bottom-tiny">
-<?php
-if (count($posts) > 0) {
-?><a class="menu-trigger menu-item" data-trigger="studio" href="<?php echo site_url(); ?>">Projects</a><?php 
-}
-
-if (count($posts) > 0 && $cat_array) {
-?><span class="menu-item">,&nbsp;</span><?php 
-}
-
-if ($cat_array) {
-
-?><a class="menu-trigger menu-item" data-trigger="sort" href="<?php echo site_url(); ?>">Sort</a><?php
-}
-?>
-        </div>
-        <div class="col col-s-4 margin-bottom-tiny text-align-right">
-<?php
-$info_id = get_id_by_slug('info');
-
-if ($info_id) {
-?>
-          <a class="menu-item" href="<?php echo get_the_permalink($info_id); ?>">Info</a>
-<?php
-}
-?>
-        </div>
-      </div>
+  <header id="header" class="u-fixed">
 
 <?php
 if (count($posts) > 0) {
 ?>
-      <div id="studio-menu" class="row sub-menu font-size-large font-bold">
-        <div class="col col-s-12 margin-bottom-tiny">
+      <div id="projects-menu" class="row sub-menu font-size-extra font-bold">
+        <div class="col col-s-12 margin-bottom-basic margin-top-small">
           <ul>
 <?php
   foreach($posts as $post) {
     setup_postdata($post);
 ?>
-            <li class="studio-list-item">
+            <li class="projects-list-item">
               <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
             </li>
 <?php
@@ -170,9 +127,11 @@ if (count($posts) > 0) {
 <?php
 if ($cat_array) {
 ?>
-      <div id="sort-menu" class="row sub-menu font-size-large font-bold">
-        <div class="col col-s-12 margin-bottom-tiny">
-          <ul class="text-align-center u-inline-list">
+      <div id="sort-menu" class="sub-menu font-size-large font-bold">
+        <div class="container">
+          <div class="row">
+            <div class="col col-s-12 margin-bottom-basic margin-top-small">
+              <ul class="u-inline-list">
 <?php
   $cat_count = count($cat_array);
   $cat_num = 0; 
@@ -180,21 +139,69 @@ if ($cat_array) {
   foreach($cat_array as $cat) {
     $cat_num++;
 ?>
-            <li class="sort-list-item">
-              &nbsp;<a
-                class="u-inline-block<?php if (is_home()) { echo ' sort-toggle'; } ?>"
-                data-cat="<?php echo $cat->slug; ?>"
-                href="<?php echo get_bloginfo('url') . '?sort=' . $cat->slug; ?>">
-                <?php echo $cat->name; ?>
-              </a><?php echo $cat_num != $cat_count ? ',' : ''; ?>
-            </li>
+                <li class="sort-list-item">
+                  &nbsp;<a
+                    class="u-inline-block<?php if (is_home()) { echo ' sort-toggle'; } ?>"
+                    data-cat="<?php echo $cat->slug; ?>"
+                    href="<?php echo get_bloginfo('url') . '?sort=' . $cat->slug; ?>">
+                    <?php echo $cat->name; ?>
+                  </a><?php echo $cat_num != $cat_count ? ',' : ''; ?>
+                </li>
 <?php
   }
 ?>
-          </ul>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
 <?php
 }
 ?>
+    <div id="main-menu" class="padding-top-small padding-bottom-tiny" <?php
+    if (!empty($bg_color)) {
+      echo 'style="background-color: ' . $bg_color . '"';
+    }
+  ?>
+      <div class="container">
+        <div class="row font-size-mid">
+
+          <div class="col col-s-4 margin-bottom-tiny">
+            <h1 class="font-size-mid">
+              <a class="menu-item" href="<?php echo site_url(); ?>">
+                <?php bloginfo('name'); ?>
+              </a>
+            </h1>
+          </div>
+
+          <div class="col col-s-4 text-align-center margin-bottom-tiny">
+<?php
+if (count($posts) > 0) {
+?><a class="menu-trigger menu-item" data-trigger="projects" href="<?php echo site_url(); ?>">List</a><?php 
+}
+
+if (count($posts) > 0 && $cat_array) {
+?><span class="menu-item">,&nbsp;</span><?php 
+}
+
+if ($cat_array) {
+
+?><a class="menu-trigger menu-item" data-trigger="sort" href="<?php echo site_url(); ?>">Sort</a><?php
+}
+?>
+          </div>
+          <div class="col col-s-4 margin-bottom-tiny text-align-right">
+<?php
+$info_id = get_id_by_slug('info');
+
+if ($info_id) {
+?>
+            <a class="menu-item menu-item-info" href="<?php echo get_the_permalink($info_id); ?>">Info</a>
+<?php
+}
+?>
+          </div>
+        </div>
+      </div>
+    </div>
   </header>
