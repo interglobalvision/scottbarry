@@ -77,8 +77,8 @@ Site.Header = {
     var _this = this;
 
     if (_this.$header.hasClass('open')) {
-      _this.$header.removeClass('open');
-      $('.sub-menu.active').hide().removeClass('active');
+      _this.$header.removeClass('open projects-open sort-open');
+      $('.sub-menu.active').removeClass('active');
     }
   },
 
@@ -87,12 +87,13 @@ Site.Header = {
     var $menu = $('#' + menuName + '-menu');
 
     if ($menu.hasClass('active')) {
-      $menu.hide().removeClass('active');
-      _this.$header.removeClass('open');
+      $menu.removeClass('active');
+      _this.$header.removeClass('open projects-open sort-open');
     } else {
-      $('.sub-menu.active').hide().removeClass('active');
-      $menu.show().addClass('active');
-      _this.$header.addClass('open'); 
+      $('.sub-menu.active').removeClass('active');
+      $menu.addClass('active');
+      _this.$header.removeClass('projects-open sort-open');
+      _this.$header.addClass('open ' + menuName + '-open');
     } 
   },
 
@@ -101,9 +102,9 @@ Site.Header = {
     var maxHeight;
 
     if ($('.sub-menu.active').length) {
-      $('.sub-menu.active').hide();
+      $('.sub-menu.active');
       maxHeight = $(window).height() - _this.$header.outerHeight(true);
-      $('.sub-menu.active').show();
+      $('.sub-menu.active');
     } else {
       maxHeight = $(window).height() - _this.$header.outerHeight(true);
     }
