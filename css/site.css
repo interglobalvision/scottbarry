@@ -734,6 +734,9 @@ p {
 .font-size-large {
   font-size: 21px;
 }
+.font-size-extra {
+  font-size: 28px;
+}
 .font-leading-tighter {
   line-height: 1.15;
 }
@@ -872,43 +875,67 @@ p.wp-caption-text {
 #header {
   width: 100%;
   z-index: 100;
-  background-color: none;
 }
 #header.open {
-  background-color: #fff;
+  color: #fff;
+}
+#header.open #main-menu {
+  background-color: unset !important;
 }
 #header.open .menu-item {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-  filter: alpha(opacity=50);
-  opacity: 0.5;
+  border-bottom: 2px solid transparent;
 }
 #header.open .menu-item.active {
-  -ms-filter: none;
-  -webkit-filter: none;
-          filter: none;
-  opacity: 1;
+  border-bottom: 2px solid #fff;
 }
-body.page-info #header,
-body.single-conversation #header {
-  background-color: #fff;
+#header.projects-open .menu-item-info {
+  color: #000;
+}
+#main-menu {
+  position: absolute;
+  z-index: 300;
+  top: 0;
+  left: 0;
+  width: 100%;
+  line-height: 1;
+}
+#main-menu h1 {
+  line-height: 1;
 }
 .sub-menu {
   display: none;
   overflow-y: scroll;
+  position: absolute;
+  padding-top: 110px;
+  background-color: #242424;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  text-align: center;
 }
-.studio-list-item {
-  border: 0px solid #000;
-  border-bottom-width: 2px;
+.sub-menu.active {
+  display: block;
 }
-.studio-list-item:first-of-type {
-  border-top-width: 2px;
+.sub-menu li {
+  -webkit-transform: scaleY(0.7);
+  transform: scaleY(0.7);
+}
+.sub-menu li a:hover {
+  font-style: italic;
 }
 .sort-list-item a {
   border-bottom: 2px solid transparent;
 }
-.sort-list-item a.active,
-.sort-list-item a:hover {
-  border-bottom: 2px solid #000;
+.sort-list-item a.active {
+  border-bottom: 2px solid #fff;
+}
+#projects-menu {
+  width: 75%;
+  height: 100%;
+}
+#sort-menu {
+  width: 100%;
 }
 #project-text-holder p {
   margin: 0 auto;
@@ -937,6 +964,9 @@ body.single-conversation #header {
   }
   .font-size-large {
     font-size: 28px;
+  }
+  .font-size-extra {
+    font-size: 32px;
   }
   .text-line-length h1,
   .text-line-length h2,
@@ -1094,6 +1124,9 @@ body.single-conversation #header {
   }
   .font-size-large {
     font-size: 32px;
+  }
+  .font-size-extra {
+    font-size: 50px;
   }
   .text-line-length h1,
   .text-line-length h2,
@@ -1324,18 +1357,6 @@ body.single-conversation #header {
         flex-basis: 100%;
     max-width: 100%;
   }
-  html {
-    font-size: 14px;
-  }
-  .font-size-small {
-    font-size: 14px;
-  }
-  .font-size-mid {
-    font-size: 26px;
-  }
-  .font-size-large {
-    font-size: 48px;
-  }
   .text-line-length h1,
   .text-line-length h2,
   .text-line-length h3,
@@ -1422,15 +1443,11 @@ body.single-conversation #header {
   }
   p.wp-caption-text {
     width: 80%;
-    font-size: 14px;
     margin-top: 9.270509831247821px;
     margin-left: auto;
     margin-right: auto;
   }
   #project-text-holder p {
     width: 1000px;
-  }
-  #conversation-holder h3 {
-    font-size: 26px;
   }
 }
