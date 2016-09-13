@@ -904,7 +904,7 @@ p.wp-caption-text {
 }
 .sub-menu {
   display: none;
-  overflow-y: scroll;
+  overflow-y: auto;
   position: absolute;
   padding-top: 110px;
   background-color: #242424;
