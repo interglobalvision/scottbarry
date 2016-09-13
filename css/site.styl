@@ -115,8 +115,9 @@ $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
 
 $font-size-small = 11px
-$font-size-mid = 16px
-$font-size-large = 21px
+$font-size-mid = $font-size-small * 1.5
+$font-size-large = $font-size-small * 2
+$font-size-extra = $font-size-small * 3.5
 
 $font-leading-basic = 1.35
 $font-leading-tighter = 1.15
@@ -129,6 +130,7 @@ $font-sans = 'Moderat', font-stack('Helvetica')
 $font-serif = font-stack('Times New Roman')
 
 $color-black = rgb(0, 0, 0)
+$color-black-soft = rgb(36, 36, 36)
 $color-white = rgb(255, 255, 255)
 
 $border-width = 2px
@@ -185,6 +187,9 @@ p
 
 .font-size-large
   font-size: $font-size-large
+  
+.font-size-extra 
+  font-size: $font-size-extra
 
 .font-leading-tighter
   line-height: $font-leading-tighter
@@ -341,33 +346,57 @@ p.wp-caption-text
 #header
   width: 100%
   z-index: 100
-  background-color: none
   &.open
-    background-color: $color-white
+    color: $color-white
+    #main-menu
+      background-color: unset !important
     .menu-item
-      opacity: 0.5
+      border-bottom: $border-width solid transparent
       &.active 
-        opacity: 1
+        border-bottom: $border-width solid $color-white
+  &.projects-open
+    .menu-item-info
+      color: $color-black
         
-body
-  &.page-info, &.single-conversation
-    #header
-      background-color: $color-white
+#main-menu
+  position: absolute
+  z-index: 300
+  top: 0
+  left: 0
+  width: 100%
+  line-height: 1
+  h1 
+    line-height: 1
 
-.sub-menu
+.sub-menu 
   display: none
-  overflow-y: scroll
-
-.studio-list-item
-  border: 0px solid $color-black
-  border-bottom-width: $border-width
-  &:first-of-type
-    border-top-width: $border-width
+  overflow-y: auto
+  position: absolute
+  padding-top: $margin-large
+  background-color: $color-black-soft
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 200
+  text-align: center
+  &.active
+    display: block
+  li
+    transform: scaleY(.7)
+    a:hover
+      font-style: italic
     
 .sort-list-item a 
   border-bottom: $border-width solid transparent
-  &.active, &:hover
-    border-bottom: $border-width solid $color-black
+  &.active
+    border-bottom: $border-width solid $color-white
+    
+#projects-menu
+  width: 75%
+  height: 100%
+  
+#sort-menu
+  width: 100%
     
 // PROJECT
 #project-text-holder

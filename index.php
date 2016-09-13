@@ -69,7 +69,7 @@ if( $query->have_posts() ) {
           <?php the_post_thumbnail('gallery', array(
               'style' => 'max-width: ' . $percent_width . '%; transform: rotate(' . $degrees_rotate . 'deg);'
           )); ?>
-          <div class="text-align-center margin-top-small caption">
+          <div class="text-align-center margin-top-tiny caption">
             <?php the_title(); ?>
           </div>
         </a>
@@ -80,7 +80,7 @@ if( $query->have_posts() ) {
 
         <a href="<?php echo get_the_permalink($link_post_id); ?>" class="text-content-centered">
           <div class="font-size-mid"><?php the_content(); ?></div>
-          <div class="text-align-center margin-top-small caption">
+          <div class="text-align-center margin-top-tiny caption">
             <?php the_title(); ?>
           </div>
         </a>

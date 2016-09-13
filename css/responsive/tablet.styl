@@ -37,8 +37,9 @@ $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
 
 $font-size-small = 14px
-$font-size-mid = 21px
-$font-size-large = 32px
+$font-size-mid = $font-size-small * 1.5
+$font-size-large = $font-size-small * 2
+$font-size-extra = $font-size-small * 3.5
 
 $font-leading-basic = 1.35
 $font-leading-tighter = 1.15
@@ -62,6 +63,9 @@ html
   
 .font-size-large 
   font-size: $font-size-large
+  
+.font-size-extra 
+  font-size: $font-size-extra
   
 // TEXT RULES
   

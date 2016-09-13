@@ -29,7 +29,7 @@ if (!empty($tagline)) {
 <?php
 if (get_the_content()) {
 ?>
-        <div id="project-text-holder" class="col col-s-12 text-align-center font-size-large font-serif underline-links"><?php the_content(); ?></div>
+        <div id="project-text-holder" class="col col-s-12 text-align-center font-size-large underline-links"><?php the_content(); ?></div>
 <?php
 }
 
@@ -56,7 +56,7 @@ if (!empty($images)) {
 <?php
       if (!empty($image['caption'])) {
 ?>
-          <div class="text-align-center margin-top-small caption">
+          <div class="text-align-center margin-top-tiny caption">
             <?php echo $image['caption'] ?>
           </div>
 <?php
