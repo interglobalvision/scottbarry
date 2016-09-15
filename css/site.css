@@ -928,10 +928,10 @@ p.wp-caption-text {
   font-style: italic;
 }
 .sort-list-item a {
-  border-bottom: 2px solid transparent;
+  border-bottom: 3px solid transparent;
 }
 .sort-list-item a.active {
-  border-bottom: 2px solid #fff;
+  border-bottom: 3px solid #fff;
 }
 #projects-menu {
   width: 75%;
@@ -943,6 +943,11 @@ p.wp-caption-text {
 #project-text-holder p {
   margin: 0 auto;
   width: 100%;
+}
+#project-text-holder a:link,
+#project-text-holder a:active,
+#project-text-holder a:visited {
+  border-bottom: 3px solid #000;
 }
 #conversation-holder {
   position: relative;
