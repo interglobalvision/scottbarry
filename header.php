@@ -104,12 +104,12 @@ if (count($posts) > 0) {
 ?>
       <div id="projects-menu" class="row sub-menu font-size-extra font-bold">
         <div class="col col-s-12 margin-bottom-basic margin-top-small">
-          <ul>
+          <ul class="font-expanded">
 <?php
   foreach($posts as $post) {
     setup_postdata($post);
 ?>
-            <li class="projects-list-item font-condensed-y">
+            <li class="projects-list-item">
               <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
             </li>
 <?php
@@ -131,7 +131,7 @@ if ($cat_array) {
         <div class="container">
           <div class="row">
             <div class="col col-s-12 margin-bottom-basic margin-top-small">
-              <ul class="u-inline-list">
+              <ul class="u-inline-list font-expanded">
 <?php
   $cat_count = count($cat_array);
   $cat_num = 0; 
@@ -139,7 +139,7 @@ if ($cat_array) {
   foreach($cat_array as $cat) {
     $cat_num++;
 ?>
-                <li class="sort-list-item font-condensed-y">
+                <li class="sort-list-item">
                   &nbsp;<a
                     class="u-inline-block<?php if (is_home()) { echo ' sort-toggle'; } ?>"
                     data-cat="<?php echo $cat->slug; ?>"

@@ -725,7 +725,7 @@ p {
 .font-capitalize {
   text-transform: capitalize;
 }
-.font-condensed-y {
+.font-expanded {
   -webkit-transform: scaleY(0.7);
   transform: scaleY(0.7);
 }
@@ -920,6 +920,9 @@ p.wp-caption-text {
 }
 .sub-menu.active {
   display: block;
+}
+.sub-menu li {
+  margin-bottom: 0;
 }
 .sub-menu li a:hover {
   font-style: italic;
