@@ -62,10 +62,6 @@ Site.Header = {
       _this.toggleMenu(menu);
     });
 
-    _this.$header.bind('mouseleave', function() {
-      _this.closeMenu();
-    });
-
     $(document).bind('click', function(event) {
       if (!$(event.target).is('#header, #header *')) {
         _this.closeMenu();
@@ -77,6 +73,7 @@ Site.Header = {
     var _this = this;
 
     if (_this.$header.hasClass('open')) {
+      $('.menu-item.active').removeClass('active');
       _this.$header.removeClass('open projects-open sort-open');
       $('.sub-menu.active').removeClass('active');
     }
