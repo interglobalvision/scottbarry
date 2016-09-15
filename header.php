@@ -109,7 +109,7 @@ if (count($posts) > 0) {
   foreach($posts as $post) {
     setup_postdata($post);
 ?>
-            <li class="projects-list-item">
+            <li class="projects-list-item font-condensed-y">
               <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
             </li>
 <?php
@@ -139,7 +139,7 @@ if ($cat_array) {
   foreach($cat_array as $cat) {
     $cat_num++;
 ?>
-                <li class="sort-list-item">
+                <li class="sort-list-item font-condensed-y">
                   &nbsp;<a
                     class="u-inline-block<?php if (is_home()) { echo ' sort-toggle'; } ?>"
                     data-cat="<?php echo $cat->slug; ?>"
