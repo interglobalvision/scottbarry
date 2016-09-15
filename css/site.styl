@@ -181,6 +181,9 @@ p
   
 .font-expanded
   transform: scaleY(.7)
+  &.underline-links
+    a:link, a:active, a:visited 
+      border-bottom: ($border-width + 1) solid $color-black
 
 .font-size-small
   font-size: $font-size-small
@@ -390,9 +393,9 @@ p.wp-caption-text
       font-style: italic
     
 .sort-list-item a 
-  border-bottom: 3px solid transparent
+  border-bottom: ($border-width + 1) solid transparent
   &.active
-    border-bottom: 3px solid $color-white
+    border-bottom: ($border-width + 1) solid $color-white
     
 #projects-menu
   width: 75%
@@ -406,8 +409,6 @@ p.wp-caption-text
   p 
     margin: 0 auto
     width: 100%
-  a:link, a:active, a:visited 
-    border-bottom: 3px solid $color-black
 
 // CONVERSATION
 

@@ -729,6 +729,11 @@ p {
   -webkit-transform: scaleY(0.7);
   transform: scaleY(0.7);
 }
+.font-expanded.underline-links a:link,
+.font-expanded.underline-links a:active,
+.font-expanded.underline-links a:visited {
+  border-bottom: 3px solid #000;
+}
 .font-size-small {
   font-size: 11px;
 }
@@ -943,11 +948,6 @@ p.wp-caption-text {
 #project-text-holder p {
   margin: 0 auto;
   width: 100%;
-}
-#project-text-holder a:link,
-#project-text-holder a:active,
-#project-text-holder a:visited {
-  border-bottom: 3px solid #000;
 }
 #conversation-holder {
   position: relative;
