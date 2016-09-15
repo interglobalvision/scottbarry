@@ -110,7 +110,7 @@ if (count($posts) > 0) {
     setup_postdata($post);
 ?>
             <li class="projects-list-item">
-              <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+              <a class="u-inline-block" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
             </li>
 <?php
   }
