@@ -36,7 +36,7 @@ $margin-basic = ($gutter * 2)
 $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
 
-$font-size-small = 14px
+$font-size-small = 12px
 $font-size-mid = $font-size-small * 1.5
 $font-size-large = $font-size-small * 2
 $font-size-extra = $font-size-small * 3.5
@@ -173,10 +173,12 @@ html
   
 p.wp-caption-text
   width: 90%
-  font-size: $font-size-small
   margin-top: $margin-micro
   margin-left: auto
   margin-right: auto
+  
+.caption, p.wp-caption-text
+  font-size: $font-size-small
   
 // PROJECT
 #project-text-holder
