@@ -879,9 +879,12 @@ img {
   margin-right: auto;
 }
 p.wp-caption-text {
-  font-size: 11px;
   text-align: center;
   margin-top: 6.798373876248402px;
+}
+.caption,
+p.wp-caption-text {
+  font-size: 10px;
 }
 #header {
   width: 100%;
@@ -993,8 +996,9 @@ p.wp-caption-text {
   .caption {
     width: 70%;
   }
+  .caption,
   p.wp-caption-text {
-    font-size: 12px;
+    font-size: 11px;
   }
   #project-text-holder p {
     width: 540px;
@@ -1232,12 +1236,15 @@ p.wp-caption-text {
   .padding-bottom-large {
     padding-bottom: 130px;
   }
+  .caption,
+  p.wp-caption-text {
+    font-size: 12px;
+  }
   .caption {
     width: 80%;
   }
   p.wp-caption-text {
     width: 90%;
-    font-size: 14px;
     margin-top: 8.034441853748111px;
     margin-left: auto;
     margin-right: auto;
