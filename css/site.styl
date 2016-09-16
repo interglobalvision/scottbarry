@@ -117,7 +117,7 @@ $margin-large = ($gutter * 5)
 $font-size-small = 11px
 $font-size-mid = $font-size-small * 1.5
 $font-size-large = $font-size-small * 2
-$font-size-extra = $font-size-small * 3.5
+$font-size-extra = $font-size-small * 2.5
 
 $font-leading-basic = 1.35
 $font-leading-tighter = 1.15
@@ -178,6 +178,13 @@ p
 
 .font-capitalize
   text-transform: capitalize
+  
+.font-expanded
+  transform-origin: top
+  transform: scaleY(.7)
+  &.underline-links
+    a:link, a:active, a:visited 
+      border-bottom: ($border-width + 1) solid $color-black
 
 .font-size-small
   font-size: $font-size-small
@@ -374,24 +381,26 @@ p.wp-caption-text
   display: none
   overflow-y: auto
   position: absolute
-  padding-top: $margin-large
   background-color: $color-black-soft
   position: fixed
   top: 0
   left: 0
   z-index: 200
   text-align: center
+  padding-top: 60px
   &.active
     display: block
+  ul 
+    padding: $margin-basic $margin-small
   li
-    transform: scaleY(.7)
+    margin-bottom: 0
     a:hover
       font-style: italic
     
 .sort-list-item a 
-  border-bottom: $border-width solid transparent
+  border-bottom: ($border-width + 1) solid transparent
   &.active
-    border-bottom: $border-width solid $color-white
+    border-bottom: ($border-width + 1) solid $color-white
     
 #projects-menu
   width: 75%

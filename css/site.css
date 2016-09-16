@@ -725,6 +725,17 @@ p {
 .font-capitalize {
   text-transform: capitalize;
 }
+.font-expanded {
+  -webkit-transform-origin: top;
+  transform-origin: top;
+  -webkit-transform: scaleY(0.7);
+  transform: scaleY(0.7);
+}
+.font-expanded.underline-links a:link,
+.font-expanded.underline-links a:active,
+.font-expanded.underline-links a:visited {
+  border-bottom: 3px solid #000;
+}
 .font-size-small {
   font-size: 11px;
 }
@@ -735,7 +746,7 @@ p {
   font-size: 22px;
 }
 .font-size-extra {
-  font-size: 38.5px;
+  font-size: 27.5px;
 }
 .font-leading-tighter {
   line-height: 1.15;
@@ -909,29 +920,31 @@ p.wp-caption-text {
   display: none;
   overflow-y: auto;
   position: absolute;
-  padding-top: 110px;
   background-color: #242424;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 200;
   text-align: center;
+  padding-top: 60px;
 }
 .sub-menu.active {
   display: block;
 }
+.sub-menu ul {
+  padding: 44px 22px;
+}
 .sub-menu li {
-  -webkit-transform: scaleY(0.7);
-  transform: scaleY(0.7);
+  margin-bottom: 0;
 }
 .sub-menu li a:hover {
   font-style: italic;
 }
 .sort-list-item a {
-  border-bottom: 2px solid transparent;
+  border-bottom: 3px solid transparent;
 }
 .sort-list-item a.active {
-  border-bottom: 2px solid #fff;
+  border-bottom: 3px solid #fff;
 }
 #projects-menu {
   width: 75%;
@@ -969,7 +982,7 @@ p.wp-caption-text {
     font-size: 24px;
   }
   .font-size-extra {
-    font-size: 42px;
+    font-size: 30px;
   }
   .text-line-length h1,
   .text-line-length h2,
@@ -1130,7 +1143,7 @@ p.wp-caption-text {
     font-size: 28px;
   }
   .font-size-extra {
-    font-size: 49px;
+    font-size: 35px;
   }
   .text-line-length h1,
   .text-line-length h2,
@@ -1223,6 +1236,10 @@ p.wp-caption-text {
   .padding-bottom-large {
     padding-bottom: 130px;
   }
+  .caption,
+  p.wp-caption-text {
+    font-size: 12px;
+  }
   .caption {
     width: 80%;
   }
@@ -1232,9 +1249,11 @@ p.wp-caption-text {
     margin-left: auto;
     margin-right: auto;
   }
-  .caption,
-  p.wp-caption-text {
-    font-size: 12px;
+  .sub-menu {
+    padding-top: 72px;
+  }
+  .sub-menu ul {
+    padding: 52px 26px;
   }
   #project-text-holder p {
     width: 720px;
@@ -1453,6 +1472,12 @@ p.wp-caption-text {
     margin-top: 9.270509831247821px;
     margin-left: auto;
     margin-right: auto;
+  }
+  .sub-menu {
+    padding-top: 81px;
+  }
+  .sub-menu ul {
+    padding: 60px 30px;
   }
   #project-text-holder p {
     width: 1000px;
