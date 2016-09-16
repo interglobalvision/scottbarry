@@ -108,9 +108,9 @@ if (count($posts) > 0) {
   foreach($posts as $post) {
     setup_postdata($post);
 ?>
-          <li class="projects-list-item">
-            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-          </li>
+            <li class="projects-list-item">
+              <a class="u-inline-block" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+            </li>
 <?php
   }
   wp_reset_postdata();
