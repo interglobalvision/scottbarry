@@ -180,6 +180,7 @@ p
   text-transform: capitalize
   
 .font-expanded
+  transform-origin: top
   transform: scaleY(.7)
   &.underline-links
     a:link, a:active, a:visited 
@@ -378,15 +379,17 @@ p.wp-caption-text
   display: none
   overflow-y: auto
   position: absolute
-  padding-top: $margin-large
   background-color: $color-black-soft
   position: fixed
   top: 0
   left: 0
   z-index: 200
   text-align: center
+  padding-top: 80px
   &.active
     display: block
+  ul 
+    padding: $margin-basic $margin-small
   li
     margin-bottom: 0
     a:hover

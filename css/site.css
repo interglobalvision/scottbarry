@@ -726,6 +726,8 @@ p {
   text-transform: capitalize;
 }
 .font-expanded {
+  -webkit-transform-origin: top;
+  transform-origin: top;
   -webkit-transform: scaleY(0.7);
   transform: scaleY(0.7);
 }
@@ -915,16 +917,19 @@ p.wp-caption-text {
   display: none;
   overflow-y: auto;
   position: absolute;
-  padding-top: 110px;
   background-color: #242424;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 200;
   text-align: center;
+  padding-top: 80px;
 }
 .sub-menu.active {
   display: block;
+}
+.sub-menu ul {
+  padding: 44px 22px;
 }
 .sub-menu li {
   margin-bottom: 0;
