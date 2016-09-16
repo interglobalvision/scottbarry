@@ -746,7 +746,7 @@ p {
   font-size: 22px;
 }
 .font-size-extra {
-  font-size: 38.5px;
+  font-size: 27.5px;
 }
 .font-leading-tighter {
   line-height: 1.15;
@@ -923,7 +923,7 @@ p.wp-caption-text {
   left: 0;
   z-index: 200;
   text-align: center;
-  padding-top: 80px;
+  padding-top: 60px;
 }
 .sub-menu.active {
   display: block;
@@ -979,7 +979,7 @@ p.wp-caption-text {
     font-size: 24px;
   }
   .font-size-extra {
-    font-size: 42px;
+    font-size: 30px;
   }
   .text-line-length h1,
   .text-line-length h2,
@@ -1139,7 +1139,7 @@ p.wp-caption-text {
     font-size: 28px;
   }
   .font-size-extra {
-    font-size: 49px;
+    font-size: 35px;
   }
   .text-line-length h1,
   .text-line-length h2,
@@ -1241,6 +1241,12 @@ p.wp-caption-text {
     margin-top: 8.034441853748111px;
     margin-left: auto;
     margin-right: auto;
+  }
+  .sub-menu {
+    padding-top: 72px;
+  }
+  .sub-menu ul {
+    padding: 52px 26px;
   }
   #project-text-holder p {
     width: 720px;
@@ -1459,6 +1465,12 @@ p.wp-caption-text {
     margin-top: 9.270509831247821px;
     margin-left: auto;
     margin-right: auto;
+  }
+  .sub-menu {
+    padding-top: 81px;
+  }
+  .sub-menu ul {
+    padding: 60px 30px;
   }
   #project-text-holder p {
     width: 1000px;
