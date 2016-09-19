@@ -1383,6 +1383,12 @@ p.wp-caption-text {
         flex-basis: 100%;
     max-width: 100%;
   }
+  .font-size-large {
+    font-size: 42px;
+  }
+  .font-size-extra {
+    font-size: 70px;
+  }
   .text-line-length h1,
   .text-line-length h2,
   .text-line-length h3,
