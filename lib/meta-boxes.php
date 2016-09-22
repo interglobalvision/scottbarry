@@ -251,6 +251,13 @@ function igv_cmb_metaboxes() {
     'default' => '#ffffff',
   ) );
 
+  $conversation_options_metabox->add_field( array(
+    'name'    => __( 'Font color', 'cmb2' ),
+    'id'      => $prefix . 'conversation_font_color',
+    'type'    => 'colorpicker',
+    'default' => '#000000',
+  ) );
+
 // Conversation details
 
   $conversation_details_metabox = new_cmb2_box( array(

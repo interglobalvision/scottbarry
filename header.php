@@ -52,17 +52,14 @@
   <?php 
     if (get_post_type() == 'conversation') {
       $bg_color = get_post_meta($post->ID, '_igv_conversation_bg_color', true);
+      $font_color = get_post_meta($post->ID, '_igv_conversation_font_color', true);
     }
   ?>
 </head>
-<body <?php 
-  
-  body_class(); 
-
-  if (!empty($bg_color)) {
-    echo 'style="background-color: ' . $bg_color . '"';
-  }
-?>>
+<body <?php body_class(); ?> style="<?php
+  echo !empty($bg_color) ? 'background-color: ' . $bg_color . '; ' : '';
+  echo !empty($font_color) ? 'color: ' . $font_color . '; ' : '';
+?>">
 <!--[if lt IE 9]><p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
 
   <section id="main-container">
