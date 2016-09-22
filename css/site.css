@@ -714,6 +714,8 @@ p {
 }
 .font-bold {
   font-weight: bold;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 .font-serif {
   font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
@@ -746,7 +748,7 @@ p {
   font-size: 22px;
 }
 .font-size-extra {
-  font-size: 27.5px;
+  font-size: 24.200000000000003px;
 }
 .font-leading-tighter {
   line-height: 1.15;
@@ -947,7 +949,7 @@ p.wp-caption-text {
   border-bottom: 3px solid #fff;
 }
 #projects-menu {
-  width: 60%;
+  width: 75%;
   height: 100%;
 }
 #sort-menu {
@@ -999,6 +1001,9 @@ p.wp-caption-text {
   .caption,
   p.wp-caption-text {
     font-size: 11px;
+  }
+  #projects-menu {
+    width: 70%;
   }
   #project-text-holder p {
     width: 540px;
@@ -1254,6 +1259,9 @@ p.wp-caption-text {
   }
   .sub-menu ul {
     padding: 52px 26px;
+  }
+  #projects-menu {
+    width: 60%;
   }
   #project-text-holder p {
     width: 720px;
