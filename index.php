@@ -41,7 +41,7 @@ if( $query->have_posts() ) {
         $percent_margin = empty($percent_margin) ? '0' : $percent_margin;
 ?>
 
-      <article class="post text-align-center col col-s-12 text-line-length js-sort-item <?php
+      <article class="post custom-layout-item text-align-center col col-s-12 text-line-length js-sort-item <?php
 
         if ($single_row !== 'on') {
           echo 'col-m-6';
@@ -67,7 +67,8 @@ if( $query->have_posts() ) {
        
         <a href="<?php echo get_the_permalink($link_post_id); ?>" class="text-content-centered">
           <?php the_post_thumbnail('gallery', array(
-              'style' => 'max-width: ' . $percent_width . '%; transform: rotate(' . $degrees_rotate . 'deg);'
+              'class' => 'custom-layout-image',
+              'style' => 'max-width: ' . $percent_width . '%; transform: rotate(' . $degrees_rotate . 'deg);',
           )); ?>
           <div class="text-align-center margin-top-tiny caption">
             <?php the_title(); ?>
@@ -101,8 +102,6 @@ if( $query->have_posts() ) {
     </div>
   <!-- end posts -->
   </section>
-
-  <?php get_template_part('partials/pagination'); ?>
 
 <!-- end main-content -->
 
