@@ -794,9 +794,11 @@ a:visited {
   border-bottom: 2px solid #000;
 }
 html {
+  height: 100%;
   color: #000;
 }
 body {
+  height: 100%;
   background-color: #fff;
 }
 img {
@@ -894,6 +896,7 @@ p.wp-caption-text {
 }
 #header.open {
   color: #fff;
+  height: 100%;
 }
 #header.open #main-menu {
   background-color: unset !important;

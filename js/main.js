@@ -62,9 +62,10 @@ Site.Header = {
       _this.toggleMenu(menu);
     });
 
-    $(document).bind('click', function(event) {
-      if (!$(event.target).is('#header, #header *')) {
+    $('#header').bind('click', function(event) {
+      if (!$(event.target).is('#header *')) {
         _this.closeMenu();
+        return false;
       }
     });
   },
