@@ -44,7 +44,7 @@ if (!empty($images)) {
 
       $image_size = $single_row == 'on' ? 'col-12' : 'col-6';
 ?>
-        <div class="<?php
+        <div class="custom-layout-item <?php
           if ($single_row == 'on') {
             echo 'image-col text-align-center col col-s-12';
           } else {
@@ -52,7 +52,10 @@ if (!empty($images)) {
           }
         ?>" style="margin-top: <?php echo $top_margin; ?>px; left: <?php echo $percent_margin; ?>%">
 
-          <?php echo wp_get_attachment_image($image['image_id'], $image_size, false, array('style'=>'max-width: ' . $percent_width . '%; transform: rotate(' . $degrees_rotate . 'deg);')); ?>
+          <?php echo wp_get_attachment_image($image['image_id'], $image_size, false, array(
+            'class' => 'custom-layout-image',
+            'style'=>'max-width: ' . $percent_width . '%; transform: rotate(' . $degrees_rotate . 'deg);',
+          )); ?>
 <?php
       if (!empty($image['caption'])) {
 ?>

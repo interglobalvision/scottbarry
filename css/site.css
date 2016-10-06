@@ -970,6 +970,19 @@ p.wp-caption-text {
   display: block;
   margin: 0 auto;
 }
+@media screen and (max-width: 750px) {
+  .custom-layout-item {
+    margin-top: 0 !important;
+  }
+  .custom-layout-item img {
+    min-width: 50% !important;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .custom-layout-item {
+    left: 0 !important;
+  }
+}
 @media screen and (min-width: 568px) {
   html {
     font-size: 12px;
