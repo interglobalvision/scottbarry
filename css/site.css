@@ -920,7 +920,6 @@ p.wp-caption-text {
   line-height: 1;
 }
 .sub-menu {
-  display: none;
   overflow-y: auto;
   position: absolute;
   background-color: #242424;
@@ -930,12 +929,22 @@ p.wp-caption-text {
   z-index: 200;
   text-align: center;
   padding-top: 60px;
+  max-height: 100vh;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  pointer-events: none;
 }
 .sub-menu.active {
   display: block;
+  -ms-filter: none;
+  -webkit-filter: none;
+          filter: none;
+  opacity: 1;
+  pointer-events: auto;
 }
 .sub-menu ul {
-  padding: 44px 22px;
+  padding: 44px 22px 77px;
 }
 .sub-menu li {
   margin-bottom: 0;
@@ -950,8 +959,6 @@ p.wp-caption-text {
   border-bottom: 3px solid #fff;
 }
 #projects-menu {
-  width: 75%;
-  height: 100%;
   width: 75vw;
   height: 100vh;
 }
@@ -1274,7 +1281,7 @@ p.wp-caption-text {
     padding-top: 72px;
   }
   .sub-menu ul {
-    padding: 52px 26px;
+    padding: 52px 26px 91px;
   }
   #projects-menu {
     width: 60%;
@@ -1507,7 +1514,7 @@ p.wp-caption-text {
     padding-top: 81px;
   }
   .sub-menu ul {
-    padding: 60px 30px;
+    padding: 60px 30px 105px;
   }
   #project-text-holder p {
     width: 1000px;
