@@ -14,12 +14,14 @@ Site = {
 
     _this.Header.init();
 
+    _this.Layout.fontExpandedHeight();
+
   },
 
   onResize: function() {
     var _this = this;
 
-    _this.Header.menuMaxHeight();
+    _this.Layout.fontExpandedHeight();
   },
 
   fixWidows: function() {
@@ -32,6 +34,14 @@ Site = {
   },
 };
 
+Site.Layout = {
+  fontExpandedHeight: function() {
+    $('.font-expanded').each(function(){
+      $(this).parent('.font-expanded-holder').css('height', $(this).outerHeight() * 0.7);
+    })
+  }
+};
+
 Site.Header = {
   $header: $('#header'),
   init: function() {
@@ -40,8 +50,6 @@ Site.Header = {
     if ($('.menu-trigger').length) {
       _this.bindMenuToggles();
     }
-
-    _this.menuMaxHeight();
   },
 
   bindMenuToggles: function() {
@@ -62,9 +70,10 @@ Site.Header = {
       _this.toggleMenu(menu);
     });
 
-    $(document).bind('click', function(event) {
-      if (!$(event.target).is('#header, #header *')) {
+    $('#header').bind('click', function(event) {
+      if (!$(event.target).is('#header *')) {
         _this.closeMenu();
+        return false;
       }
     });
   },
@@ -92,21 +101,6 @@ Site.Header = {
       _this.$header.removeClass('projects-open sort-open');
       _this.$header.addClass('open ' + menuName + '-open');
     } 
-  },
-
-  menuMaxHeight: function() {
-    var _this = this;
-    var maxHeight;
-
-    if ($('.sub-menu.active').length) {
-      $('.sub-menu.active');
-      maxHeight = $(window).height() - _this.$header.outerHeight(true);
-      $('.sub-menu.active');
-    } else {
-      maxHeight = $(window).height() - _this.$header.outerHeight(true);
-    }
-
-    $('.sub-menu').css('max-height', maxHeight);
   }
 };
 

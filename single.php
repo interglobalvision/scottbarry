@@ -14,10 +14,12 @@ $tagline = get_post_meta($post->ID, '_igv_tagline', true);
 $images = get_post_meta($post->ID, '_igv_image_gallery', true);
 ?>
 
-      <article <?php post_class('row'); ?>>
+      <article <?php post_class('row justify-center'); ?>>
 
         <div class="col col-s-12 text-align-center">
-          <h1 class="font-size-mid"><?php the_title(); ?></h1>
+          <h1 class="font-size-mid">
+            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+          </h1>
 <?php
 if (!empty($tagline)) {
 ?>
@@ -29,7 +31,11 @@ if (!empty($tagline)) {
 <?php
 if (get_the_content()) {
 ?>
-        <div id="project-text-holder" class="col col-s-12 text-align-center font-size-large font-bold underline-links font-expanded"><?php the_content(); ?></div>
+        <div id="project-text-holder" class="col col-s-12 text-align-center font-size-large font-bold underline-links font-expanded-holder margin-bottom-basic">
+          <div class="font-expanded">
+            <?php the_content(); ?>
+          </div>
+        </div>
 <?php
 }
 

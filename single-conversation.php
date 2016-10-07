@@ -13,7 +13,7 @@ get_header();
 
       <div class="col col-s-12 col-m-6 text-line-length">
         <h1 class="font-size-mid margin-bottom-1rem">
-          <?php the_title(); ?>
+          <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
         </h1>
 <?php
 $details = get_post_meta($post->ID, '_igv_conversation_details', true);

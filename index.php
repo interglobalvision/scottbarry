@@ -8,7 +8,7 @@ get_header();
 
   <!-- main posts loop -->
   <section id="posts" class="container">
-    <div class="row">
+    <div class="row justify-center">
 
 <?php
 $args = array (

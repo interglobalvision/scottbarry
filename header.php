@@ -100,7 +100,8 @@ if (count($home_items) > 0) {
 if (count($posts) > 0) {
 ?>
       <div id="projects-menu" class="sub-menu font-size-extra font-bold">
-        <ul class="font-expanded">
+        <div class="font-expanded-holder">
+          <ul class="font-expanded">
 <?php
   foreach($posts as $post) {
     setup_postdata($post);
@@ -112,7 +113,8 @@ if (count($posts) > 0) {
   }
   wp_reset_postdata();
 ?>
-        </ul>
+          </ul>
+        </div>
       </div>
 <?php
 }
@@ -123,7 +125,8 @@ if (count($posts) > 0) {
 if ($cat_array) {
 ?>
       <div id="sort-menu" class="sub-menu font-size-large font-bold">
-        <ul class="u-inline-list font-expanded">
+        <div class="font-expanded-holder">
+          <ul class="u-inline-list font-expanded">
 <?php
   $cat_count = count($cat_array);
   $cat_num = 0; 
@@ -142,7 +145,8 @@ if ($cat_array) {
 <?php
   }
 ?>
-        </ul>
+          </ul>
+        </div>
       </div>
 <?php
 }
