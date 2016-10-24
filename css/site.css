@@ -966,8 +966,13 @@ p.wp-caption-text {
 .sub-menu li {
   margin-bottom: 0;
 }
-.sub-menu li a:hover {
-  font-style: italic;
+a.hover-skew span {
+  display: inline-block;
+}
+a.hover-skew:hover span {
+  -webkit-transform: skewX(-7deg);
+  -ms-transform: skewX(-7deg);
+  transform: skewX(-7deg);
 }
 .sort-list-item a {
   border-bottom: 3px solid transparent;
