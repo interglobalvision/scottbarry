@@ -50,11 +50,11 @@ if (!empty($images)) {
 
       $image_size = $single_row == 'on' ? 'col-12' : 'col-6';
 ?>
-        <div class="custom-layout-item <?php
+        <div class="custom-layout-item image-col text-align-center col <?php
           if ($single_row == 'on') {
-            echo 'image-col text-align-center col col-s-12';
+            echo 'col-s-12';
           } else {
-            echo 'image-col text-align-center col col-s-12 col-m-6';
+            echo 'col-s-12 col-m-6';
           }
         ?>" style="margin-top: <?php echo $top_margin; ?>px; left: <?php echo $percent_margin; ?>%">
 
