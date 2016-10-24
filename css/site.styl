@@ -115,9 +115,9 @@ $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
 
 $font-size-small = 11px
-$font-size-mid = $font-size-small * 1.5
-$font-size-large = $font-size-small * 2
-$font-size-extra = $font-size-small * 2.2
+$font-size-mid = $font-size-small * 1.3
+$font-size-large = $font-size-small * 1.5
+$font-size-extra = $font-size-small * 1.7
 
 $font-leading-basic = 1.35
 $font-leading-tighter = 1.15
@@ -185,6 +185,7 @@ p
 .font-expanded
   transform-origin: top
   transform: scaleY(.7)
+  line-height: 1.1
   &.underline-links
     a:link, a:active, a:visited 
       border-bottom: ($border-width + 1) solid $color-black
@@ -413,7 +414,7 @@ p.wp-caption-text
     border-bottom: ($border-width + 1) solid $color-white
     
 #projects-menu
-  width: 75vw
+  width: 260px
   height: 100vh
   
 #sort-menu
@@ -443,13 +444,13 @@ p.wp-caption-text
 @media screen and (max-width: 750px)
   
   .custom-layout-item
+    margin-top: 0 !important
     img 
       min-width: 50% !important
     
 @media screen and (max-width: 1150px)
   
   .custom-layout-item
-    margin-top: 0 !important
     left: 0 !important
 
 @media screen and (min-width: 568px)
