@@ -106,13 +106,12 @@ Site.Header = {
   },
 
   hoverSkew: function() {
-    var characters;
 
     if ($('.hover-skew').length) {
       $('.hover-skew').each(function() {
         var $this = $(this);
 
-        characters = $this.text().split("");
+        var characters = $this.text().split("");
 
         $this.empty();
         $.each(characters, function (i, el) {
