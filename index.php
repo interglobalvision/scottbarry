@@ -33,12 +33,12 @@ if( $query->have_posts() ) {
         $categories = get_the_terms($link_post_id, 'category');
 
         $single_row = get_post_meta($post->ID, '_igv_single_row', true);
-        $top_margin = get_post_meta($post->ID, '_igv_top_margin', true);
-        $percent_margin = get_post_meta($post->ID, '_igv_percent_margin', true);
+        $percent_margin_top = get_post_meta($post->ID, '_igv_margin_top', true);
+        $percent_margin_left = get_post_meta($post->ID, '_igv_margin_left', true);
 
         $single_row = empty($single_row) ? '' : $single_row;
-        $top_margin = empty($top_margin) ? '0' : $top_margin;
-        $percent_margin = empty($percent_margin) ? '0' : $percent_margin;
+        $percent_margin_top = empty($percent_margin_top) ? '0' : $percent_margin_top;
+        $percent_margin_left = empty($percent_margin_left) ? '0' : $percent_margin_left;
 ?>
 
       <article class="post custom-layout-item text-align-center col col-s-12 text-line-length js-sort-item <?php
@@ -53,7 +53,7 @@ if( $query->have_posts() ) {
           }
         }
 
-      ?>" id="post-<?php the_ID(); ?>" style="margin-top: <?php echo $top_margin; ?>px; left: <?php echo $percent_margin; ?>%">
+      ?>" id="post-<?php the_ID(); ?>" style="margin-top: <?php echo $percent_margin_top; ?>%; left: <?php echo $percent_margin_left; ?>%">
 
 <?php
         if ($link_post_type == 'project') {

@@ -113,9 +113,9 @@ function igv_cmb_metaboxes() {
 
   $home_layout_metabox->add_field( array(
     'name'        => __( 'Top margin', 'cmb2' ),
-    'description' => __( 'px (Default 0)', 'cmb2' ),
+    'description' => __( '% (Default 0)', 'cmb2' ),
     'default'     => '0',
-    'id'          => $prefix . 'top_margin',
+    'id'          => $prefix . 'margin_top',
     'type'        => 'text_small',
   ) );
 
@@ -123,7 +123,7 @@ function igv_cmb_metaboxes() {
     'name'        => __( 'Side margin', 'cmb2' ),
     'description' => __( '% (Right: # / Left: -#)', 'cmb2' ),
     'default'     => '0',
-    'id'          => $prefix . 'percent_margin',
+    'id'          => $prefix . 'margin_left',
     'type'        => 'text_small',
   ) );
 
@@ -206,9 +206,9 @@ function igv_cmb_metaboxes() {
 
   $image_gallery_group->add_group_field( $image_gallery_field_id, array(
     'name'        => __( 'Top margin', 'cmb2' ),
-    'description' => __( 'px (Default 0)', 'cmb2' ),
+    'description' => __( '% (Default 0)', 'cmb2' ),
     'default'     => '0',
-    'id'          => 'top_margin',
+    'id'          => 'margin_top',
     'type'        => 'text_small',
   ) );
 
@@ -232,7 +232,7 @@ function igv_cmb_metaboxes() {
     'name'        => __( 'Side margin', 'cmb2' ),
     'description' => __( '% (Right: # / Left: -#)', 'cmb2' ),
     'default'     => '0',
-    'id'          => 'percent_margin',
+    'id'          => 'margin_left',
     'type'        => 'text_small',
   ) );
 

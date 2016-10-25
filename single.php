@@ -43,20 +43,21 @@ if (!empty($images)) {
   foreach ($images as $image) {
     if (!empty($image['image_id'])) {
       $single_row = empty($image['single_row']) ? '' : $image['single_row'];
-      $top_margin = empty($image['top_margin']) ? '0' : $image['top_margin'];
+      $percent_margin_top = empty($image['margin_top']) ? '0' : $image['margin_top'];
+      $percent_margin_left = empty($image['margin_left']) ? '0' : $image['margin_left'];
       $percent_width = empty($image['percent_width']) ? '100' : $image['percent_width'];
       $degrees_rotate = empty($image['degrees_rotate']) ? '0' : $image['degrees_rotate'];
-      $percent_margin = empty($image['percent_margin']) ? '0' : $image['percent_margin'];
+      
 
       $image_size = $single_row == 'on' ? 'col-12' : 'col-6';
 ?>
-        <div class="custom-layout-item <?php
+        <div class="custom-layout-item image-col text-align-center col <?php
           if ($single_row == 'on') {
-            echo 'image-col text-align-center col col-s-12';
+            echo 'col-s-12';
           } else {
-            echo 'image-col text-align-center col col-s-12 col-m-6';
+            echo 'col-s-12 col-m-6';
           }
-        ?>" style="margin-top: <?php echo $top_margin; ?>px; left: <?php echo $percent_margin; ?>%">
+        ?>" style="margin-top: <?php echo $percent_margin_top; ?>%; left: <?php echo $percent_margin_left; ?>%">
 
           <?php echo wp_get_attachment_image($image['image_id'], $image_size, false, array(
             'class' => 'custom-layout-image',

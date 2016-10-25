@@ -107,7 +107,7 @@ if (count($posts) > 0) {
     setup_postdata($post);
 ?>
             <li class="projects-list-item">
-              <a class="u-inline-block" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+              <a class="u-inline-block hover-skew" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
             </li>
 <?php
   }
@@ -136,12 +136,9 @@ if ($cat_array) {
 ?>
           <li class="sort-list-item">
             &nbsp;<a
-              class="u-inline-block<?php if (is_home()) { echo ' sort-toggle'; } ?>"
+              class="u-inline-block hover-skew<?php if (is_home()) { echo ' sort-toggle'; } ?>"
               data-cat="<?php echo $cat->slug; ?>"
-              href="<?php echo get_bloginfo('url') . '?sort=' . $cat->slug; ?>">
-              <?php echo $cat->name; ?>
-            </a><?php echo $cat_num != $cat_count ? ',' : ''; ?>
-          </li>
+              href="<?php echo get_bloginfo('url') . '?sort=' . $cat->slug; ?>"><?php echo $cat->name; ?></a><?php echo $cat_num != $cat_count ? ',' : ''; ?></li>
 <?php
   }
 ?>
