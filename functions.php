@@ -49,15 +49,14 @@ register_nav_menus( array(
 
 get_template_part( 'lib/custom-gallery' );
 get_template_part( 'lib/post-types' );
-get_template_part( 'lib/meta-boxes' );
-get_template_part( 'lib/theme-options' );
-
 
 // Add third party PHP libs
 
 add_action( 'init', 'cmb_initialize_cmb_meta_boxes', 9999 );
 function cmb_initialize_cmb_meta_boxes() {
   if (!class_exists( 'cmb2_bootstrap_202' ) ) {
+    get_template_part( 'lib/meta-boxes' );
+    get_template_part( 'lib/theme-options' );
     require_once 'lib/CMB2/init.php';
   }
 }
