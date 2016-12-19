@@ -31,10 +31,8 @@ if (!empty($tagline)) {
 <?php
 if (get_the_content()) {
 ?>
-        <div id="project-text-holder" class="col col-s-12 text-align-center font-size-large font-bold underline-links font-expanded-holder margin-bottom-basic">
-          <div class="font-expanded">
-            <?php the_content(); ?>
-          </div>
+        <div id="project-text-holder" class="col col-s-12 text-align-center font-size-large font-heavy underline-links margin-bottom-basic">
+          <?php the_content(); ?>
         </div>
 <?php
 }

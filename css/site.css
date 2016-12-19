@@ -766,6 +766,11 @@ p {
   line-height: 1.15;
   letter-spacing: -0.02em;
 }
+.font-heavy {
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
 .font-serif {
   font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
 }
@@ -775,20 +780,6 @@ p {
 }
 .font-capitalize {
   text-transform: capitalize;
-}
-.font-expanded {
-  -webkit-transform-origin: top;
-  -ms-transform-origin: top;
-  transform-origin: top;
-  -webkit-transform: scaleY(0.7);
-  -ms-transform: scaleY(0.7);
-  transform: scaleY(0.7);
-  line-height: 1.1;
-}
-.font-expanded.underline-links a:link,
-.font-expanded.underline-links a:active,
-.font-expanded.underline-links a:visited {
-  border-bottom: 3px solid #000;
 }
 .font-size-small {
   font-size: 11px;
