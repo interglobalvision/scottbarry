@@ -36,7 +36,7 @@ Site = {
 Site.Layout = {
   fontExpandedHeight: function() {
     $('.font-expanded').each(function(){
-      $(this).parent('.font-expanded-holder').css('height', $(this).outerHeight() * 0.8);
+      $(this).parent('.font-expanded-holder').css('height', $(this).outerHeight() * 0.9);
     })
   }
 };

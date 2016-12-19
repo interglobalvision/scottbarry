@@ -783,10 +783,9 @@ p {
   -webkit-transform-origin: top;
   -ms-transform-origin: top;
   transform-origin: top;
-  -webkit-transform: scaleY(0.8);
-  -ms-transform: scaleY(0.8);
-  transform: scaleY(0.8);
-  line-height: 1.1;
+  -webkit-transform: scaleY(0.9);
+  -ms-transform: scaleY(0.9);
+  transform: scaleY(0.9);
 }
 .font-expanded.underline-links a:link,
 .font-expanded.underline-links a:active,
