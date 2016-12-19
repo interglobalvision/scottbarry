@@ -779,6 +779,20 @@ p {
 .font-capitalize {
   text-transform: capitalize;
 }
+.font-expanded {
+  -webkit-transform-origin: top;
+  -ms-transform-origin: top;
+  transform-origin: top;
+  -webkit-transform: scaleY(0.8);
+  -ms-transform: scaleY(0.8);
+  transform: scaleY(0.8);
+  line-height: 1.1;
+}
+.font-expanded.underline-links a:link,
+.font-expanded.underline-links a:active,
+.font-expanded.underline-links a:visited {
+  border-bottom: 3px solid #000;
+}
 .font-size-small {
   font-size: 11px;
 }

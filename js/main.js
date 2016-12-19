@@ -13,11 +13,14 @@ Site = {
     _this.Sort.init();
 
     _this.Header.init();
+
+    _this.Layout.fontExpandedHeight();
   },
 
   onResize: function() {
     var _this = this;
 
+    _this.Layout.fontExpandedHeight();
   },
 
   fixWidows: function() {
@@ -28,6 +31,14 @@ Site = {
       $(this).html(string);
     });
   },
+};
+
+Site.Layout = {
+  fontExpandedHeight: function() {
+    $('.font-expanded').each(function(){
+      $(this).parent('.font-expanded-holder').css('height', $(this).outerHeight() * 0.8);
+    })
+  }
 };
 
 Site.Header = {

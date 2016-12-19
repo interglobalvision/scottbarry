@@ -191,6 +191,14 @@ p
 
 .font-capitalize
   text-transform: capitalize
+  
+.font-expanded
+  transform-origin: top
+  transform: scaleY(.8)
+  line-height: 1.1
+  &.underline-links
+    a:link, a:active, a:visited 
+      border-bottom: ($border-width + 1) solid $color-black
 
 .font-size-small
   font-size: $font-size-small
