@@ -1041,19 +1041,19 @@ a.hover-skew:hover span {
 }
 @media screen and (min-width: 568px) {
   html {
-    font-size: 12px;
+    font-size: 14px;
   }
   .font-size-small {
-    font-size: 12px;
+    font-size: 14px;
   }
   .font-size-mid {
-    font-size: 18px;
+    font-size: 21px;
   }
   .font-size-large {
-    font-size: 24px;
+    font-size: 28px;
   }
   .font-size-extra {
-    font-size: 42px;
+    font-size: 35px;
   }
   .text-line-length h1,
   .text-line-length h2,
@@ -1078,7 +1078,7 @@ a.hover-skew:hover span {
     width: 540px;
   }
   #conversation-holder h3 {
-    font-size: 18px;
+    font-size: 21px;
     position: absolute;
     text-align: right;
     right: 85%;
@@ -1217,19 +1217,19 @@ a.hover-skew:hover span {
     max-width: 100%;
   }
   html {
-    font-size: 14px;
+    font-size: 16px;
   }
   .font-size-small {
-    font-size: 14px;
+    font-size: 16px;
   }
   .font-size-mid {
-    font-size: 21px;
+    font-size: 28.8px;
   }
   .font-size-large {
-    font-size: 28px;
+    font-size: 32px;
   }
   .font-size-extra {
-    font-size: 49px;
+    font-size: 48px;
   }
   .text-line-length h1,
   .text-line-length h2,
@@ -1348,7 +1348,7 @@ a.hover-skew:hover span {
     width: 720px;
   }
   #conversation-holder h3 {
-    font-size: 21px;
+    font-size: 28.8px;
     right: 100%;
   }
 }
@@ -1485,10 +1485,10 @@ a.hover-skew:hover span {
     max-width: 100%;
   }
   .font-size-large {
-    font-size: 35px;
+    font-size: 36px;
   }
   .font-size-extra {
-    font-size: 70px;
+    font-size: 54px;
   }
   .text-line-length h1,
   .text-line-length h2,
