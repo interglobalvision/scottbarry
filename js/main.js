@@ -15,7 +15,6 @@ Site = {
     _this.Header.init();
 
     _this.Layout.fontExpandedHeight();
-
   },
 
   onResize: function() {
@@ -37,7 +36,7 @@ Site = {
 Site.Layout = {
   fontExpandedHeight: function() {
     $('.font-expanded').each(function(){
-      $(this).parent('.font-expanded-holder').css('height', $(this).outerHeight() * 0.7);
+      $(this).parent('.font-expanded-holder').css('height', $(this).outerHeight() * 0.9);
     })
   }
 };
@@ -50,8 +49,6 @@ Site.Header = {
     if ($('.menu-trigger').length) {
       _this.bindMenuToggles();
     }
-
-    _this.hoverSkew();
   },
 
   bindMenuToggles: function() {
@@ -103,23 +100,6 @@ Site.Header = {
       _this.$header.removeClass('projects-open sort-open');
       _this.$header.addClass('open ' + menuName + '-open');
     } 
-  },
-
-  hoverSkew: function() {
-
-    if ($('.hover-skew').length) {
-      $('.hover-skew').each(function() {
-        var $this = $(this);
-
-        var characters = $this.text().split("");
-
-        $this.empty();
-        $.each(characters, function (i, el) {
-          var spaceless = el.replace(/\s+/g, '&nbsp;');
-          $this.append("<span>" + spaceless + "</span>");
-        });
-      });
-    }
   }
 };
 

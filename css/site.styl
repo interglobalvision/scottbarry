@@ -127,7 +127,7 @@ $font-tracking-basic = 0.001em
 $font-tracking-tighter = -0.02em
 $font-tracking-wider = 0.05em
 
-$font-sans = 'Moderat', font-stack('Helvetica')
+$font-sans = 'Helvetica Neue', font-stack('Helvetica')
 $font-serif = font-stack('Times New Roman')
 
 $color-black = rgb(0, 0, 0)
@@ -171,7 +171,17 @@ p
   font-weight: bold
   line-height: $font-leading-tighter
   letter-spacing: $font-tracking-tighter
-
+  
+.font-heavy
+  font-weight: 900
+  line-height: $font-leading-tighter
+  letter-spacing: $font-tracking-tighter
+  a,
+  a:active,
+  a:visited
+    &:hover 
+      font-style: italic
+  
 .font-serif
   font-family: $font-serif
 
@@ -184,8 +194,7 @@ p
   
 .font-expanded
   transform-origin: top
-  transform: scaleY(.7)
-  line-height: 1.1
+  transform: scaleY(.9)
   &.underline-links
     a:link, a:active, a:visited 
       border-bottom: ($border-width + 1) solid $color-black
@@ -405,13 +414,6 @@ p.wp-caption-text
     padding: $margin-basic $margin-small $margin-mid
   li
     margin-bottom: 0
-    
-a.hover-skew
-  span 
-    display: inline-block
-  &:hover 
-    span 
-      transform: skewX(-7deg)
     
 .sort-list-item a 
   border-bottom: ($border-width + 1) solid transparent
