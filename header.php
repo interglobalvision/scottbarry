@@ -171,7 +171,7 @@ if (count($posts) > 0) {
 }
 
 if (count($posts) > 0 && $cat_array) {
-?><span class="menu-item">,&nbsp;</span><?php 
+?><span class="menu-item">&ndash;&ndash;&ndash;</span><?php 
 }
 
 if ($cat_array) {
