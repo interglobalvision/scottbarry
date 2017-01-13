@@ -1,16 +1,16 @@
 $cols = 12
 $gutter = 30px
-  
+
 // COLUMN SIZES & OFFSETS
 
 .col
   padding: 0 ($gutter / 2)
   margin-bottom: $gutter
-  
+
 .col-no-gutter
   padding-left: 0
   padding-right: 0
-  
+
 .col-no-margin-bottom
   margin-bottom: 0
 
@@ -22,7 +22,7 @@ for col in 1..$cols
   .col-l-{col}
     flex-basis: ( 100% / $cols ) * col
     max-width: ( 100% / $cols ) * col
-    
+
 // ******************************************************
 
 // VARIABLES
@@ -45,17 +45,17 @@ $font-size-extra = $font-size-small * 3
 // TYPOGRAPHY
 .font-size-large
   font-size: $font-size-large
-.font-size-extra 
+.font-size-extra
   font-size: $font-size-extra
-  
+
 // TEXT RULES
-  
-.text-line-length 
+
+.text-line-length
   h1, h2, h3, p
     width: 430px
   div.wp-caption
     width: 430px !important
-  
+
 // ******************************************************
 
 // MARGINS AND PADDING
@@ -144,25 +144,35 @@ $font-size-extra = $font-size-small * 3
 
 .caption
   width: 65%
-  
+
 p.wp-caption-text
   width: 80%
   margin-top: $margin-micro
   margin-left: auto
   margin-right: auto
-  
-// HEADER 
 
-.sub-menu 
+// ******************************************************
+
+// HEADER
+
+#header-contact-tablet
+  display: none
+
+#header-contact-desktop
+  display: block
+
+.sub-menu
   padding-top: 81px
-  ul 
+  ul
     padding: $margin-basic $margin-small $margin-mid
-    
+
 #projects-menu
   width: 930px
-  
+
+// ******************************************************
+
 // PROJECT
 
 #project-text-holder
-  p 
+  p
     width: 1000px

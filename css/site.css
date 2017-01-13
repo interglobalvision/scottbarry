@@ -749,6 +749,7 @@ h2 {
   margin: 0;
 }
 p {
+  line-height: 1.35;
   margin-bottom: 1rem;
 }
 .font-italic {
@@ -968,10 +969,16 @@ p.wp-caption-text {
   top: 0;
   left: 0;
   width: 100%;
-  line-height: 1;
 }
 #main-menu h1 {
   line-height: 1;
+}
+#main-menu p {
+  margin-bottom: 0;
+}
+#header-contact-tablet,
+#header-contact-desktop {
+  display: none;
 }
 .sub-menu {
   overflow-y: auto;
@@ -1340,6 +1347,12 @@ p.wp-caption-text {
     margin-left: auto;
     margin-right: auto;
   }
+  #header-contact-mobile {
+    display: none;
+  }
+  #header-contact-tablet {
+    display: block;
+  }
   .sub-menu {
     padding-top: 72px;
   }
@@ -1584,6 +1597,12 @@ p.wp-caption-text {
     margin-top: 9.270509831247821px;
     margin-left: auto;
     margin-right: auto;
+  }
+  #header-contact-tablet {
+    display: none;
+  }
+  #header-contact-desktop {
+    display: block;
   }
   .sub-menu {
     padding-top: 81px;

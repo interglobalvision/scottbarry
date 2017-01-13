@@ -160,6 +160,7 @@ h2
   margin: 0
 
 p
+  line-height: $font-leading-basic
   margin-bottom: 1rem
 
   // FONT RULES
@@ -171,7 +172,7 @@ p
   font-weight: bold
   line-height: $font-leading-tighter
   letter-spacing: $font-tracking-tighter
-  
+
 .font-heavy
   font-weight: 900
   line-height: $font-leading-tighter
@@ -179,9 +180,9 @@ p
   a,
   a:active,
   a:visited
-    &:hover 
+    &:hover
       font-style: italic
-  
+
 .font-serif
   font-family: $font-serif
 
@@ -191,12 +192,12 @@ p
 
 .font-capitalize
   text-transform: capitalize
-  
+
 .font-expanded
   transform-origin: top
   transform: scaleY(.9)
   &.underline-links
-    a:link, a:active, a:visited 
+    a:link, a:active, a:visited
       border-bottom: ($border-width + 1) solid $color-black
 
 .font-size-small
@@ -207,8 +208,8 @@ p
 
 .font-size-large
   font-size: $font-size-large
-  
-.font-size-extra 
+
+.font-size-extra
   font-size: $font-size-extra
 
 .font-leading-tighter
@@ -227,8 +228,8 @@ p
 
 .text-align-center
   text-align: center
-  
-.text-line-length 
+
+.text-line-length
   h1, h2, h3, p, div.wp-caption
     margin-left: auto
     margin-right: auto
@@ -237,7 +238,7 @@ p
     width: 85% !important
 
 .margin-bottom-1rem
-  margin-bottom: 1rem 
+  margin-bottom: 1rem
 
   // LINKS
 
@@ -246,18 +247,18 @@ a:active,
 a:visited
   color: inherit
   text-decoration: none
-  
+
 .underline-links
-  a:link, a:active, a:visited 
+  a:link, a:active, a:visited
     border-bottom: $border-width solid $color-black
 
 // ******************************************************
 
 // BASIC
-  
+
 html
   color: $color-black
-  
+
 body
   background-color: $color-white
 
@@ -357,14 +358,16 @@ $header-height = 60px
   width: 70%
   margin-left: auto
   margin-right: auto
-  
+
 p.wp-caption-text
   text-align: center
   margin-top: $margin-micro
-  
+
 .caption, p.wp-caption-text
   font-size: 10px
-  
+
+// ******************************************************
+
 // HEADER
 
 #header
@@ -377,21 +380,25 @@ p.wp-caption-text
       background-color: unset !important
     .menu-item
       border-bottom: $border-width solid transparent
-      &.active 
+      &.active
         border-bottom: $border-width solid $color-white
   &.projects-open
     .menu-item-info
       color: $color-black
-        
+
 #main-menu
   position: absolute
   z-index: 300
   top: 0
   left: 0
   width: 100%
-  line-height: 1
-  h1 
+  h1
     line-height: 1
+  p
+    margin-bottom: 0
+
+#header-contact-tablet, #header-contact-desktop
+  display: none
 
 .sub-menu
   overflow-y: auto
@@ -410,37 +417,42 @@ p.wp-caption-text
     display: block
     opacity: 1
     pointer-events: auto
-  ul 
+  ul
     padding: $margin-basic $margin-small $margin-mid
   li
     margin-bottom: 0
-    
-.sort-list-item a 
+
+.sort-list-item a
   border-bottom: ($border-width + 1) solid transparent
   &.active
     border-bottom: ($border-width + 1) solid $color-white
-    
+
 #projects-menu
   width: 260px
   height: 100vh
-  
+
 #sort-menu
   width: 100%
-    
+
+// ******************************************************
+
 // PROJECT
+
 #project-text-holder
-  p 
+  p
     margin: 0 auto
     width: 100%
+
+// ******************************************************
 
 // CONVERSATION
 
 #conversation-holder
   position: relative
-  h3 
+  h3
     font-size: $font-size-mid
     position: relative
-  img 
+  img
     display: block
     margin: 0 auto
 
@@ -449,14 +461,14 @@ p.wp-caption-text
 // MEDIA QUERIES
 
 @media screen and (max-width: 750px)
-  
+
   .custom-layout-item
     margin-top: 0 !important
-    img 
+    img
       min-width: 50% !important
-    
+
 @media screen and (max-width: 1150px)
-  
+
   .custom-layout-item
     left: 0 !important
 
