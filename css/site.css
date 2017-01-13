@@ -1017,8 +1017,13 @@ p.wp-caption-text {
   border-bottom: 3px solid #fff;
 }
 #projects-menu {
-  width: 260px;
+  width: 70%;
   height: 100vh;
+}
+#projects-menu-container {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
 }
 #sort-menu {
   width: 100%;
@@ -1084,7 +1089,10 @@ p.wp-caption-text {
     font-size: 11px;
   }
   #projects-menu {
-    width: 515px;
+    width: 500px;
+  }
+  #projects-menu-container {
+    max-width: none;
   }
   #project-text-holder p {
     width: 540px;
@@ -1360,7 +1368,7 @@ p.wp-caption-text {
     padding: 52px 26px 91px;
   }
   #projects-menu {
-    width: 600px;
+    width: 675px;
   }
   #project-text-holder p {
     width: 720px;
@@ -1611,7 +1619,11 @@ p.wp-caption-text {
     padding: 60px 30px 105px;
   }
   #projects-menu {
-    width: 930px;
+    width: 70%;
+    min-width: 840px;
+  }
+  #projects-menu-container {
+    width: 840px;
   }
   #project-text-holder p {
     width: 1000px;
