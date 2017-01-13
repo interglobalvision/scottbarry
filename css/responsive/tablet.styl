@@ -1,16 +1,16 @@
 $cols = 12
 $gutter = 26px
-  
+
 // COLUMN SIZES & OFFSETS
 
 .col
   padding: 0 ($gutter / 2)
   margin-bottom: $gutter
-  
+
 .col-no-gutter
   padding-left: 0
   padding-right: 0
-  
+
 .col-no-margin-bottom
   margin-bottom: 0
 
@@ -22,7 +22,7 @@ for col in 1..$cols
   .col-m-{col}
     flex-basis: ( 100% / $cols ) * col
     max-width: ( 100% / $cols ) * col
-    
+
 // ******************************************************
 
 // VARIABLES
@@ -54,34 +54,34 @@ $font-tracking-wider = 0.05em
 
 html
   font-size: $font-size-small
-  
-.font-size-small 
+
+.font-size-small
   font-size: $font-size-small
-  
-.font-size-mid 
+
+.font-size-mid
   font-size: $font-size-mid
-  
-.font-size-large 
+
+.font-size-large
   font-size: $font-size-large
-  
-.font-size-extra 
+
+.font-size-extra
   font-size: $font-size-extra
-  
+
 // TEXT RULES
-  
-.text-line-length 
+
+.text-line-length
   h1, h2, h3, p, div.wp-caption
     width: 329px
     margin-left: initial
     margin-right: initial
   div.wp-caption
     width: 329px !important
-    
+
 .text-content-centered
   h1, h2, h3, p
     margin-left: auto
     margin-right: auto
-  
+
 // ******************************************************
 
 // MARGINS AND PADDING
@@ -173,32 +173,44 @@ html
 
 .caption
   width: 80%
-  
+
 p.wp-caption-text
   width: 90%
   margin-top: $margin-micro
   margin-left: auto
   margin-right: auto
 
-// HEADER 
+// ******************************************************
 
-.sub-menu 
+// HEADER
+
+#header-contact-mobile
+  display: none
+
+#header-contact-tablet
+  display: block
+
+.sub-menu
   padding-top: 72px
-  ul 
+  ul
     padding: $margin-basic $margin-small $margin-mid
-  
+
 #projects-menu
   width: 600px
-  
+
+// ******************************************************
+
 // PROJECT
 
 #project-text-holder
-  p 
+  p
     width: 720px
-  
+
+// ******************************************************
+
 // CONVERSATION
 
 #conversation-holder
-  h3 
+  h3
     font-size: $font-size-mid
     right: 100%
