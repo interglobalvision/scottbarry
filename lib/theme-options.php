@@ -101,34 +101,37 @@ class IGV_Admin {
       ),
     ) );
 
-    // SOCIAL MEDIA OPTIONS
-
     $options_metabox->add_field( array(
-      'name' => __( 'Social Media', 'cmb2' ),
-      'desc' => __( 'urls and accounts for different social media platforms. For use in menus and metadata', 'cmb2' ),
-      'id'   => $this->prefix . 'socialmedia_title',
-      'type' => 'title',
+      'name' => __( 'Header Contact', 'IGV' ),
+      'desc' => __( '', 'IGV' ),
+      'id'   => $this->prefix . 'header_contact',
+      'type' => 'wysiwyg',
+      'options' => array(
+        'media_buttons' => false, // show insert/upload button(s)
+        'textarea_rows' => get_option('default_post_edit_rows', 4), // rows="..."
+      ),
     ) );
 
     $options_metabox->add_field( array(
-      'name' => __( 'Facebook Page URL', 'IGV' ),
+      'name' => __( 'Header Contact Tablet', 'IGV' ),
       'desc' => __( '', 'IGV' ),
-      'id'   => $this->prefix . 'socialmedia_facebook_url',
-      'type' => 'text',
+      'id'   => $this->prefix . 'header_contact_tablet',
+      'type' => 'wysiwyg',
+      'options' => array(
+        'media_buttons' => false, // show insert/upload button(s)
+        'textarea_rows' => get_option('default_post_edit_rows', 4), // rows="..."
+      ),
     ) );
 
     $options_metabox->add_field( array(
-      'name' => __( 'Twitter Account Handle', 'IGV' ),
+      'name' => __( 'Header Contact Mobile', 'IGV' ),
       'desc' => __( '', 'IGV' ),
-      'id'   => $this->prefix . 'socialmedia_twitter',
-      'type' => 'text',
-    ) );
-
-    $options_metabox->add_field( array(
-      'name' => __( 'Instagram Account Handle', 'IGV' ),
-      'desc' => __( '', 'IGV' ),
-      'id'   => $this->prefix . 'socialmedia_instagram',
-      'type' => 'text',
+      'id'   => $this->prefix . 'header_contact_mobile',
+      'type' => 'wysiwyg',
+      'options' => array(
+        'media_buttons' => false, // show insert/upload button(s)
+        'textarea_rows' => get_option('default_post_edit_rows', 4), // rows="..."
+      ),
     ) );
 
     // METADATA OPTIONS
@@ -152,38 +155,6 @@ class IGV_Admin {
       'desc' => __( '(options) ', 'IGV' ),
       'id'   => $this->prefix . 'metadata_logo',
       'type' => 'file',
-    ) );
-
-    $options_metabox->add_field( array(
-      'name' => __( 'Facebook App ID', 'IGV' ),
-      'desc' => __( '(optional)', 'IGV' ),
-      'id'   => $this->prefix . 'og_fb_app_id',
-      'type' => 'text',
-    ) );
-
-    // BOILER
-
-    $options_metabox->add_field( array(
-      'name' => __( 'Title for options section', 'cmb2' ),
-      'desc' => __( '', 'cmb2' ),
-      'id'   => $this->prefix . 'general_title',
-      'type' => 'title',
-    ) );
-
-    $options_metabox->add_field( array(
-      'name' => __( 'Test Text', 'IGV' ),
-      'desc' => __( 'field description (optional)', 'IGV' ),
-      'id'   => $this->prefix . 'test_text',
-      'type' => 'text',
-      'default' => 'Default Text',
-    ) );
-
-    $options_metabox->add_field( array(
-      'name'    => __( 'Test Color Picker', 'IGV' ),
-      'desc'    => __( 'field description (optional)', 'IGV' ),
-      'id'      => $this->prefix . 'test_colorpicker',
-      'type'    => 'colorpicker',
-      'default' => '#bada55',
     ) );
 
   }
