@@ -14,7 +14,6 @@
   <link rel="apple-touch-icon" href="<?php bloginfo('stylesheet_directory'); ?>/img/dist/favicon-touch.png">
   <link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo('stylesheet_directory'); ?>/img/dist/favicon.png">
 
-
   <script src="<?php bloginfo('stylesheet_directory'); ?>/js/vendor/modernizr.js"></script>
   <script type="text/javascript">
     /* Modernizr 2.8.3 (Custom Build) | MIT & BSD Build: http://modernizr.com/download/#-shiv-mq-cssclasses-teststyles-load */
@@ -100,15 +99,16 @@ if (count($home_items) > 0) {
 if (count($posts) > 0) {
 ?>
       <div id="projects-menu" class="sub-menu font-size-extra font-heavy">
-        <div class="font-expanded-holder">
-          <ul class="font-expanded">
+        <div id="projects-menu-container">
+          <div class="font-expanded-holder">
+            <ul class="font-expanded">
 <?php
   foreach($posts as $post) {
     setup_postdata($post);
 ?>
-            <li class="projects-list-item">
-              <a class="u-inline-block" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-            </li>
+              <li class="projects-list-item">
+                <a class="u-inline-block" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+              </li>
 <?php
   }
   wp_reset_postdata();
@@ -116,6 +116,7 @@ if (count($posts) > 0) {
           </ul>
         </div>
       </div>
+    </div>
 <?php
 }
 ?>
