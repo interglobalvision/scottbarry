@@ -49,7 +49,7 @@
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
   <?php } ?>
   <?php wp_head(); ?>
-  <?php 
+  <?php
     if (get_post_type() == 'conversation') {
       $bg_color = get_post_meta($post->ID, '_igv_conversation_bg_color', true);
       $font_color = get_post_meta($post->ID, '_igv_conversation_font_color', true);
@@ -64,7 +64,7 @@
 
   <section id="main-container">
 
-<?php 
+<?php
 $args = array(
   'posts_per_page'   => -1,
   'post_type'        => array('project','conversation'),
@@ -129,7 +129,7 @@ if ($cat_array) {
           <ul class="u-inline-list font-expanded">
 <?php
   $cat_count = count($cat_array);
-  $cat_num = 0; 
+  $cat_num = 0;
 
   foreach($cat_array as $cat) {
     $cat_num++;
@@ -152,26 +152,63 @@ if ($cat_array) {
     if (!empty($bg_color)) {
       echo 'style="background-color: ' . $bg_color . '"';
     }
-  ?>
+  ?>>
       <div class="container">
-        <div class="row font-size-mid">
+        <div class="row font-size-mid font-leading-tighter">
 
-          <div class="col col-s-4 margin-bottom-tiny">
+
+          <div class="col col-s-4 col-no-margin-bottom">
+<?php
+$header_contact_desktop = IGV_get_option('_igv_header_contact');
+$header_contact_tablet= IGV_get_option('_igv_header_contact_tablet');
+$header_contact_mobile = IGV_get_option('_igv_header_contact_mobile');
+
+if (!empty($header_contact_desktop)) {
+?>
+            <h1 class="u-hidden">
+              <?php bloginfo('name'); ?>
+            </h1>
+
+            <div id="header-contact-desktop" class="font-size-mid">
+              <?php echo apply_filters('the_content', $header_contact_desktop); ?>
+            </div>
+<?php
+  if (!empty($header_contact_tablet)) {
+?>
+            <div id="header-contact-tablet" class="font-size-mid">
+              <?php echo apply_filters('the_content', $header_contact_tablet); ?>
+            </div>
+<?php
+  }
+
+  if (!empty($header_contact_mobile)) {
+?>
+            <div id="header-contact-mobile" class="font-size-mid">
+              <?php echo apply_filters('the_content', $header_contact_mobile); ?>
+            </div>
+<?php
+  }
+} else {
+?>
             <h1 class="font-size-mid">
               <a class="menu-item" href="<?php echo site_url(); ?>">
                 <?php bloginfo('name'); ?>
               </a>
             </h1>
+<?php
+}
+?>
           </div>
 
-          <div class="col col-s-4 text-align-center margin-bottom-tiny">
+
+          <div class="col col-s-4 text-align-center col-no-margin-bottom">
 <?php
 if (count($posts) > 0) {
-?><a class="menu-trigger menu-item" data-trigger="projects" href="<?php echo site_url(); ?>">List</a><?php 
+?><a class="menu-trigger menu-item" data-trigger="projects" href="<?php echo site_url(); ?>">List</a><?php
 }
 
 if (count($posts) > 0 && $cat_array) {
-?><span class="menu-item">&ndash;&ndash;&ndash;</span><?php 
+?><span class="menu-item">&ndash;&ndash;&ndash;</span><?php
 }
 
 if ($cat_array) {
@@ -180,7 +217,7 @@ if ($cat_array) {
 }
 ?>
           </div>
-          <div class="col col-s-4 margin-bottom-tiny text-align-right">
+          <div class="col col-s-4 col-no-margin-bottom text-align-right">
 <?php
 $info_id = get_id_by_slug('info');
 
