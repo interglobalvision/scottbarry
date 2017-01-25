@@ -99,6 +99,7 @@ if (count($home_items) > 0) {
 if (count($posts) > 0) {
 ?>
       <div id="projects-menu" class="sub-menu font-size-extra font-light padding-bottom-small">
+        <div id="projects-menu-border"></div>
         <ul>
 <?php
   foreach($posts as $post) {

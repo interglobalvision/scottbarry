@@ -1012,6 +1012,16 @@ a.menu-item:hover {
   max-width: 100px;
   margin-top: 0.25em;
 }
+#projects-menu-border {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 70%;
+  min-width: 270px;
+  height: calc(100vh - 82px);
+  border-right: 10px solid #000;
+  pointer-events: none;
+}
 #sort-menu {
   width: 100%;
 }
@@ -1089,6 +1099,11 @@ a.menu-item:hover {
   }
   #projects-menu img {
     max-width: 150px;
+  }
+  #projects-menu-border {
+    top: 68px;
+    width: 500px;
+    height: calc(100vh - 90px);
   }
   #sort-menu ul {
     width: 560px;
@@ -1392,6 +1407,12 @@ a.menu-item:hover {
   #projects-menu li a:hover .list-item-text {
     border-bottom-width: 4px;
   }
+  #projects-menu-border {
+    top: 85px;
+    width: 660px;
+    height: calc(100vh - 111px);
+    border-right-width: 15px;
+  }
   #sort-menu ul {
     width: 750px;
   }
@@ -1649,6 +1670,12 @@ a.menu-item:hover {
   }
   #projects-menu ul {
     width: 800px;
+  }
+  #projects-menu-border {
+    top: 93px;
+    width: 70%;
+    min-width: 840px;
+    height: calc(100vh - 123px);
   }
   #project-text-holder p {
     width: 1000px;
