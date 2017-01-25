@@ -1008,6 +1008,9 @@ a.menu-item:hover {
 #projects-menu ul {
   width: 240px;
 }
+#projects-menu img {
+  max-width: 100px;
+}
 #sort-menu {
   width: 100%;
 }
@@ -1082,6 +1085,9 @@ a.menu-item:hover {
   }
   #projects-menu ul {
     width: 480px;
+  }
+  #projects-menu img {
+    max-width: 150px;
   }
   #sort-menu ul {
     width: 560px;
@@ -1375,6 +1381,9 @@ a.menu-item:hover {
   }
   #projects-menu ul {
     width: 580px;
+  }
+  #projects-menu img {
+    max-width: 200px;
   }
   #sort-menu ul {
     width: 750px;
