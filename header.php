@@ -98,23 +98,21 @@ if (count($home_items) > 0) {
 <?php
 if (count($posts) > 0) {
 ?>
-      <div id="projects-menu" class="sub-menu font-size-extra font-heavy">
+      <div id="projects-menu" class="sub-menu font-size-extra font-light">
         <div id="projects-menu-container">
-          <div class="font-expanded-holder">
-            <ul class="font-expanded">
+          <ul>
 <?php
   foreach($posts as $post) {
     setup_postdata($post);
 ?>
-              <li class="projects-list-item">
-                <a class="u-inline-block" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-              </li>
+            <li class="projects-list-item">
+              <a class="u-inline-block" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+            </li>
 <?php
   }
   wp_reset_postdata();
 ?>
-          </ul>
-        </div>
+        </ul>
       </div>
     </div>
 <?php
@@ -125,9 +123,8 @@ if (count($posts) > 0) {
 <?php
 if ($cat_array) {
 ?>
-      <div id="sort-menu" class="sub-menu font-size-large font-heavy">
-        <div class="font-expanded-holder">
-          <ul class="u-inline-list font-expanded">
+      <div id="sort-menu" class="sub-menu font-size-large font-bold">
+        <ul class="u-inline-list">
 <?php
   $cat_count = count($cat_array);
   $cat_num = 0;
@@ -143,8 +140,7 @@ if ($cat_array) {
 <?php
   }
 ?>
-          </ul>
-        </div>
+        </ul>
       </div>
 <?php
 }
