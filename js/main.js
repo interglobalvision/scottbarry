@@ -50,7 +50,7 @@ Site.Header = {
   },
 
   bindTitleSection: function() {
-    $('.menu-post-type').hover(function () {
+    $('.menu-post-type').hoverIntent(function () {
       $('#site-title-holder').toggleClass("hide-section");
     });
   },
