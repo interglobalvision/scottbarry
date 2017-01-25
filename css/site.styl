@@ -362,9 +362,11 @@ $header-height = 60px
     height: 100%
     #main-menu
       background-color: unset !important
-    .menu-item
+    a.menu-item
       border-bottom: $border-width solid transparent
       &.active
+        border-bottom: $border-width solid $color-black
+      &:hover
         border-bottom: $border-width solid $color-black
   &.projects-open
     .menu-item-info
@@ -437,7 +439,7 @@ a.menu-item
   left: 0
   width: 70%
   min-width: 270px
-  height: calc('100vh - ' + ($header-height + $margin-basic))
+  height: calc('100vh - ' + ($header-height + $margin-small))
   border-right: 10px solid black
   pointer-events: none
 
@@ -447,6 +449,16 @@ a.menu-item
   box-sizing: content-box
   ul
     width: 280px
+    
+.menu-post-type
+  #site-title-holder
+    #site-title
+      display: none
+    &.hide-section
+      #site-section
+        display: none
+      #site-title
+        display: block
 
 // ******************************************************
 

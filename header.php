@@ -154,7 +154,7 @@ if ($cat_array) {
 <?php
 }
 ?>
-    <div id="main-menu" class="padding-top-small padding-bottom-small" <?php
+    <div id="main-menu" class="<?php echo is_single() ? 'menu-post-type' : ''; ?>  padding-top-small padding-bottom-small" <?php
     if (!empty($bg_color)) {
       echo 'style="background-color: ' . $bg_color . '"';
     }
@@ -162,13 +162,21 @@ if ($cat_array) {
       <div class="container">
         <div class="row font-size-mid font-leading-tighter">
 
-
-          <div class="col col-s-4 col-no-margin-bottom">
-            <h1 class="font-size-mid">
+          <div class="col col-s-4 col-no-margin-bottom" id="site-title-holder">
+            <h1 class="font-size-mid u-inline-block" id="site-title">
               <a class="menu-item" href="<?php echo site_url(); ?>">
                 Studio
               </a>
             </h1>
+            <?php
+            if (is_single()) {
+            ?>
+            <div class="font-size-mid u-inline-block" id="site-section">
+              <a class="menu-item" href="<?php echo site_url(); ?>">
+                <?php echo get_post_type() === 'project' ? 'Project' : 'Conversation'; ?>
+              </a>
+            </div>
+            <?php } ?>
           </div>
 
 

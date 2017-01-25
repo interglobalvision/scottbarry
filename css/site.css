@@ -929,10 +929,13 @@ p.wp-caption-text {
 #header.open #main-menu {
   background-color: unset !important;
 }
-#header.open .menu-item {
+#header.open a.menu-item {
   border-bottom: 2px solid transparent;
 }
-#header.open .menu-item.active {
+#header.open a.menu-item.active {
+  border-bottom: 2px solid #000;
+}
+#header.open a.menu-item:hover {
   border-bottom: 2px solid #000;
 }
 #header.projects-open .menu-item-info {
@@ -1015,7 +1018,7 @@ a.menu-item:hover {
   left: 0;
   width: 70%;
   min-width: 270px;
-  height: calc(100vh - 104px);
+  height: calc(100vh - 82px);
   border-right: 10px solid #000;
   pointer-events: none;
 }
@@ -1026,6 +1029,15 @@ a.menu-item:hover {
 }
 #sort-menu ul {
   width: 280px;
+}
+.menu-post-type #site-title-holder #site-title {
+  display: none;
+}
+.menu-post-type #site-title-holder.hide-section #site-section {
+  display: none;
+}
+.menu-post-type #site-title-holder.hide-section #site-title {
+  display: block;
 }
 #project-text-holder p {
   margin: 0 auto;
@@ -1102,7 +1114,7 @@ a.menu-item:hover {
   #projects-menu-border {
     top: 68px;
     width: 500px;
-    height: calc(100vh - 112px);
+    height: calc(100vh - 90px);
   }
   #sort-menu ul {
     width: 560px;
@@ -1373,10 +1385,13 @@ a.menu-item:hover {
   .underline-links a:visited {
     border-bottom-width: 3px;
   }
-  #header.open .menu-item {
+  #header.open a.menu-item {
     border-bottom-width: 3px;
   }
-  #header.open .menu-item.active {
+  #header.open a.menu-item.active {
+    border-bottom-width: 3px;
+  }
+  #header.open a.menu-item:hover {
     border-bottom-width: 3px;
   }
   a.menu-item:hover {
@@ -1409,7 +1424,7 @@ a.menu-item:hover {
   #projects-menu-border {
     top: 85px;
     width: 660px;
-    height: calc(100vh - 137px);
+    height: calc(100vh - 111px);
     border-right-width: 15px;
   }
   #sort-menu {
@@ -1674,7 +1689,7 @@ a.menu-item:hover {
     top: 93px;
     width: 70%;
     min-width: 840px;
-    height: calc(100vh - 153px);
+    height: calc(100vh - 123px);
   }
   #project-text-holder p {
     width: 1000px;

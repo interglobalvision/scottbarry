@@ -14,13 +14,11 @@ Site = {
 
     _this.Header.init();
 
-    _this.Layout.fontExpandedHeight();
   },
 
   onResize: function() {
     var _this = this;
 
-    _this.Layout.fontExpandedHeight();
   },
 
   fixWidows: function() {
@@ -34,11 +32,7 @@ Site = {
 };
 
 Site.Layout = {
-  fontExpandedHeight: function() {
-    $('.font-expanded').each(function(){
-      $(this).parent('.font-expanded-holder').css('height', $(this).outerHeight() * 0.9);
-    })
-  }
+
 };
 
 Site.Header = {
@@ -49,6 +43,16 @@ Site.Header = {
     if ($('.menu-trigger').length) {
       _this.bindMenuToggles();
     }
+
+    if ($('.menu-post-type').length) {
+      _this.bindTitleSection();
+    }
+  },
+
+  bindTitleSection: function() {
+    $('.menu-post-type').hover(function () {
+      $('#site-title-holder').toggleClass("hide-section");
+    });
   },
 
   bindMenuToggles: function() {
@@ -62,7 +66,7 @@ Site.Header = {
       } else {
         $('.menu-item.active').removeClass('active');
         $(this).addClass('active');
-      } 
+      }
 
       var menu = $(this).attr('data-trigger');
 
@@ -99,7 +103,7 @@ Site.Header = {
       $menu.addClass('active');
       _this.$header.removeClass('projects-open sort-open');
       _this.$header.addClass('open ' + menuName + '-open');
-    } 
+    }
   }
 };
 
