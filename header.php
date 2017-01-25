@@ -103,10 +103,16 @@ if (count($posts) > 0) {
 <?php
   foreach($posts as $post) {
     setup_postdata($post);
+
+    $show_image = get_post_meta($post->ID, '_igv_img_in_list', true);
+    $thumb = get_the_post_thumbnail($post->ID, 'list');
 ?>
-          <li class="projects-list-item">
-            <a class="u-inline-block" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-          </li>
+        <li class="projects-list-item">
+          <a class="u-inline-block" href="<?php the_permalink(); ?>">
+            <?php the_title(); ?><br>
+            <?php echo $show_image === 'on' ? $thumb : ''; ?>
+          </a>
+        </li>
 <?php
   }
   wp_reset_postdata();
