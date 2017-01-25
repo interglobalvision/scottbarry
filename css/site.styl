@@ -417,9 +417,9 @@ a.menu-item
           border-bottom: $border-width solid $color-black
 
 .sort-list-item a
-  border-bottom: $border-width solid transparent
   &.active
-    border-bottom: $border-width solid $color-black
+    .list-item-text
+      border-bottom: $border-width solid $color-black
 
 #projects-menu
   width: 70%
@@ -443,6 +443,8 @@ a.menu-item
 
 #sort-menu
   width: 100%
+  border-bottom: 10px solid black
+  box-sizing: content-box
   ul
     width: 280px
 

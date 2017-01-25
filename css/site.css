@@ -994,10 +994,7 @@ a.menu-item:hover {
 .sub-menu li a:hover .list-item-text {
   border-bottom: 2px solid #000;
 }
-.sort-list-item a {
-  border-bottom: 2px solid transparent;
-}
-.sort-list-item a.active {
+.sort-list-item a.active .list-item-text {
   border-bottom: 2px solid #000;
 }
 #projects-menu {
@@ -1024,6 +1021,8 @@ a.menu-item:hover {
 }
 #sort-menu {
   width: 100%;
+  border-bottom: 10px solid #000;
+  box-sizing: content-box;
 }
 #sort-menu ul {
   width: 280px;
@@ -1413,13 +1412,13 @@ a.menu-item:hover {
     height: calc(100vh - 111px);
     border-right-width: 15px;
   }
+  #sort-menu {
+    border-bottom-width: 15px;
+  }
   #sort-menu ul {
     width: 750px;
   }
-  .sort-list-item a {
-    border-bottom-width: 3px;
-  }
-  .sort-list-item a.active {
+  .sort-list-item a.active .list-item-text {
     border-bottom-width: 3px;
   }
   #project-text-holder p {
