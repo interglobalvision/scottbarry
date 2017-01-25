@@ -158,6 +158,12 @@ function igv_cmb_metaboxes() {
     ) );
 
     $project_conversation_metabox->add_field( array(
+      'name'    => __( 'Subtitle [or number(s)]', 'cmb2' ),
+      'id'      => $prefix . 'post_subtitle',
+      'type'    => 'text',
+    ) );
+
+    $project_conversation_metabox->add_field( array(
       'name'    => __( 'Show featured image in List menu?', 'cmb2' ),
       'id'      => $prefix . 'img_in_list',
       'type'    => 'checkbox',

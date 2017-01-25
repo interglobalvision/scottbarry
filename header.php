@@ -104,12 +104,16 @@ if (count($posts) > 0) {
   foreach($posts as $post) {
     setup_postdata($post);
 
+    $subtitle = get_post_meta($post->ID, '_igv_post_subtitle', true);
     $show_image = get_post_meta($post->ID, '_igv_img_in_list', true);
     $thumb = get_the_post_thumbnail($post->ID, 'list');
 ?>
         <li class="projects-list-item">
           <a href="<?php the_permalink(); ?>">
-            <span class="list-item-text"><?php the_title(); ?></span><br>
+            <span class="list-item-text">
+              <?php the_title(); ?>
+              <?php echo !empty($subtitle) ? '<br>' . $subtitle : ''; ?>
+            </span><br>
             <?php echo $show_image === 'on' ? $thumb : ''; ?>
           </a>
         </li>
