@@ -127,7 +127,7 @@ $font-tracking-basic = 0.001em
 $font-tracking-tighter = -0.02em
 $font-tracking-wider = 0.05em
 
-$font-sans = 'Helvetica Neue', font-stack('Helvetica')
+$font-sans = "Favorit", font-stack('Helvetica')
 $font-serif = font-stack('Times New Roman')
 
 $color-black = rgb(0, 0, 0)
@@ -170,18 +170,9 @@ p
 
 .font-bold
   font-weight: bold
-  line-height: $font-leading-tighter
-  letter-spacing: $font-tracking-tighter
 
-.font-heavy
-  font-weight: 900
-  line-height: $font-leading-tighter
-  letter-spacing: $font-tracking-tighter
-  a,
-  a:active,
-  a:visited
-    &:hover
-      font-style: italic
+.font-light
+  font-weight: 300
 
 .font-serif
   font-family: $font-serif
@@ -192,13 +183,6 @@ p
 
 .font-capitalize
   text-transform: capitalize
-
-.font-expanded
-  transform-origin: top
-  transform: scaleY(.9)
-  &.underline-links
-    a:link, a:active, a:visited
-      border-bottom: ($border-width + 1) solid $color-black
 
 .font-size-small
   font-size: $font-size-small

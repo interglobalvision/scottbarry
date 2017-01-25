@@ -87,43 +87,43 @@ ul.u-inline-list li {
 }
 @font-face {
   font-family: 'Favorit';
-  src: url("Favorit-Regular.eot");
-  src: url("Favorit-Regular.eot?#iefix") format('embedded-opentype'), url("Favorit-Regular.woff2") format('woff2'), url("Favorit-Regular.woff") format('woff'), url("Favorit-Regular.ttf") format('truetype'), url("Favorit-Regular.svg#Favorit-Regular") format('svg');
+  src: url("fonts/Favorit-Regular.eot");
+  src: url("fonts/Favorit-Regular.eot?#iefix") format('embedded-opentype'), url("fonts/Favorit-Regular.woff2") format('woff2'), url("fonts/Favorit-Regular.woff") format('woff'), url("fonts/Favorit-Regular.ttf") format('truetype'), url("fonts/Favorit-Regular.svg#Favorit-Regular") format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Favorit';
-  src: url("Favorit-RegularItalic.eot");
-  src: url("Favorit-RegularItalic.eot?#iefix") format('embedded-opentype'), url("Favorit-RegularItalic.woff2") format('woff2'), url("Favorit-RegularItalic.woff") format('woff'), url("Favorit-RegularItalic.ttf") format('truetype'), url("Favorit-RegularItalic.svg#Favorit-RegularItalic") format('svg');
+  src: url("fonts/Favorit-RegularItalic.eot");
+  src: url("fonts/Favorit-RegularItalic.eot?#iefix") format('embedded-opentype'), url("fonts/Favorit-RegularItalic.woff2") format('woff2'), url("fonts/Favorit-RegularItalic.woff") format('woff'), url("fonts/Favorit-RegularItalic.ttf") format('truetype'), url("fonts/Favorit-RegularItalic.svg#Favorit-RegularItalic") format('svg');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: 'Favorit';
-  src: url("Favorit-Light.eot");
-  src: url("Favorit-Light.eot?#iefix") format('embedded-opentype'), url("Favorit-Light.woff2") format('woff2'), url("Favorit-Light.woff") format('woff'), url("Favorit-Light.ttf") format('truetype'), url("Favorit-Light.svg#Favorit-Light") format('svg');
+  src: url("fonts/Favorit-Light.eot");
+  src: url("fonts/Favorit-Light.eot?#iefix") format('embedded-opentype'), url("fonts/Favorit-Light.woff2") format('woff2'), url("fonts/Favorit-Light.woff") format('woff'), url("fonts/Favorit-Light.ttf") format('truetype'), url("fonts/Favorit-Light.svg#Favorit-Light") format('svg');
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: 'Favorit';
-  src: url("Favorit-LightItalic.eot");
-  src: url("Favorit-LightItalic.eot?#iefix") format('embedded-opentype'), url("Favorit-LightItalic.woff2") format('woff2'), url("Favorit-LightItalic.woff") format('woff'), url("Favorit-LightItalic.ttf") format('truetype'), url("Favorit-LightItalic.svg#Favorit-LightItalic") format('svg');
+  src: url("fonts/Favorit-LightItalic.eot");
+  src: url("fonts/Favorit-LightItalic.eot?#iefix") format('embedded-opentype'), url("fonts/Favorit-LightItalic.woff2") format('woff2'), url("fonts/Favorit-LightItalic.woff") format('woff'), url("fonts/Favorit-LightItalic.ttf") format('truetype'), url("fonts/Favorit-LightItalic.svg#Favorit-LightItalic") format('svg');
   font-weight: 300;
   font-style: italic;
 }
 @font-face {
   font-family: 'Favorit';
-  src: url("Favorit-Medium.eot");
-  src: url("Favorit-Medium.eot?#iefix") format('embedded-opentype'), url("Favorit-Medium.woff2") format('woff2'), url("Favorit-Medium.woff") format('woff'), url("Favorit-Medium.ttf") format('truetype'), url("Favorit-Medium.svg#Favorit-Medium") format('svg');
+  src: url("fonts/Favorit-Medium.eot");
+  src: url("fonts/Favorit-Medium.eot?#iefix") format('embedded-opentype'), url("fonts/Favorit-Medium.woff2") format('woff2'), url("fonts/Favorit-Medium.woff") format('woff'), url("fonts/Favorit-Medium.ttf") format('truetype'), url("fonts/Favorit-Medium.svg#Favorit-Medium") format('svg');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'Favorit';
-  src: url("Favorit-MediumItalic.eot");
-  src: url("Favorit-MediumItalic.eot?#iefix") format('embedded-opentype'), url("Favorit-MediumItalic.woff2") format('woff2'), url("Favorit-MediumItalic.woff") format('woff'), url("Favorit-MediumItalic.ttf") format('truetype'), url("Favorit-MediumItalic.svg#Favorit-MediumItalic") format('svg');
+  src: url("fonts/Favorit-MediumItalic.eot");
+  src: url("fonts/Favorit-MediumItalic.eot?#iefix") format('embedded-opentype'), url("fonts/Favorit-MediumItalic.woff2") format('woff2'), url("fonts/Favorit-MediumItalic.woff") format('woff'), url("fonts/Favorit-MediumItalic.ttf") format('truetype'), url("fonts/Favorit-MediumItalic.svg#Favorit-MediumItalic") format('svg');
   font-weight: bold;
   font-style: italic;
 }
@@ -729,7 +729,7 @@ th {
   max-width: 100%;
 }
 html {
-  font-family: 'Helvetica Neue', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Favorit", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
   letter-spacing: 0.001em;
 }
@@ -754,18 +754,9 @@ p {
 }
 .font-bold {
   font-weight: bold;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
 }
-.font-heavy {
-  font-weight: 900;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-}
-.font-heavy a:hover,
-.font-heavy a:active:hover,
-.font-heavy a:visited:hover {
-  font-style: italic;
+.font-light {
+  font-weight: 300;
 }
 .font-serif {
   font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
@@ -776,19 +767,6 @@ p {
 }
 .font-capitalize {
   text-transform: capitalize;
-}
-.font-expanded {
-  -webkit-transform-origin: top;
-  -ms-transform-origin: top;
-  transform-origin: top;
-  -webkit-transform: scaleY(0.9);
-  -ms-transform: scaleY(0.9);
-  transform: scaleY(0.9);
-}
-.font-expanded.underline-links a:link,
-.font-expanded.underline-links a:active,
-.font-expanded.underline-links a:visited {
-  border-bottom: 3px solid #000;
 }
 .font-size-small {
   font-size: 11px;
