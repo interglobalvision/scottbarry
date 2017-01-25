@@ -205,7 +205,7 @@ if (count($posts) > 0) {
 }
 
 if (count($posts) > 0 && $cat_array) {
-?><span class="menu-item">&ndash;&ndash;&ndash;</span><?php
+?><span class="menu-item">&mdash;</span><?php
 }
 
 if ($cat_array) {
