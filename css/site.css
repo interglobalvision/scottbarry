@@ -772,13 +772,13 @@ p {
   font-size: 11px;
 }
 .font-size-mid {
-  font-size: 14.3px;
+  font-size: 14px;
 }
 .font-size-large {
-  font-size: 16.5px;
+  font-size: 14px;
 }
 .font-size-extra {
-  font-size: 18.7px;
+  font-size: 18px;
 }
 .font-leading-tighter {
   line-height: 1.15;
@@ -923,7 +923,7 @@ p.wp-caption-text {
   z-index: 100;
 }
 #header.open {
-  color: #fff;
+  color: #000;
   height: 100%;
 }
 #header.open #main-menu {
@@ -933,10 +933,13 @@ p.wp-caption-text {
   border-bottom: 2px solid transparent;
 }
 #header.open .menu-item.active {
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #000;
 }
 #header.projects-open .menu-item-info {
   color: #000;
+}
+a.menu-item:hover {
+  border-bottom: 2px solid #000;
 }
 #main-menu {
   position: absolute;
@@ -958,7 +961,7 @@ p.wp-caption-text {
 .sub-menu {
   overflow-y: auto;
   position: absolute;
-  background-color: #242424;
+  background-color: #fff;
   position: fixed;
   top: 0;
   left: 0;
@@ -980,28 +983,36 @@ p.wp-caption-text {
   pointer-events: auto;
 }
 .sub-menu ul {
-  padding: 44px 22px 77px;
+  margin: 0 auto;
 }
 .sub-menu li {
   margin-bottom: 0;
 }
+.sub-menu li a {
+  border-bottom: 2px solid transparent;
+}
+.sub-menu li a:hover {
+  border-bottom: 2px solid #000;
+}
 .sort-list-item a {
-  border-bottom: 3px solid transparent;
+  border-bottom: 2px solid transparent;
 }
 .sort-list-item a.active {
-  border-bottom: 3px solid #fff;
+  border-bottom: 2px solid #000;
 }
 #projects-menu {
   width: 70%;
   height: 100vh;
+  min-width: 270px;
 }
-#projects-menu-container {
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
+#projects-menu ul {
+  width: 240px;
 }
 #sort-menu {
   width: 100%;
+}
+#sort-menu ul {
+  width: 280px;
 }
 #project-text-holder p {
   margin: 0 auto;
@@ -1011,7 +1022,7 @@ p.wp-caption-text {
   position: relative;
 }
 #conversation-holder h3 {
-  font-size: 14.3px;
+  font-size: 14px;
   position: relative;
 }
 #conversation-holder img {
@@ -1042,10 +1053,10 @@ p.wp-caption-text {
     font-size: 21px;
   }
   .font-size-large {
-    font-size: 28px;
+    font-size: 32px;
   }
   .font-size-extra {
-    font-size: 35px;
+    font-size: 42px;
   }
   .text-line-length h1,
   .text-line-length h2,
@@ -1063,11 +1074,17 @@ p.wp-caption-text {
   p.wp-caption-text {
     font-size: 11px;
   }
+  .sub-menu {
+    padding-top: 68px;
+  }
   #projects-menu {
     width: 500px;
   }
-  #projects-menu-container {
-    max-width: none;
+  #projects-menu ul {
+    width: 480px;
+  }
+  #sort-menu ul {
+    width: 560px;
   }
   #project-text-holder p {
     width: 540px;
@@ -1221,10 +1238,10 @@ p.wp-caption-text {
     font-size: 28.8px;
   }
   .font-size-large {
-    font-size: 32px;
+    font-size: 42px;
   }
   .font-size-extra {
-    font-size: 48px;
+    font-size: 54px;
   }
   .text-line-length h1,
   .text-line-length h2,
@@ -1330,20 +1347,38 @@ p.wp-caption-text {
     margin-left: auto;
     margin-right: auto;
   }
-  #header-contact-mobile {
-    display: none;
+  #header.open .menu-item {
+    border-bottom-width: 3px;
   }
-  #header-contact-tablet {
-    display: block;
+  #header.open .menu-item.active {
+    border-bottom-width: 3px;
+  }
+  a.menu-item:hover {
+    border-bottom-width: 3px;
   }
   .sub-menu {
-    padding-top: 72px;
+    padding-top: 85px;
   }
-  .sub-menu ul {
-    padding: 52px 26px 91px;
+  .sub-menu li a {
+    border-bottom-width: 3px;
+  }
+  .sub-menu li a:hover {
+    border-bottom-width: 3px;
   }
   #projects-menu {
-    width: 675px;
+    width: 660px;
+  }
+  #projects-menu ul {
+    width: 580px;
+  }
+  #sort-menu ul {
+    width: 750px;
+  }
+  .sort-list-item a {
+    border-bottom-width: 3px;
+  }
+  .sort-list-item a.active {
+    border-bottom-width: 3px;
   }
   #project-text-holder p {
     width: 720px;
@@ -1486,10 +1521,10 @@ p.wp-caption-text {
     max-width: 100%;
   }
   .font-size-large {
-    font-size: 36px;
+    font-size: 60px;
   }
   .font-size-extra {
-    font-size: 54px;
+    font-size: 74px;
   }
   .text-line-length h1,
   .text-line-length h2,
@@ -1581,24 +1616,18 @@ p.wp-caption-text {
     margin-left: auto;
     margin-right: auto;
   }
-  #header-contact-tablet {
-    display: none;
-  }
-  #header-contact-desktop {
-    display: block;
-  }
   .sub-menu {
-    padding-top: 81px;
+    padding-top: 93px;
   }
-  .sub-menu ul {
-    padding: 60px 30px 105px;
+  #sort-menu ul {
+    width: 1100px;
   }
   #projects-menu {
     width: 70%;
     min-width: 840px;
   }
-  #projects-menu-container {
-    width: 840px;
+  #projects-menu ul {
+    width: 800px;
   }
   #project-text-holder p {
     width: 1000px;

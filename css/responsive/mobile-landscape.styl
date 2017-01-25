@@ -1,7 +1,7 @@
 $font-size-small = 14px
 $font-size-mid = $font-size-small * 1.5
-$font-size-large = $font-size-small * 2
-$font-size-extra = $font-size-small * 2.5
+$font-size-large = 32px
+$font-size-extra = 42px
 
 // ******************************************************
 
@@ -38,15 +38,23 @@ html
 .caption, p.wp-caption-text
   font-size: 11px
 
+$header-height = 68px
+
 // ******************************************************
 
 // HEADER
 
+.sub-menu
+  padding-top: $header-height
+
 #projects-menu
   width: 500px
+  ul
+    width: 480px
 
-#projects-menu-container
-  max-width: none
+#sort-menu
+  ul
+    width: 560px
 
 // ******************************************************
 

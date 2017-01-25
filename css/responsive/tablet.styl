@@ -38,8 +38,8 @@ $margin-large = ($gutter * 5)
 
 $font-size-small = 16px
 $font-size-mid = $font-size-small * 1.8
-$font-size-large = $font-size-small * 2
-$font-size-extra = $font-size-small * 3
+$font-size-large = 42px
+$font-size-extra = 54px
 
 $font-leading-basic = 1.35
 $font-leading-tighter = 1.15
@@ -180,23 +180,45 @@ p.wp-caption-text
   margin-left: auto
   margin-right: auto
 
+$header-height = 85px
+$border-width = 3px
+
 // ******************************************************
 
 // HEADER
 
-#header-contact-mobile
-  display: none
+#header
+  &.open
+    .menu-item
+      border-bottom-width: $border-width
+      &.active
+        border-bottom-width: $border-width
 
-#header-contact-tablet
-  display: block
+a.menu-item
+  &:hover
+    border-bottom-width: $border-width
 
 .sub-menu
-  padding-top: 72px
-  ul
-    padding: $margin-basic $margin-small $margin-mid
+  padding-top: $header-height
+  li
+    a
+      border-bottom-width: $border-width
+      &:hover
+        border-bottom-width: $border-width
 
 #projects-menu
-  width: 675px
+  width: 660px
+  ul
+    width: 580px
+
+#sort-menu
+  ul
+    width: 750px
+
+.sort-list-item a
+  border-bottom-width: $border-width
+  &.active
+    border-bottom-width: $border-width
 
 // ******************************************************
 

@@ -115,9 +115,9 @@ $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
 
 $font-size-small = 11px
-$font-size-mid = $font-size-small * 1.3
-$font-size-large = $font-size-small * 1.5
-$font-size-extra = $font-size-small * 1.7
+$font-size-mid = 14px
+$font-size-large = 14px
+$font-size-extra = 18px
 
 $font-leading-basic = 1.35
 $font-leading-tighter = 1.15
@@ -336,8 +336,6 @@ img
 
 // ******************************************************
 
-$header-height = 60px
-
 .caption
   width: 70%
   margin-left: auto
@@ -350,6 +348,8 @@ p.wp-caption-text
 .caption, p.wp-caption-text
   font-size: 10px
 
+$header-height = 60px
+
 // ******************************************************
 
 // HEADER
@@ -358,17 +358,21 @@ p.wp-caption-text
   width: 100%
   z-index: 100
   &.open
-    color: $color-white
+    color: $color-black
     height: 100%
     #main-menu
       background-color: unset !important
     .menu-item
       border-bottom: $border-width solid transparent
       &.active
-        border-bottom: $border-width solid $color-white
+        border-bottom: $border-width solid $color-black
   &.projects-open
     .menu-item-info
       color: $color-black
+
+a.menu-item
+  &:hover
+    border-bottom: $border-width solid $color-black
 
 #main-menu
   position: absolute
@@ -387,7 +391,7 @@ p.wp-caption-text
 .sub-menu
   overflow-y: auto
   position: absolute
-  background-color: $color-black-soft
+  background-color: $color-white
   position: fixed
   top: 0
   left: 0
@@ -402,26 +406,30 @@ p.wp-caption-text
     opacity: 1
     pointer-events: auto
   ul
-    padding: $margin-basic $margin-small $margin-mid
+    margin: 0 auto
   li
     margin-bottom: 0
+    a
+      border-bottom: $border-width solid transparent
+      &:hover
+        border-bottom: $border-width solid $color-black
 
 .sort-list-item a
-  border-bottom: ($border-width + 1) solid transparent
+  border-bottom: $border-width solid transparent
   &.active
-    border-bottom: ($border-width + 1) solid $color-white
+    border-bottom: $border-width solid $color-black
 
 #projects-menu
   width: 70%
   height: 100vh
-
-#projects-menu-container
-  width: 100%
-  max-width: 300px
-  margin: 0 auto
+  min-width: 270px
+  ul
+    width: 240px
 
 #sort-menu
   width: 100%
+  ul
+    width: 280px
 
 // ******************************************************
 

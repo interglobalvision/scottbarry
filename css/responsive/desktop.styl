@@ -37,8 +37,8 @@ $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
 
 $font-size-small = 18px
-$font-size-large = $font-size-small * 2
-$font-size-extra = $font-size-small * 3
+$font-size-large = 60px
+$font-size-extra = 74px
 
 // ******************************************************
 
@@ -151,27 +151,24 @@ p.wp-caption-text
   margin-left: auto
   margin-right: auto
 
+$header-height = 93px
+
 // ******************************************************
 
 // HEADER
 
-#header-contact-tablet
-  display: none
-
-#header-contact-desktop
-  display: block
-
 .sub-menu
-  padding-top: 81px
+  padding-top: $header-height
+
+#sort-menu
   ul
-    padding: $margin-basic $margin-small $margin-mid
+    width: 1100px
 
 #projects-menu
   width: 70%
   min-width: 840px
-
-#projects-menu-container
-  width: 840px
+  ul
+    width: 800px
 
 // ******************************************************
 

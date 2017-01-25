@@ -98,22 +98,20 @@ if (count($home_items) > 0) {
 <?php
 if (count($posts) > 0) {
 ?>
-      <div id="projects-menu" class="sub-menu font-size-extra font-light">
-        <div id="projects-menu-container">
-          <ul>
+      <div id="projects-menu" class="sub-menu font-size-extra font-light padding-bottom-small">
+        <ul>
 <?php
   foreach($posts as $post) {
     setup_postdata($post);
 ?>
-            <li class="projects-list-item">
-              <a class="u-inline-block" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-            </li>
+          <li class="projects-list-item">
+            <a class="u-inline-block" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+          </li>
 <?php
   }
   wp_reset_postdata();
 ?>
-        </ul>
-      </div>
+      </ul>
     </div>
 <?php
 }
@@ -123,7 +121,7 @@ if (count($posts) > 0) {
 <?php
 if ($cat_array) {
 ?>
-      <div id="sort-menu" class="sub-menu font-size-large font-bold">
+      <div id="sort-menu" class="sub-menu font-size-large font-bold padding-bottom-small">
         <ul class="u-inline-list">
 <?php
   $cat_count = count($cat_array);
@@ -145,7 +143,7 @@ if ($cat_array) {
 <?php
 }
 ?>
-    <div id="main-menu" class="padding-top-small padding-bottom-tiny" <?php
+    <div id="main-menu" class="padding-top-small padding-bottom-small" <?php
     if (!empty($bg_color)) {
       echo 'style="background-color: ' . $bg_color . '"';
     }
@@ -155,46 +153,11 @@ if ($cat_array) {
 
 
           <div class="col col-s-4 col-no-margin-bottom">
-<?php
-$header_contact_desktop = IGV_get_option('_igv_header_contact');
-$header_contact_tablet= IGV_get_option('_igv_header_contact_tablet');
-$header_contact_mobile = IGV_get_option('_igv_header_contact_mobile');
-
-if (!empty($header_contact_desktop)) {
-?>
-            <h1 class="u-hidden">
-              <?php bloginfo('name'); ?>
-            </h1>
-
-            <div id="header-contact-desktop" class="font-size-mid">
-              <?php echo apply_filters('the_content', $header_contact_desktop); ?>
-            </div>
-<?php
-  if (!empty($header_contact_tablet)) {
-?>
-            <div id="header-contact-tablet" class="font-size-mid">
-              <?php echo apply_filters('the_content', $header_contact_tablet); ?>
-            </div>
-<?php
-  }
-
-  if (!empty($header_contact_mobile)) {
-?>
-            <div id="header-contact-mobile" class="font-size-mid">
-              <?php echo apply_filters('the_content', $header_contact_mobile); ?>
-            </div>
-<?php
-  }
-} else {
-?>
             <h1 class="font-size-mid">
               <a class="menu-item" href="<?php echo site_url(); ?>">
-                <?php bloginfo('name'); ?>
+                Studio
               </a>
             </h1>
-<?php
-}
-?>
           </div>
 
 
