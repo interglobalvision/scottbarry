@@ -410,9 +410,11 @@ a.menu-item
   li
     margin-bottom: 0
     a
-      border-bottom: $border-width solid transparent
+      .list-item-text
+        border-bottom: $border-width solid transparent
       &:hover
-        border-bottom: $border-width solid $color-black
+        .list-item-text
+          border-bottom: $border-width solid $color-black
 
 .sort-list-item a
   border-bottom: $border-width solid transparent
@@ -427,6 +429,7 @@ a.menu-item
     width: 240px
   img
     max-width: 100px
+    margin-top: .25em
 
 #sort-menu
   width: 100%

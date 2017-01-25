@@ -108,8 +108,8 @@ if (count($posts) > 0) {
     $thumb = get_the_post_thumbnail($post->ID, 'list');
 ?>
         <li class="projects-list-item">
-          <a class="u-inline-block" href="<?php the_permalink(); ?>">
-            <?php the_title(); ?><br>
+          <a href="<?php the_permalink(); ?>">
+            <span class="list-item-text"><?php the_title(); ?></span><br>
             <?php echo $show_image === 'on' ? $thumb : ''; ?>
           </a>
         </li>
@@ -140,7 +140,7 @@ if ($cat_array) {
             &nbsp;<a
               class="u-inline-block <?php if (is_home()) { echo 'sort-toggle'; } ?>"
               data-cat="<?php echo $cat->slug; ?>"
-              href="<?php echo get_bloginfo('url') . '?sort=' . $cat->slug; ?>"><?php echo $cat->name; ?></a><?php echo $cat_num != $cat_count ? ',' : ''; ?></li>
+              href="<?php echo get_bloginfo('url') . '?sort=' . $cat->slug; ?>"><span class="list-item-text"><?php echo $cat->name; ?></span></a><?php echo $cat_num != $cat_count ? ',' : ''; ?></li>
 <?php
   }
 ?>

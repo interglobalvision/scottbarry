@@ -206,9 +206,11 @@ a.menu-item
   padding-top: $header-height
   li
     a
-      border-bottom-width: $border-width
-      &:hover
+      .list-item-text
         border-bottom-width: $border-width
+      &:hover
+        .list-item-text
+          border-bottom-width: $border-width
 
 #projects-menu
   width: 660px
@@ -216,6 +218,13 @@ a.menu-item
     width: 580px
   img
     max-width: 200px
+  li
+    a
+      .list-item-text
+        border-bottom-width: $border-width + 1
+      &:hover
+        .list-item-text
+          border-bottom-width: $border-width + 1
 
 #sort-menu
   ul

@@ -988,10 +988,10 @@ a.menu-item:hover {
 .sub-menu li {
   margin-bottom: 0;
 }
-.sub-menu li a {
+.sub-menu li a .list-item-text {
   border-bottom: 2px solid transparent;
 }
-.sub-menu li a:hover {
+.sub-menu li a:hover .list-item-text {
   border-bottom: 2px solid #000;
 }
 .sort-list-item a {
@@ -1010,6 +1010,7 @@ a.menu-item:hover {
 }
 #projects-menu img {
   max-width: 100px;
+  margin-top: 0.25em;
 }
 #sort-menu {
   width: 100%;
@@ -1370,10 +1371,10 @@ a.menu-item:hover {
   .sub-menu {
     padding-top: 85px;
   }
-  .sub-menu li a {
+  .sub-menu li a .list-item-text {
     border-bottom-width: 3px;
   }
-  .sub-menu li a:hover {
+  .sub-menu li a:hover .list-item-text {
     border-bottom-width: 3px;
   }
   #projects-menu {
@@ -1384,6 +1385,12 @@ a.menu-item:hover {
   }
   #projects-menu img {
     max-width: 200px;
+  }
+  #projects-menu li a .list-item-text {
+    border-bottom-width: 4px;
+  }
+  #projects-menu li a:hover .list-item-text {
+    border-bottom-width: 4px;
   }
   #sort-menu ul {
     width: 750px;
