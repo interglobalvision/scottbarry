@@ -80,7 +80,7 @@ function igv_cmb_metaboxes() {
     'type'             => 'select',
     'show_option_none' => true,
     'options'          => cmb2_get_post_options(array(
-      'post_type'       => 'project', 
+      'post_type'       => 'project',
       'posts_per_page'  => -1,
     )),
   ) );
@@ -91,7 +91,7 @@ function igv_cmb_metaboxes() {
     'type'             => 'select',
     'show_option_none' => true,
     'options'          => cmb2_get_post_options(array(
-      'post_type'       => 'conversation', 
+      'post_type'       => 'conversation',
       'posts_per_page'  => -1,
     )),
   ) );
@@ -148,6 +148,20 @@ function igv_cmb_metaboxes() {
     'id'          => $prefix . 'degrees_rotate',
     'type'        => 'text_small',
   ) );
+
+  // Conversation details
+
+    $project_conversation_metabox = new_cmb2_box( array(
+      'id'           => $prefix . 'project_conversation_metabox',
+      'title'        => __( 'Options', 'cmb2' ),
+      'object_types' => array( 'project', 'conversation', ),
+    ) );
+
+    $project_conversation_metabox->add_field( array(
+      'desc'    => __( 'Show featured image in List menu?', 'cmb2' ),
+      'id'      => $prefix . 'img_in_list',
+      'type'    => 'checkbox',
+    ) );
 
 // Project tagline
 
