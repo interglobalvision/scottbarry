@@ -1037,7 +1037,7 @@ a.menu-item:hover {
   display: none;
 }
 .menu-post-type #site-title-holder.hide-section #site-title {
-  display: block;
+  display: inline-block;
 }
 #project-text-holder p {
   margin: 0 auto;
