@@ -193,9 +193,11 @@ $border-width = 3px
 
 #header
   &.open
-    .menu-item
+    a.menu-item
       border-bottom-width: $border-width
       &.active
+        border-bottom-width: $border-width
+      &:hover
         border-bottom-width: $border-width
 
 a.menu-item
@@ -229,7 +231,7 @@ a.menu-item
 #projects-menu-border
   top: $header-height
   width: 660px
-  height: calc('100vh - ' + ($header-height + $margin-basic))
+  height: calc('100vh - ' + ($header-height + $margin-small))
   border-right-width: 15px
 
 #sort-menu
