@@ -31,10 +31,8 @@ if (!empty($tagline)) {
 <?php
 if (get_the_content()) {
 ?>
-        <div id="project-text-holder" class="col col-s-12 text-align-center font-size-large font-heavy underline-links margin-bottom-basic font-expanded-holder">
-          <div class="font-expanded">
-            <?php the_content(); ?>
-          </div>
+        <div id="project-text-holder" class="col col-s-12 text-align-center font-size-large font-bold font-size-large underline-links margin-bottom-basic">
+          <?php the_content(); ?>
         </div>
 <?php
 }
@@ -47,7 +45,7 @@ if (!empty($images)) {
       $percent_margin_left = empty($image['margin_left']) ? '0' : $image['margin_left'];
       $percent_width = empty($image['percent_width']) ? '100' : $image['percent_width'];
       $degrees_rotate = empty($image['degrees_rotate']) ? '0' : $image['degrees_rotate'];
-      
+
 
       $image_size = $single_row == 'on' ? 'col-12' : 'col-6';
 ?>
@@ -79,7 +77,7 @@ if (!empty($images)) {
 }
 ?>
       </article>
-      
+
   <!-- end posts -->
   </section>
 
