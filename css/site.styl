@@ -484,6 +484,29 @@ a.menu-item
 
 // ******************************************************
 
+// FOOTER
+
+#footer
+  pointer-events: none
+  position: fixed
+  bottom: 0
+  left: 0
+  width: 100%
+
+#circle
+  display: block
+  width: 20px
+  pointer-events: auto
+  circle
+    stroke-width: 3px
+    fill: $color-white
+    stroke: $color-black
+    &:hover
+      fill: $color-black
+      cursor: help
+
+// ******************************************************
+
 // MEDIA QUERIES
 
 @media screen and (max-width: 750px)

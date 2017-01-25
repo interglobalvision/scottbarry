@@ -1054,6 +1054,27 @@ a.menu-item:hover {
   display: block;
   margin: 0 auto;
 }
+#footer {
+  pointer-events: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+#circle {
+  display: block;
+  width: 20px;
+  pointer-events: auto;
+}
+#circle circle {
+  stroke-width: 3px;
+  fill: #fff;
+  stroke: #000;
+}
+#circle circle:hover {
+  fill: #000;
+  cursor: help;
+}
 @media screen and (max-width: 750px) {
   .custom-layout-item {
     margin-top: 0 !important;
@@ -1442,6 +1463,9 @@ a.menu-item:hover {
   #conversation-holder h3 {
     font-size: 28.8px;
     right: 100%;
+  }
+  #circle circle {
+    stroke-width: 4px;
   }
 }
 @media screen and (min-width: 1150px) {
