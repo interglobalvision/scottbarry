@@ -164,7 +164,7 @@ if ($cat_array) {
 
           <div class="col col-s-4 col-no-margin-bottom" id="site-title-holder">
             <h1 class="font-size-mid u-inline-block" id="site-title">
-              <a class="menu-item" href="<?php echo site_url(); ?>">
+              <a class="menu-item" href="<?php echo home_url(); ?>">
                 Studio
               </a>
             </h1>
@@ -172,7 +172,7 @@ if ($cat_array) {
             if (is_single()) {
             ?>
             <div class="font-size-mid u-inline-block" id="site-section">
-              <a class="menu-item" href="<?php echo site_url(); ?>">
+              <a class="menu-item" href="<?php echo home_url(); ?>">
                 <?php echo get_post_type() === 'project' ? 'Project' : 'Conversation'; ?>
               </a>
             </div>
