@@ -101,39 +101,6 @@ class IGV_Admin {
       ),
     ) );
 
-    $options_metabox->add_field( array(
-      'name' => __( 'Header Contact', 'IGV' ),
-      'desc' => __( '', 'IGV' ),
-      'id'   => $this->prefix . 'header_contact',
-      'type' => 'wysiwyg',
-      'options' => array(
-        'media_buttons' => false, // show insert/upload button(s)
-        'textarea_rows' => get_option('default_post_edit_rows', 4), // rows="..."
-      ),
-    ) );
-
-    $options_metabox->add_field( array(
-      'name' => __( 'Header Contact Tablet', 'IGV' ),
-      'desc' => __( '', 'IGV' ),
-      'id'   => $this->prefix . 'header_contact_tablet',
-      'type' => 'wysiwyg',
-      'options' => array(
-        'media_buttons' => false, // show insert/upload button(s)
-        'textarea_rows' => get_option('default_post_edit_rows', 4), // rows="..."
-      ),
-    ) );
-
-    $options_metabox->add_field( array(
-      'name' => __( 'Header Contact Mobile', 'IGV' ),
-      'desc' => __( '', 'IGV' ),
-      'id'   => $this->prefix . 'header_contact_mobile',
-      'type' => 'wysiwyg',
-      'options' => array(
-        'media_buttons' => false, // show insert/upload button(s)
-        'textarea_rows' => get_option('default_post_edit_rows', 4), // rows="..."
-      ),
-    ) );
-
     // METADATA OPTIONS
 
     $options_metabox->add_field( array(
